@@ -1,7 +1,7 @@
 #732 - Hamgyeong
 
-owner = FO7
-controller = FO7
+owner = KOR
+controller = KOR
 culture = korean
 religion = confucianism
 capital = "Hamgyeong"
@@ -11,7 +11,7 @@ base_tax = 1
 base_production = 1
 base_manpower = 2
 is_city = yes
-add_core = FO7
+add_core = KOR
 add_local_autonomy = 35
 discovered_by = chinese
 discovered_by = nomad_group

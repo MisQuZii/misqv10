@@ -1695,7 +1695,7 @@ NED_3_1 = {
 						has_saved_event_target = low_countries_university_target_1
 					}
 					event_target:low_countries_university_target_1 = {
-						add_or_upgrade_university_building = yes
+						add_building = state_house
 					}
 				}
 			}
@@ -1733,7 +1733,7 @@ NED_3_1 = {
 					add_years_of_income = -0.25
 					add_prestige = 5
 					4383 = {
-						add_or_upgrade_university_building = yes
+						add_building = state_house
 					}
 					add_innovativeness_small_effect = yes
 				"

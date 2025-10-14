@@ -14,6 +14,7 @@ woc_flavor_hordes_1 = {
 			tag = MGE
 			tag = ILK
 			tag = GLH
+			tag = CRI
 		}
 		NOT = { was_tag = YUA }
 		has_dlc = "Winds of Change"
@@ -79,6 +80,7 @@ woc_shared_hordes_1 = {
 			tag = MGE
 			tag = ILK
 			tag = GLH
+			tag = CRI
 		}
 		has_dlc = "Winds of Change"
 	}
@@ -163,6 +165,7 @@ woc_hordes_1_branching = {
 			tag = MGE
 			tag = ILK
 			tag = GLH
+			tag = CRI
 		}
 	}
 
@@ -199,6 +202,7 @@ woc_hordes_1_tolerance = {
 			tag = MGE
 			tag = ILK
 			tag = GLH
+			tag = CRI
 		}
 	}
 	
@@ -299,6 +303,7 @@ woc_hordes_1_devout = {
 			tag = MGE
 			tag = ILK
 			tag = GLH
+			tag = CRI
 		}
 	}
 	
@@ -309,24 +314,12 @@ woc_hordes_1_devout = {
 
 		trigger = {  
 			not_in_mission_preview_mode = { key = HORDES }
-			num_of_converted_provinces = {
-				amount = 30
+			num_converted_provinces = 30 
+			has_razed_provinces = {
+            	min = 20
 			}
-			if = {
-				limit = {
-					is_nomad = yes
-				}
-				custom_trigger_tooltip = {
-					tooltip = TATARS_RAIZED_35_PROVINCES
-					check_variable = {
-						which = HordeProvincesRazed
-						value = 35
-					}
-				}
-			}
-			else = {
-				num_of_cavalry = 40
-			}
+			num_of_cavalry = 40
+			
 			inquisitor = 3
 		} 
 
@@ -451,6 +444,7 @@ woc_hordes_1_confucian = {
 			tag = MGE
 			tag = ILK
 			tag = GLH
+			tag = CRI
 		}
 	}
 	
@@ -588,6 +582,7 @@ woc_flavor_hordes_2 = {
 			tag = MGE
 			tag = ILK
 			tag = GLH
+			tag = CRI
 		}
 		NOT = { was_tag = YUA }
 		has_dlc = "Winds of Change"
@@ -709,6 +704,7 @@ woc_shared_hordes_2 = {
 			tag = MGE
 			tag = ILK
 			tag = GLH
+			tag = CRI
 		}
 		has_dlc = "Winds of Change"
 	}
@@ -779,6 +775,7 @@ woc_flavor_hordes_3 = {
 			tag = MGE
 			tag = ILK
 			tag = GLH
+			tag = CRI
 		}
 		NOT = { was_tag = YUA }
 		has_dlc = "Winds of Change"
@@ -906,6 +903,7 @@ woc_shared_hordes_3 = {
 			tag = MGE
 			tag = ILK
 			tag = GLH
+			tag = CRI
 		}
 		has_dlc = "Winds of Change"
 	}
@@ -916,7 +914,7 @@ woc_shared_hordes_3 = {
 
 		trigger = {  
 			num_of_cavalry = 35
-			num_of_battles = { amount = 30 }
+			num_won_battles = 30
 		} 
 
 		effect = {  
@@ -1006,6 +1004,7 @@ woc_flavor_hordes_4 = {
 			tag = MGE
 			tag = ILK
 			tag = GLH
+			tag = CRI
 		}
 		NOT = { was_tag = YUA }
 		has_dlc = "Winds of Change"
@@ -1154,6 +1153,7 @@ woc_shared_hordes_4 = {
 			tag = MGE
 			tag = ILK
 			tag = GLH
+			tag = CRI
 		}
 		has_dlc = "Winds of Change"
 	}
@@ -1251,6 +1251,7 @@ woc_flavor_hordes_5 = {
 			tag = MGE
 			tag = ILK
 			tag = GLH
+			tag = CRI
 		}
 		NOT = { 
 			was_tag = YUA 
@@ -1319,6 +1320,7 @@ woc_shared_hordes_5 = {
 			tag = MGE
 			tag = ILK
 			tag = GLH
+			tag = CRI
 		}
 		has_dlc = "Winds of Change"
 	}

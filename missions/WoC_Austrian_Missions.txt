@@ -2506,7 +2506,7 @@ WoC_austria_2_1 = {
 
 		effect = {  
 			134 = {
-				add_or_upgrade_university_building = yes
+				add_building = trade_depot
 			}
 
 			custom_tooltip = SEPERATOR_TOOLTIP

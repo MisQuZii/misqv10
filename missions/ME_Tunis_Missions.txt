@@ -1071,10 +1071,7 @@ TUN_missions_3 = {
 		}
 		effect = {
 			341 = {
-				add_or_upgrade_tax_building = yes
-				add_or_upgrade_university_building = yes
-				
-				custom_tooltip = " "
+				add_building = trade_depot
 				
 				add_province_modifier = {
 					name = TUN_zaytunah_madrasah

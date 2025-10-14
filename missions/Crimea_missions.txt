@@ -56,6 +56,7 @@ X_CRI_slot_1 = {
 			crimea_area = {
 				add_local_autonomy = -10
 				add_base_tax = 1
+				add_base_production = 1
 			}
 			2410 = {
 				if = {
@@ -102,9 +103,9 @@ X_CRI_slot_1 = {
 			}
 		}
 		effect = {
-			add_power_projection = {
-				type = mission_rewards_power_projection
-				amount = 50
+			add_power_projection = { 
+				type = 25_permanent_power_projection
+				amount = 15 
 			}
 			if = {
 				limit = { NOT = { has_completed_all_reforms_trigger = yes } }

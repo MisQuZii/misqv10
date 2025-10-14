@@ -221,7 +221,7 @@ FU_swiss_missions_1 = {
 		}
 		effect = {
 			165 = {
-				add_or_upgrade_university_building = yes
+				add_building = manufactory
 			}
 			
 			custom_tooltip = " "
