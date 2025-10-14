@@ -1,0 +1,11 @@
+government = monarchy
+add_government_reform = confucian_bureaucracy
+government_rank = 1
+technology_group = chinese
+religion = confucianism
+primary_culture = korean
+capital = 733
+fixed_capital = 733
+add_truce_with = MJZ
+historical_rival = MJZ
+historical_rival = ASK

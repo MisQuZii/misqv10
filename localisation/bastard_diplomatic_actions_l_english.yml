@@ -1,0 +1,100 @@
+﻿l_english:
+####################
+gc_truce_with_ally:0 "Cannot ally this nation until the "Broke Alliance" opinion modifier has ticked down to 0 as we recently broke alliance with them. This is usually 5 years, but is effected by Improve Relations."
+gecko_stability:0 "Must have 0 Stability or higher to declare war."
+bastard_mng_dec_horde:0 "Must have passed 5 Imperial Reforms or the target must not be a player Tributary State in order to declare war on them."
+bastard_mng_dec_mjz:0 "Jianzhou must have over 300 Development in order to be a valid target for us to attack."
+bastard_convert_trib_to_vassal:0 "Convert Tributary to Vassal"
+bastard_convert_trib_to_vassal_tooltip:0 "Convert Tributary to Vassal"
+bastard_convert_trib_to_vassal_title:0 "Convert Tributary to Vassal"
+bastard_convert_trib_to_vassal_desc:0 "Convert to Tributary at the cost of §R50§! Dip Power."
+b_gift_action:0 "Can only send gifts to our Subjects."
+b_warsubsidy_action:0 "Can only subsidise our subjects."
+b_takeondebt_action:0 "Can only take on the debts of our Subjects."
+b_offerloan_action:0 "Cannot offer loans."
+chinese_warlord_grace_period:0 "You must wait 20 years after the Ming Crisis Disaster fired to attack the successor state."
+bs_cant_remove_human_freecity:0 "You cannot remove player Free City Status."
+
+ #powers_and_ideas_l_english
+ MODIFIER_MERCENARY_MANPOWER:1 "Mercenary Force Limit"
+ #cradle_of_civilization_l_english
+ ARMY_PROFESSIONALISM_STATIC_MODIFIERS_DESC:1 "§YImmediate Gain:§!\nRecruit General: §G+0.25%§!\nRecruit General with Offensive Ideas: §G+0.375%§!\nRecruit Mercenary: §R-0.2%§!"
+ #EU4_l_english
+ tunis:0 "Barbary Coast"
+ persia:0 "Tabriz"
+ lahore:0 "Herat"
+ basra:0 "Persian Gulf"
+ gulf_of_aden:0 "Red Sea"
+ english_channel:0 "London"
+ obj_30_development_city_desc:0 "Own and control a core province with at least §Y25§! development."
+ obj_30_development_city_tooltip:0 "Cored Province with §Y25§! development\n"
+ obj_many_vassals_desc:0 "Have at least three different vassals at the same time."
+ #areas_regions_l_english
+ morea_area:0 "Greece"
+ morea_area_name:0 "Morea"
+ morea_area_adj:0 "Morean"
+ northern_greece_area:0 "Northern Greece"
+ northern_greece_area_name:0 "Thessaly"
+ northern_greece_area_adj:0 "Thessalian"
+ cukurova_area:0 "Akdeniz"
+ cukurova_area_name:0 "Çukurova"
+ cukurova_area_adj:0 "Çukurovan"
+ erzurum_area:0 "Western Armenia"
+ erzurum_area_name:0 "Erzurum"
+ erzurum_area_adj:0 "Erzurumian"
+ KOR:0 "Joseon"
+ SHY:0 "Shaybanids"
+ colonial_alaska:0 "Americas"
+ colonial_east_indies:0 "East indies"
+ superior_firepower_desc:0 "The use of massed firepower to disrupt the enemy before delivering the coup de grace is one of our army's strength and we will ensure that our leaders know this.\nRecruit General: §G+0.375%§! Army Professionalism" 
+
+#protestant aspects
+ organised_through_bishops_aspect:0 "Organized Through Bishops"
+ desc_organised_through_bishops_aspect:1 "Bishops used to be leader of a single church, confined to an urban area. Nowadays, they lead the churches of a larger area and no longer serve individual congregations. Priests are appointed to minister each congregation, and acts as the bishop's delegate. \n\n We will also gain §G-5%§! Construction Cost for §Y10§! years"
+ saints_accept_prayers_aspect:0 "Saints Accept Prayers"
+ desc_saints_accept_prayers_aspect:1 "The Intercession of saints, that saints may be asked to intercede or pray for others, is a doctrine supported by our church. \n\n We will also gain §G+25%§! Army Tradition from Battles for §Y10§! years"
+ icons_images_aspect:0 "Icons"
+ desc_icons_images_aspect:1 "The images depicting Jesus, Mary, saints and angels, cast in metal, carved in stone, embroidered on cloth, painted on wood or made in many different ways are often illuminated. These icons have been debated and opposed, but the popular favor for icons have guaranteed their continued existence and the Church have finally resigned themselves to allow the veneration of icons. \n\n We will also gain §G-5%§! Advisor Cost with Ruler's Culture for §Y10§! years"
+ parish_registers_aspect:0 "Parish Registers"
+ desc_parish_registers_aspect:1 "Details of baptisms, marriages and burials will from now on be documented in a parish register. Each parish priest will keep a book where they will enter these events and keep it in a sure coffer with two locks. \n\n We will also gain §G-0.25%§! Yearly Corruption for §Y10§! years"
+ allow_usury_aspect:0 "Allow Usury"
+ desc_allow_usury_aspect:1 "Monetary loans with interest that enrich the lender is now allowed and no longer considered sinful. \n\n We will also gain §G-0.15%§! Interest per Annum for §Y10§! years"
+ organised_through_bishops_aspect_modifier:0 "Church Aspect Zeal"
+
+#egyptian westernisation
+ egyptian_dip_counter_1_tt:0 "£no£ Gain §G100.00§! Government Reform Progress\n£no£ Goods Produced Modifier: §G+2.5%§!\n£no£ Goods Produced Modifier: §G+5%§!\n£no£ Goods Produced Modifier: §G+7.5%§!\n£no£ Goods Produced Modifier: §G+10%§!"
+
+ egyptian_dip_counter_2_tt:0 "£yes£ Gain §G100.00§! Government Reform Progress\n£no£ Goods Produced Modifier: §G+2.5%§!\n£no£ Goods Produced Modifier: §G+50%§!\n£no£ Goods Produced Modifier: §G+7.5%§!\n£no£ Goods Produced Modifier: §G+10%§!"
+ 
+ egyptian_dip_counter_3_tt:0 "£yes£ Gain §G100.00§! Government Reform Progress\n£yes£ Goods Produced Modifier: §G+2.5%§!\n£no£ Goods Produced Modifier: §G+5%§!\n£no£ Goods Produced Modifier: §G+7.5%§!\n£no£ Goods Produced Modifier: §G+10%§!"
+
+ egyptian_dip_counter_4_tt:0 "£yes£ Gain §G100.00§! Government Reform Progress\n£yes£ Goods Produced Modifier: §G+2.5%§!\n£yes£ Goods Produced Modifier: §G+50%§!\n£no£ Goods Produced Modifier: §G+7.5%§!\n£no£ Goods Produced Modifier: §G+10%§!"
+
+ egyptian_dip_counter_5_tt:0 "£yes£ Gain §G100.00§! Government Reform Progress\n£yes£ Goods Produced Modifier: §G+2.5%§!\n£yes£ Goods Produced Modifier: §G+5%§!\n£yes£ Goods Produced Modifier: §G+7.5%§!\n£no£ Goods Produced Modifier: §G+10%§!"
+
+ egyptian_dip_counter_6_tt:0 "£yes£ Gain §G100.00§! Government Reform Progress\n£yes£ Goods Produced Modifier: §G+2.5%§!\n£yes£ Goods Produced Modifier: §G+5%§!\n£yes£ Goods Produced Modifier: §G+7.5%§!\n£yes£ Goods Produced Modifier: §G+10%§!"
+
+#privileges
+estate_nobles_right_of_counsel:0 "Invest in Heavy Cavalry"
+#events
+ mam_mosque_great_mosque_generates_crown_land_tt:0 "\nConstructing §YMosques§! and §YGreat Mosques§! will grant us §G+0.25%§! Crown Land for §Y20 Years§!, as well as the following reward:\n"
+ mam_adm_advisors_generate_idea_cost_tt:0 "\nAll our §YAdministrative§! advisors will generate §G-1%§! Idea cost per level for §Y20 Years§!."
+#naval doctrines
+ chinese_treasure_fleet:0 "The Treasure Fleet"
+#government mechanics
+jap_20_years_devving_tax_yields_twice_bonus_1_burgher_loyalt_tt:0 "Developing our provincial £adm£ will yield twice the §YBase Tax§! Development as well as §G1§! Merchant Guilds loyalty bonus for 10 years"
+royal_council_interaction_tooltip:0 "Can choose one of the following modifiers for §Y10 years§!:\n§YCouncil of the Chamber§!:\n    Possible Advisors: §G+1§!\n    Advisor Cost: §G-10.0%§!\n\n§YCouncil of Finance§!:\n    Yearly Inflation Reduction: §G-0.05§!\n    Interest per Annum: §G-0.5.00§!\n\n§YCouncil of the Inquisition§!:\n    Missionaries: §G+1§!\n    Missionary Strength against Heretics: §G+2.0%§!"
+ state_council_interaction:0 "Call the Council of State"
+ state_council_interaction_desc:0 ""
+ state_council_interaction_tooltip:1 "Can choose one of the following modifiers for §Y10 years§!:\n§YCouncil of Europe§!:\n    Diplomatic Reputation: §G+2.00§!\n\n§YCouncil of the Mediterranean§!:\n    Galley Combat Ability: §G+10.0%§!\n\n§YCouncil of the Indies§!:\n    Global Settler Increase: §G+15.00§! \n    Reduced Liberty Desire on Other Continent: §G-10.00%§!"
+ war_council_interaction:0 "Call the Council of War"
+ war_council_interaction_desc:0 ""
+ war_council_interaction_tooltip:0 "Can choose one of the following modifiers for §Y10 years§!:\n§YCouncil of the Crusade§!:\n    Manpower Recovery Speed: §G+15.0%§!\n\n§YCouncil of Military Orders§!:\n    Yearly Army Tradition: §G+0.5§!\n\n§YCouncil of the Armada§!:\n    Yearly Navy Tradition: §G+0.5§!"
+###missions###
+unite_mongol_culture_tt:1 "All owned provinces with §YKazakh§!, §YTurkmeni§!, §YUyghur§!, §YKyrgzy§!, or §YNogai§! culture will change to §YUzbek§! culture"
+ mch_missions.7.t:0 "Reuniting the Uzbeks"
+ mch_missions.7.d:0 "Since the fall of the great Mongol Empire there have been many attempts to reunite the Mongol people. None have succeeded for more than a brief moment. Like many before us we have assembled a horde with warriors and chieftains from every tribe, but this unity will likely be temporary unless we strive for greater unity. We could, as Genghis Khan did, proclaim that all the Mongols are one people, with all division between them made obsolete. Alternatively we could reorganize the tribes, recognizing their distinctiveness but clearly defining their rights and territories."
+ mch_missions.7.a:0 "We are all Uzbeks."
+ #decisions
+ splendor_into_power_title:0 "Invest Splendor"
+ splendor_into_power_desc:0 ""

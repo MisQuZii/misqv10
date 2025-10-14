@@ -1,0 +1,644 @@
+b_burma_disc = {
+	discipline = 0.05
+}	
+
+bs_lowland_integration = {
+	diplomatic_annexation_cost = -0.2
+}
+gc_growing_economy = {
+	build_cost = -0.10
+	build_time = -0.25
+	great_project_upgrade_cost = -0.25
+}
+
+gc_west_african_integration = {
+	 	num_accepted_cultures = 1
+		culture_conversion_cost = -0.1
+}
+
+cape_trade_established = {
+	trade_efficiency = 0.05
+}
+charles_army_reorganisation = {
+	artillery_cost = -0.2
+}
+
+charles_court_reorganisation = {
+	advisor_cost = -0.1
+	advisor_pool = 1
+}
+bs_bur_realm_united_mod = {
+	local_production_efficiency = 0.25
+	trade_goods_size_modifier = 0.15
+}
+
+norman_resurgence = {
+	ae_impact = -0.5
+	province_warscore_cost = -0.5
+}
+
+gc_african_gold_modifier = {
+	trade_goods_size_modifier = 0.25
+}
+
+berber_fury = {
+	land_morale = 0.1
+}
+
+gc_mor_italy = {
+	global_manpower_modifier = 0.1
+	artillery_fire = 0.5
+}
+
+fertile_crescent = {
+	local_development_cost = -0.05
+	trade_goods_size_modifier = 0.1
+}
+
+bastard_muskeeter_modifier = {
+	infantry_power = 0.1
+	land_maintenance_modifier = 0.05
+	is_musketeer_modifier = yes
+}	
+####################austria###################
+bs_royal_hungary = {
+	land_morale = 0.1
+}
+##############################################
+########################################
+# Modifiers for Portugal
+########################################
+
+prester_john_discovered = {
+	infantry_power = 0.05
+}
+
+bastard_portuguese_empire = {
+	land_forcelimit_modifier = 0.25
+}
+
+X_POR_portugese_renaissance_cmod = {
+	technology_cost = -0.05
+	idea_cost = -0.05
+}
+X_POR_manueline_architecture_cmod = {
+	build_cost = -0.05
+	build_time = -0.10
+	great_project_upgrade_cost = -0.25
+	development_cost = -0.05
+	interest = -0.25
+}
+X_POR_proto_colonialism_cmod = {
+	global_colonial_growth = 10
+}
+
+X_POR_companhia_de_lagos_cmod = {
+	trade_efficiency = 0.20
+}
+
+X_POR_razias_de_escravos_cmod = {
+	manpower_recovery_speed = 0.2
+}
+####mughals###############
+gc_mug_formation_hope = {
+	land_morale = 0.05
+}
+####sweden#############
+bastard_hakkapeliita_cavalry = {
+	cavalry_power = 0.1
+}
+
+bastard_hakkapeliita_cavalry_2 = {
+	cavalry_power = 0.1
+	cavalry_fire = 0.5
+}
+
+########################################
+# Modifiers for Venice
+########################################
+X_VEN_monopolio_adriatico_pmod = {
+	province_trade_power_modifier = 0.35
+}
+
+X_VEN_basilica_di_san_biagio_pmod = {
+	local_tax_modifier = 0.40
+}
+
+X_VEN_reduced_ottoman_meddling_cmod = {
+	global_foreign_trade_power = 0.1
+	embargo_efficiency = 0.25
+}
+
+X_VEN_armada_cmod = {
+	naval_maintenance_modifier = -0.20
+	global_sailors_modifier = 0.30
+}
+
+X_VEN_contrafossa_pmod = {
+	local_hostile_movement_speed = -0.5
+	blockade_force_required = 1
+}
+
+X_VEN_generale_da_mar_cmod = {
+	admiral_cost = -0.15
+	republican_tradition = 0.1
+}
+
+X_VEN_bulwark_of_europe_pmod = {
+	local_sailors_modifier = 1
+	local_ship_repair = 0.25
+	galley_power = 0.1
+}
+
+X_VEN_morean_development_pmod = {
+	local_development_cost = -0.1
+	local_build_cost = -0.10
+}
+
+X_VEN_renewed_viticulure_pmod = {
+	trade_goods_size_modifier = 0.50
+}
+
+X_VEN_greek_ambition_cmod = {
+	manpower_recovery_speed = 0.20
+	prestige = 1
+}
+
+X_VEN_walls_of_nicosia_pmod = {
+	local_hostile_movement_speed = -0.5
+	local_defensiveness = 0.25
+	allowed_num_of_buildings = 1
+}
+
+X_VEN_port_of_famagusta_pmod = {
+	local_ship_cost = -0.25
+	local_ship_repair = 0.2
+	placed_merchant_power = 10
+}
+
+X_VEN_cypriot_sammet_pmod = {
+	trade_goods_size = 0.5
+	trade_value_modifier = 0.15
+}
+
+X_VEN_mercantile_system_cmod = {
+	mercantilism_cost = -0.15
+}
+
+X_VEN_venetokratia_cmod = {
+	tolerance_heretic = 3
+	global_manpower_modifier = 0.15
+}
+
+X_VEN_ottomans_defeated_cmod = {
+	land_morale = 0.1
+}
+
+X_VEN_innovative_tactics_cmod = {
+	cavalry_power = 0.1
+}
+
+X_VEN_galilean_ballistics_cmod = {
+	artillery_fire = 0.5
+}
+
+X_VEN_magistrato_al_sal_cmod = {
+	global_tax_modifier = 0.1
+}
+
+X_VEN_preservation_of_classics_cmod = {
+	technology_cost = -0.05
+	idea_cost = -0.05
+}
+
+X_VEN_cretan_literature_cmod = {
+	dip_tech_cost_modifier = -0.1
+	monthly_splendor = 1
+}
+
+X_VEN_center_of_greek_arts_pmod = {
+	local_development_cost = -0.1
+	local_production_efficiency = 0.3
+}
+
+X_VEN_new_advisement_cmod = {
+	advisor_cost = -0.10
+}
+
+X_VEN_venetian_marines_cmod = {
+	discipline = 0.1
+	is_marine_modifier = yes
+}
+
+###################
+maghreb_oases_stability_pmod = {
+	trade_value_modifier = 0.25
+	local_development_cost = -0.25
+	allowed_num_of_buildings = 1
+}
+
+####kilwa
+
+zan_colonial_ambition_2 = {
+	global_colonial_growth = 25
+	range = 0.25
+}
+
+####crimea####
+
+########################################
+# Modifiers for Crimea
+########################################
+X_CRI_reform_3_pmod = {
+	local_development_cost = -0.05
+}
+
+X_CRI_reform_6_pmod = {
+	local_tax_modifier = 0.33
+}
+
+X_CRI_era_of_peace_cmod = {
+	war_exhaustion = -0.10
+	global_monthly_devastation = -0.1
+	manpower_recovery_speed = 0.10
+	global_tax_modifier = 0.15
+}
+
+X_CRI_tatars_crushed_cmod = {
+	army_tradition = 1
+	prestige = 0.5
+	land_morale = 0.1
+}
+
+X_CRI_exact_tribute_cmod = {
+	global_tax_modifier = 0.20
+}
+
+X_CRI_exacted_tribute_cmod = {
+	global_tax_modifier = -0.20
+}
+
+X_CRI_qaraylar_craftsmen_pmod = {
+	local_production_efficiency = 0.35
+	local_development_cost = -0.10
+}
+
+X_CRI_qaraylar_lending_cmod = {
+	inflation_reduction = 0.10
+	interest = -0.25
+	great_project_upgrade_cost = -0.15
+}
+
+X_CRI_trench_gate_pmod = {
+	local_hostile_attrition = 1
+	local_defensiveness = 0.35
+	local_defender_dice_roll_bonus = 1
+}
+
+X_CRI_gateway_protected_pmod = {
+	local_build_cost = -0.05
+	local_development_cost = -0.05
+}
+
+X_CRI_rights_of_the_khan_cmod = {
+	global_tax_modifier = 0.20
+}
+
+X_estate_burghers_privilege_1_pmod = {
+	local_production_efficiency = 0.75
+}
+
+X_CRI_rex_russiae_cmod = {
+	global_tax_income = 24
+}
+
+X_CRI_batus_tribute_cmod = {
+	vassal_income = 0.15
+}
+
+X_CRI_through_the_zasechnaya_cherta_cmod = {
+	siege_ability = 0.20
+	movement_speed = 0.10
+}
+
+X_CRI_end_of_the_cossacks_cmod = {
+	discipline = 0.05
+}
+
+X_CRI_ruthenian_dominance_cmod = {
+	governing_capacity_modifier = 0.25
+	vassal_income = 0.2
+}
+
+###shaybanids###
+silk_road_restored = {
+	trade_goods_size_modifier = 0.1
+}
+
+bukharan_slave_trade = {
+	trade_goods_size_modifier = 0.2
+}
+
+##netherlands##
+bastard_ned_formed = {
+	all_power_cost = -0.1
+}
+
+
+###################################
+# ME_Timurid_Princes_Modifiers
+###################################
+ME_ulugh_beg = {
+	diplomatic_reputation = 1
+	legitimacy = 1
+	technology_cost = -0.05
+}
+
+ME_babur = {
+	province_warscore_cost = -0.1
+	shock_damage = 0.1
+	movement_speed = 0.15
+}
+
+ME_sistan = {
+	rebel_support_efficiency = 0.5
+	spy_offence = 0.25
+	discovered_relations_impact = -0.2
+}
+
+ME_Karatshar = {
+	stability_cost_modifier = -0.25
+	global_unrest = -1
+	build_cost = -0.05
+}
+
+ME_fars_regency = {
+	advisor_cost = -0.1
+}
+
+ME_Baysonqor = {
+	land_morale = 0.075
+	global_autonomy = -0.1
+}
+
+ME_khorasan_agaist_beg = {
+	land_morale = 0.1
+	cavalry_power = 0.1
+	land_forcelimit_modifier = 0.5 #this is meant for more troops during the fight
+}
+
+legitimacy_var_increased = {
+
+}
+
+ME_yearly_timurid_legitimacy = {
+}
+
+ME_fall_of_herat_in_1_years = {
+
+}
+
+ME_fall_of_herat_in_2_years = {
+
+}
+
+allow_persian_restoration_for_20_years = {
+
+}
+
+allow_persian_restoration = {
+
+}
+
+ME_uncontested_ruler = {
+	prestige = 1
+	global_unrest = -2
+}
+
+ME_pacified_the_persians = {
+	num_accepted_cultures = 1
+	promote_culture_cost = -0.20
+}
+
+ME_healed_religious_turmoil = {
+	tolerance_own = 1
+	tolerance_heretic = 1
+	tolerance_heathen = 1
+}
+
+ME_seljuk_architecture = {
+	build_cost = -0.1
+	prestige = 1
+	development_cost = -0.10
+}
+
+ME_pinnacle_of_islamic_art = {
+	prestige_decay = -0.01
+	advisor_cost = -0.15
+}
+
+ME_heir_of_timur = {
+	siege_ability = 0.1
+}
+
+ME_beijing_samarkand_pact = {
+	trade_efficiency = 0.1
+}
+
+timurid_prince_satisfied_the_masses = {
+	global_unrest = -2
+}
+
+ME_rise_of_babur = {
+	land_forcelimit_modifier = 0.5
+	shock_damage = 0.1
+	global_regiment_cost = -0.2
+}
+###################################
+# ME_Timurids_Modifiers
+###################################
+preparing_against_ottomans = {
+	land_morale = 0.1
+	movement_speed = 0.1
+}
+
+1402_repeated = {
+	monthly_splendor = 3
+	prestige_decay = -0.01
+	army_tradition_decay = -0.01
+}
+
+zealot_ruler1 = {
+	monthly_piety = 0.005
+}
+
+zealot_ruler2 = {
+	monthly_piety = -0.005
+}
+
+secured_flanks = {
+	discipline = 0.05
+}
+
+timurid_critical_city = {
+	trade_value = 10
+	trade_goods_size = 1
+}
+
+land_of_faith = {
+	tolerance_own = 2
+}
+
+rebuilding_persia_modifier = {
+	local_development_cost = -0.2
+}
+
+ME_unleash_tiger = {
+	land_morale = 0.05
+}
+
+erasing_shia_beliefs = {
+	global_heretic_missionary_strength = 0.03
+	tolerance_own = 1
+}
+
+unleash_the_elephants = {
+	shock_damage = 0.1
+}
+
+elephant_regiments = {
+	cavalry_power = 0.05
+	cav_to_inf_ratio = 0.05
+}
+
+unparalleled_architecture = {
+	development_cost = -0.10
+	build_cost = -0.2
+}
+
+stampeding_the_traitor = {
+	province_warscore_cost = -0.15
+}
+
+traitors_demise = {
+	reduced_liberty_desire = 10
+}
+
+mountain_conquest = {
+	land_attrition = -0.15
+}
+
+sack_of_delhi = {
+	prestige_from_land = 2
+	land_morale = 0.1
+	global_unrest = -2
+}
+
+samarkand_observatory_modifier = {
+	technology_cost = -0.05
+	innovativeness_gain = 0.5
+}
+
+samarkand_permanent_observatory_modifier = {
+	technology_cost = -0.05
+	innovativeness_gain = 0.75
+}
+
+pearl_of_khorasan_modifier = {
+	local_missionary_strength = -0.05
+	local_build_cost = -0.15
+	trade_goods_size = 0.5
+}
+
+ME_defeat_ajam_or_suffer_modifier = {
+
+}
+
+###################################
+# ME_Khorasan_Modifiers
+###################################
+me_khorasan_lighting_warfare = {
+	siege_ability = 0.1
+}
+
+me_khorasan_stronghold_against_transoxiana = {
+	local_defensiveness = 0.1
+}
+
+me_defeat_at_merv_incident = {
+	land_morale = -0.05
+	prestige = -0.5
+}
+
+me_khorasan_conqueror_of_qom = {
+	land_morale = 0.05
+	ae_impact = -0.1
+}
+
+me_khorasan_scourge_of_fars = {
+	army_tradition = 1
+}
+
+me_khorasan_bane_of_transoxiana = {
+	global_unrest = -2
+}
+
+me_khorasan_prosperous_ilkhanate_city = {
+	local_development_cost = -0.1
+	trade_goods_size_modifier = 0.1
+}
+
+me_khorasan_patron_of_arts = {
+	prestige_decay = -0.01
+	advisor_cost = -0.15
+}
+
+me_khorasan_great_sheikh_of_khorasan = {
+	global_regiment_cost = -0.1
+}
+###################################
+###################################
+# ME_Transoxiana_Modifiers
+###################################
+me_transoxiana_silk_road_benefits = {
+	trade_efficiency = 0.15
+	development_cost = -0.1
+}
+
+me_transoxiana_taming_the_steppes = {
+	prestige = 0.5
+	cavalry_cost = -0.1
+}
+
+me_transoxiana_true_heir_of_timur = {
+	monarch_military_power = 1
+}
+
+me_transoxiana_turkoman_tactics = {
+	cavalry_fire = 0.15
+}
+
+me_transoxiana_inspiration_for_many_great_men = {
+	advisor_cost = -0.1
+}
+
+me_transoxiana_the_end_of_a_legend = {
+	army_tradition = 1
+}
+
+me_transoxiana_usurper_of_transoxiana = {
+	legitimacy = 0.5
+	prestige = 1
+}
+
+me_transoxiana_full_scale_rebellion = {
+	global_unrest = -1
+	global_manpower_modifier = 0.1
+}
+
+me_transoxiana_mountain_fortifications = {
+	local_defensiveness = 0.15
+}
+
+
+

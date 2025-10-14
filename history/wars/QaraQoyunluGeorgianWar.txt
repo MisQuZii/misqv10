@@ -1,0 +1,34 @@
+name = "Qara Qoyunlu Invasion of Georgia"
+
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 423 # Tbilisi
+}
+
+1444.1.1 = {
+	add_attacker = QAR
+	add_defender = GEO
+}
+
+1444.5.5 = {
+	rem_attacker = QAR
+	rem_defender = GEO
+}
+
+name = "Ajam and QQ"
+war_goal = {
+	type = superiority_crusade
+	casus_belli = cb_crusade
+}
+
+1444.10.10 = {
+	add_attacker = QOM
+	add_defender = QAR
+}
+
+#Peace and end of war
+1444.10.11 = {
+	rem_attacker = QOM
+	rem_defender = QAR
+}
