@@ -85,7 +85,7 @@ NED_1 = {
 							culture = flemish
 							skill = 2
 							type = artist
-							cost_multiplier = 0.75
+							cost_multiplier = 0.5
 						}
 					"
 				}
@@ -1205,7 +1205,7 @@ NED_2_1 = {
 			define_advisor = {
 				type = naval_reformer
 				skill = 3
-				cost_multiplier = 0.75
+				cost_multiplier = 0.5
 				name = "Piet Hein"
 			}
 			add_country_modifier = {
@@ -1695,7 +1695,7 @@ NED_3_1 = {
 						has_saved_event_target = low_countries_university_target_1
 					}
 					event_target:low_countries_university_target_1 = {
-						add_building = state_house
+						add_or_upgrade_university_building = yes
 					}
 				}
 			}
@@ -1733,7 +1733,7 @@ NED_3_1 = {
 					add_years_of_income = -0.25
 					add_prestige = 5
 					4383 = {
-						add_building = state_house
+						add_or_upgrade_university_building = yes
 					}
 					add_innovativeness_small_effect = yes
 				"
@@ -1927,7 +1927,7 @@ NED_3_1 = {
 				type = colonial_governor
 				skill = 3
 				culture = swedish
-				cost_multiplier = 0.75
+				cost_multiplier = 0.5
 				name = "Frederick Coyett"
 			}
 		} 
@@ -3157,7 +3157,7 @@ NED_5_1 = {
 					define_advisor = {
 						type = artist
 						skill = 3
-						cost_multiplier = 0.75
+						cost_multiplier = 0.5
 						name = \"Pieter Post\"
 					}
 				"

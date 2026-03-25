@@ -3,7 +3,7 @@
 owner = QIC
 controller = QIC
 add_core = QIC
-culture = zhongyuan
+culture = shandong_culture
 religion = confucianism
 capital = "Yanzhou"
 trade_goods = grain

@@ -1,0 +1,33 @@
+no_colonies_in_the_asia = {
+	local_colonial_growth = -5000
+}
+
+conquer_gujarat = {
+    reduced_liberty_desire = 15
+    vassal_income = 0.15
+}
+malwani_vassals = {
+    development_cost = -0.1
+}
+malvani_gujarat = {
+    build_cost = -0.1
+}
+prepare_for_war = {
+    land_morale = 0.1
+}
+bahmanis_peace = {
+    manpower_recovery_speed = 0.15
+}
+mlw_strenghten_rajputs = {
+    shock_damage_received = -0.1
+    infantry_power = 0.05
+    is_rajput_modifier = yes
+}
+dlh_conquest = {
+    cavalry_cost = -0.1
+    cavalry_flanking = 0.7
+}
+dlh_shock = {
+    shock_damage = 0.1
+    artillery_shock = 0.3
+}

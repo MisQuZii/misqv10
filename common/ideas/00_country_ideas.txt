@@ -52,6 +52,7 @@ norse_ideas = {
 
 HLR_ideas = {
 	start = {
+		possible_policy = 1
 		diplomatic_reputation = 2
 	}
 	
@@ -98,11 +99,11 @@ GER_ideas = {
 		republican_tradition = 0.3
 		meritocracy = 1
 		horde_unity = 1
-		infantry_power = 0.20
+		infantry_power = 0.15
 	}
 	
 	bonus = {
-		global_manpower_modifier = 0.33
+		diplomatic_upkeep = 1
 	}	
 
 	trigger = {
@@ -111,7 +112,7 @@ GER_ideas = {
 	free = yes
 	
 	ger_german_confederation = {
-        land_morale = 0.2
+		global_unrest = -2
 	}
 	ger_german_universities = {
 		technology_cost = -0.1
@@ -120,11 +121,10 @@ GER_ideas = {
 		discipline = 0.05
 	}
 	ger_new_hanseatics = {
-		trade_efficiency = 0.20
+		trade_efficiency = 0.10
 	}
 	ger_junkers = {
 		army_tradition = 0.5
-		land_forcelimit_modifier = 0.2
 	}
 	ger_reichstag = {
 		administrative_efficiency = 0.05
@@ -1126,7 +1126,7 @@ SCO_Ideas = {
 NAP_ideas = {
 	start = {
 		global_institution_spread = 0.1 #University of Naples, Angevine Heritage, Academies, centre of Neapolitan renaissance.
-		diplomatic_upkeep = -2
+		trade_efficiency = 0.1 #One of the main trade port of the mediterrenean for much of the timeframe
 	}
 	
 	bonus = {
@@ -1266,7 +1266,7 @@ VIJ_ideas = {
 	
 	bonus = {
 		#mercenary_manpower = 0.25
-		manpower_recovery_speed = 0.15
+		land_forcelimit_modifier = 0.15
 	}
 	
 	trigger = {
@@ -1278,7 +1278,7 @@ VIJ_ideas = {
 		global_trade_power = 0.10
 	}
 	arab_horses = {
-		global_tax_modifier = 0.1
+		cavalry_power = 0.10
 	}
 	harsh_penal_code = {
 		stability_cost_modifier = -0.1
@@ -1773,7 +1773,7 @@ TAU_ideas = {
 GRA_ideas = {
 	start = {
 		global_tax_modifier = 0.15
-		diplomatic_upkeep = -4
+		religious_unity = 0.25
 	}
 	
 	bonus = {
@@ -1812,9 +1812,8 @@ GRA_ideas = {
 
 PAP_ideas = {
 	start = {
-     can_not_build_buildings = yes
-	 global_regiment_cost = 100
-	 diplomatic_upkeep = 15
+		diplomatic_reputation = 1
+		religious_unity = 0.25
 	}
 
 	bonus = {
@@ -7794,40 +7793,41 @@ DMS_ideas = {
 
 MLW_ideas = {
 	start = {
+		advisor_pool = 1
 		infantry_power = 0.1
-		infantry_cost = -0.1
 	}
-
+	
 	bonus = {
-		num_accepted_cultures = 1
+		#mercenary_manpower = 0.25
+		land_forcelimit_modifier = 0.15
 	}
 	
 	trigger = {
 		tag = MLW
 	}
-	free = yes		#will be added at load.
-
-	mlw_rajputs_of_malwa = {
-		global_manpower_modifier = 0.15
+	free = yes
+	
+	vij_promo_trade = {
+		global_trade_power = 0.10
 	}
-	mlw_nimatnama = {
-		religious_unity = 0.25
-		prestige = 0.5
+	arab_horses = {
+		cavalry_power = 0.10
 	}
-	mlw_surat_delhi_route = {
-		trade_efficiency = 0.1
+	harsh_penal_code = {
+		stability_cost_modifier = -0.1
 	}
-	mlw_fortified_strongholds = {
-		defensiveness = 0.2
+	vij_tolerance = {
+		tolerance_heretic = 1
+ 		tolerance_heathen = 1
 	}
-	mlw_black_soil = {
-		global_trade_goods_size_modifier = 0.1
+	carnatic_music = {
+		prestige = 1
 	}
-	mlw_reliance_on_jain_bankers = {
-		inflation_reduction = 0.1
+	adroit_diplomacy = {
+		diplomats = 1
 	}
-	mlw_malwa_opium = {
-		global_prov_trade_power_modifier = 0.10
+	army_for_city_of_victory = {
+		discipline = 0.05
 	}
 }
 
@@ -8074,22 +8074,20 @@ YUA_ideas = {
 		core_creation = -0.25
 	}
 	yua_a_savage_kingdom_holy_and_enchanted = {
-		envoy_travel_time = -0.1
+		land_morale = 0.1
 	}
 	yua_the_three_teachings_and_nine_schools_respected = {
 		technology_cost = -0.1
 	}
 	yua_keshik_and_weijun = {
 		shock_damage = 0.1
-		max_general_shock = 1
 	}
 	yua_a_thousand_miles_as_if_at_home = {
 		movement_speed = 0.1
-		
+		envoy_travel_time = -0.1
 	}
 	yua_sino_mongol_administration = {
 		administrative_efficiency = 0.05
-		cavalry_flanking = 0.5
 	}
 	yua_pax_mongolica = {
 		global_trade_goods_size_modifier = 0.1
@@ -8566,13 +8564,12 @@ HSK_ideas = {
 
 UES_ideas = {
 	start = {
-		infantry_power = 0.1
-		colonists = 1
+		army_tradition_decay = -0.01
+		production_efficiency = 0.1
 	}
 	
 	bonus = {
-		colonists = 1
-		global_manpower_modifier = 0.20
+		infantry_power = 0.1
 	}
 
 	trigger = {
@@ -8581,26 +8578,23 @@ UES_ideas = {
 	free = yes
 	
 	ues_kanto_kanrei = {
-		global_colonial_growth = 15
-		global_ship_cost = -0.20
+		diplomatic_upkeep = 1
 	}
-
+	
 	ues_yamanouchi_and_ogigayatsu_branches = {
 		army_tradition = 0.5
-		development_cost = -0.10
 	}
 
 	ues_kamakura_office = {
-		heavy_ship_power = 0.1
+		reinforce_cost_modifier = -0.25
 	}
 	
 	ues_dragon_of_echigo = {
-		army_tradition_decay = -0.01
+		land_morale = 0.1
 	}
 
 	ues_nokizaru = {
 		spy_offence = 0.2
-		galley_power = 0.1
 	}
 	
 	ues_agakita_shu = {
@@ -9144,7 +9138,7 @@ SMZ_ideas = {
 	}
 	
 	bonus = {
-		artillery_fire = 0.5
+		global_tax_modifier = 0.1
 	}
 
 	trigger = {
@@ -9153,7 +9147,7 @@ SMZ_ideas = {
 	free = yes
 	
 	smz_satsuma_hayato = {
-		global_tax_modifier = 0.15
+		land_morale = 0.1
 	}
 	
 	smz_satsunan_school = {
@@ -9174,7 +9168,6 @@ SMZ_ideas = {
 	
 	smz_ryukyu_trade = {
 		trade_steering = 0.2
-		
 	}
 	
 	smz_early_westernization = {
@@ -10333,7 +10326,7 @@ KHO_ideas = {
 TRS_ideas = {
 	start = {
 		land_morale = 0.1
-		artillery_cost = -0.33
+		cavalry_cost = -0.1
 	}
 	bonus = {
 		idea_cost = -0.1
@@ -10344,27 +10337,25 @@ TRS_ideas = {
 	free = yes
 	
 	trs_mawarannahr = {
-		cavalry_power = 0.1
-		cavalry_cost = -0.1
+		cavalry_power = 0.2
 	}
 	trs_threshold_of_paradise = {
 		prestige = 1
-		development_cost = -0.05
 	}
 	trs_adept_diplomacy = {
-		technology_cost = -0.05
+		spy_offence = 0.2
 	}
 	trs_turkoman_cannoneers = { #Babur's ambition
-		artillery_power = 0.10
+		artillery_cost = -0.15
 	}
 	trs_scientific_patronage = {
-		spy_offence = 0.2
+		technology_cost = -0.05
 	}
 	trs_entrepot_of_the_silk_road = {
 		global_own_trade_power = 0.25
 	}
 	chagatai_literature = {
-		shock_damage = 0.1
+		#Same as Timurids
 	}
 }
 
@@ -10705,8 +10696,7 @@ RUM_ideas = {
 		horde_unity = 1
 	}
 	rum_sultan_of_rum = {
-		cav_to_inf_ratio = 0.15
-		cavalry_power = 0.15
+		tolerance_heathen = 3
 	}
 	rum_sulan_al_bahrayn = {
 		naval_maintenance_modifier = -0.15
@@ -10980,7 +10970,7 @@ ODA_ideas = {
 		leader_siege = 1
 	}
 	oda_triple_firing = {
-		discipline = 0.05
+		fire_damage = 0.1
 	}
 	oda_patronization_of_the_west = {
 		technology_cost = -0.05
@@ -12276,7 +12266,7 @@ KLE_ideas = {
 
 DLH_ideas = {
 	start = {
-		cavalry_power = 0.15
+		cavalry_power = 0.1
 		diplomatic_reputation = 1
 	}
 	
@@ -12293,7 +12283,7 @@ DLH_ideas = {
 		army_tradition = 0.5
 	}
 	dlh_suppress_rebellion = {
-		global_unrest = -1
+		land_morale = 0.1
 	}
 	dlh_expansionism = {
 		core_creation = -0.1
@@ -12308,11 +12298,8 @@ DLH_ideas = {
 		global_own_trade_power = 0.1
 	}
 	dlh_throne_of_india = {
-		legitimacy = 1
-		devotion = 1
-		republican_tradition = 0.3
-		meritocracy = 1
-		horde_unity = 1
+		cavalry_power = 0.05
+		cavalry_cost = -0.1
 	}
 }
 
@@ -12461,7 +12448,7 @@ BNG_ideas = {
 		leader_land_shock = 1
 	}
 	bng_rupees = {
-		discipline = 0.05
+		global_tax_modifier = 0.1
 	}
 	bng_bengali_industrialization = {
 		global_trade_goods_size_modifier = 0.1
@@ -13126,7 +13113,7 @@ SOO_ideas = {
 
 OIR_ideas = {
 	start = {
-		cavalry_power = -0.20
+		cavalry_power = 0.20
 		core_creation = -0.20
 	}
 	
@@ -13142,31 +13129,31 @@ OIR_ideas = {
 	}
 	free = yes
 	
-	fearsome_warriors_of_tumuq = {
+	fearsome_warriors_of_tumu = {
 		leader_land_manuever = 1
 		cavalry_cost = -0.1
 	}
-	life_of_steppe_warrioser = { #also used in Horde ideas, KHA_ideas
+	life_of_steppe_warrior = { #also used in Horde ideas, KHA_ideas
 		land_attrition = -0.20
 	}
-	the_four_oiratss = {
+	the_four_oirats = {
 		legitimacy = 1
 		devotion = 1
 		republican_tradition = 0.3
 		meritocracy = 1
 		horde_unity = 1
 	}
-	todo_besheg_scripte = {
+	todo_besheg_script = {
 		technology_cost = -0.05
 	}
-	OIR_great_khans_legacyr = {
+	OIR_great_khans_legacy = {
 		ae_impact = -0.15
 	}
-	defiance_of_the_dzungarsr = {
+	defiance_of_the_dzungars = {
 		discipline = 0.05
 		manpower_recovery_speed = 0.15
 	}
-	glory_of_conquestt = { #also used in Horde ideas, KHA_ideas and CHG_ideas
+	glory_of_conquest = { #also used in Horde ideas, KHA_ideas and CHG_ideas
 		global_manpower_modifier = 0.15
 	}
 }
@@ -13193,8 +13180,8 @@ KHA_ideas = {
 	ikh_mongol_uls = {
 		ae_impact = -0.15
 	}
-	life_of_steppe_warriorrr = {
-		land_attrition = -0.20 
+	life_of_steppe_warrior = {
+		#land_attrition = -0.20 (effect taken in OIR_ideas)
 	}
 	northern_yuan = {
 		core_creation = -0.25
@@ -13214,52 +13201,41 @@ KHA_ideas = {
 
 CHG_ideas = {
 	start = {
-        cavalry_cost = -0.1
-		core_creation = -0.20
-		global_missionary_strength = 0.03
+		cavalry_power = 0.20
+		harsh_treatment_cost = -0.2
 	}
 	
 	bonus = {
-		cavalry_flanking = 0.5
-	  
+		land_maintenance_modifier = -0.05
 	}
 	
 	trigger = {
-		OR = {
-			tag = CHG
-			tag = ZUN
-		}
+		tag = CHG
 	}
 	free = yes
 	
-	fearsome_warriors_of_tumu = {
-		leader_land_shock = 1
-		cavalry_power = 0.1
+	the_mountain_khanate = {
+		hostile_attrition = 0.5
+		land_attrition = -0.10
 	}
-	life_of_a_eu_addict = { #also used in Horde ideas, KHA_ideas
-		build_cost = -0.15
-	}
-	the_four_oirats = {
-		land_attrition = -0.20
-		missionaries = 1
-        
-	}																																																																																														
-	todo_besheg_script = {
-		technology_cost = -0.05
-		amount_of_banners = 0.25
-	}
-	OIR_great_khans_legacy = {
-		legitimacy = 1
-		devotion = 1
-		republican_tradition = 0.3
-		meritocracy = 1
-		horde_unity = 5
-	}
-	defiance_of_the_dzungars = {
+	CHG_border_wars = {
+		land_morale = 0.05
 		manpower_recovery_speed = 0.15
 	}
-	glory_of_conquest = { #also used in Horde ideas, KHA_ideas and CHG_ideas
-		global_manpower_modifier = 0.15
+	sons_of_chagatai = {
+		diplomatic_annexation_cost = -0.15
+	}
+	CHG_chagatai_literature = {
+		prestige = 1
+	}
+	tradition_of_conquest = { #also used in horde_ideas
+		core_creation = -0.15
+	}
+	CHG_constant_scheming = {
+		diplomats = 1
+	}
+	glory_of_conquest = {
+		#global_manpower_modifier = 0.25 (effect taken in OIR idea)
 	}
 }
 
@@ -14266,7 +14242,7 @@ LFA_ideas = {
 		infantry_power = 0.1
 	}
 	bonus = {
-		global_tax_modifier = 0.10
+		possible_policy = 1
 	}
 	trigger = {
 		tag = LFA

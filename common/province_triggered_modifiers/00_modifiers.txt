@@ -675,7 +675,7 @@ changbai_mountain = {
 				religion = confucianism
 				religion = mahayana
 			}
-			owns_core_province = 2743
+			#owns_core_province = 2743
 			owns_core_province = 4201
 		}
 	}

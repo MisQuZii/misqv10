@@ -811,7 +811,7 @@ mam_missions_2 = {
 		trigger = {
 			if = {
 				limit = { ai = no }
-				trader = 1
+				trader = 3
 			}
 			else = { trader = 1 }
 			OR = {
@@ -1489,12 +1489,6 @@ mam_missions_4 = {
 				382 = { add_random_development = 1 }
 				377 = { add_random_development = 1 }
 			}
-			define_general = {
-    shock = 4
-    fire = 2
-    manuever = 2
-    siege = 2
-    }
 		}
 	}
 
@@ -1829,8 +1823,9 @@ mam_missions_4 = {
 			is_at_war = no 
 		}
 		effect = {
-			development_cost = -0.1
-			duration = 3650
+			country_event = { id = flavor_mam.103 }
+
+			custom_tooltip = flavor_mam.103_tt
 		}
 	}
 
@@ -1941,10 +1936,36 @@ mam_missions_5 = {
 		required_missions = { mam_reincorporate_northern_territories }
 		position = 2
 		provinces_to_highlight = {
-            province_id = 2301
+			OR = {
+				area = aleppo_area
+				area = karaman_area
+				area = dulkadir_area
+				province_id = 327
+				province_id = 2302
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		trigger = {
-			2301 = { is_core = ROOT}
+			aleppo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			327 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2302 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			karaman_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			dulkadir_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		effect = {
 			if = {
@@ -1980,14 +2001,6 @@ mam_missions_5 = {
 				type = adm
 				amount = 1
 			}
-			
-			add_country_modifier = {
-				name = onurotuzbir
-				duration = 3650
-			 }
-			 add_treasury = 1000
-			 add_manpower = 30.0
-			 add_war_exhaustion = -10
 		}
 	}
 
@@ -2178,74 +2191,4 @@ mam_missions_5 = {
 			custom_tooltip = flavor_mam.104_tt
 		}
 	}
-	repulse_turk_gank = {
-        icon = mission_cossack_cavalry
-        required_missions = {  }
-		position = 12
-        trigger = {																																
-            NOT = {
-                is_year = 1460
-            }
-
-        OR = {
-            AND = { 
-                is_in_war = {
-                    attackers = TUR
-                }
-                is_in_war = {
-                    attackers = ETH
-                }
-            }
-            AND = { 	
-                is_in_war = {
-                    attackers = TUR
-                }
-                is_in_war = {
-                    attackers = AKK
-                }
-            }
-            AND = { 
-                is_in_war = {
-                    defenders = TUR
-                }
-                is_in_war = {
-                    attackers = ETH
-                }
-            }
-			AND = { 
-                is_in_war = {
-                    defenders = TUR
-                }
-                is_in_war = {
-                    attackers = AKK
-                }
-            }
-			AND = { 
-                is_in_war = {
-                    defenders = TUR
-                }
-                is_in_war = {
-                    attackers = RAS
-                }
-            }
-        }	
-    }
-
-    
-        effect = {
-            define_conquistador = {
-                shock = 6
-                fire = 4
-                manuever = 4
-                siege = 2
-                name = "II. Baibars"
-                trait = defensive_planner_personality
-                }
-
-                add_country_modifier = {
-                name = "anti_turko_gank"
-                duration = 3650
-                }
-            }
-		}
 }

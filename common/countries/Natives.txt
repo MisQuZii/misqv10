@@ -6,12 +6,14 @@ color = { 203  164  103 }
 
 # Used for colonial nations
 historical_idea_groups = {	
+	theocracy_gov_ideas
 	infrastructure_ideas
-	court_ideas
+	#court_ideas
+	trade_ideas
 	plutocracy_ideas		
 	quantity_ideas
 	administrative_ideas	
-	defensive_ideas	
+	#defensive_ideas	
 	religious_ideas	
 	expansion_ideas
 }

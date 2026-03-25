@@ -186,6 +186,7 @@ emp_bra_pru_1 = {
 		effect = {
 			if = { 
 				limit = { has_dlc = "Domination" }
+				add_dip_power = 50
 				add_accepted_culture_or_dip_power = { culture = prussian value = 100 }
 				custom_tooltip = pru_spread_dev_tt
 				hidden_effect = { 
@@ -585,6 +586,7 @@ emp_bra_pru_2 = {
 				}
 			}
 			add_mil_power = 100
+			add_dip_power = 50
 			add_accepted_culture_or_dip_power = { culture = franconian value = 100 }
 		}
 		ai_weight = {
@@ -1302,7 +1304,7 @@ emp_bra_pru_4 = {
 	}
 	emp_brapru_westphalian_conquest = {
 		icon = westphalian_conquest
-		required_missions = { emp_brapru_the_balance_of_power }
+		required_missions = { emp_brapru_lower_saxony }
 		position = 3
 		provinces_to_highlight = {
 			OR = {

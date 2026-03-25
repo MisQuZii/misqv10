@@ -159,6 +159,23 @@ designate_march = {
 declarewar = {
 
 	condition = {
+		tooltip = kielak_ipa_anti_war_priviledge
+		potential = {
+			ROOT = {
+				has_country_flag = kielak_ipa_priviledge_lose_inflation_on_repaid_loans
+			}
+		}
+		allow = {
+			FROM = {
+				ai = yes
+			}
+			FROM = {
+				is_subject = no
+			}
+		}
+	}
+
+	condition = {
 		tooltip = gecko_stability
 		potential = {
 		}
@@ -639,25 +656,30 @@ royal_marriage = {
 }
 
 guaranteeaction = {
-		condition = {
+	  condition = {
+        allow = {
+            always = no
+        }
+
 		potential = {
 			
 		}
-		allow = {
-
-			FROM = { 
-				has_opinion = { who = ROOT value = 175 }
-				} 
-		}
-		
+    }
 
 	effect = {
 		change_asha_vahishta = { value = 1 }
-
-		}
 	}
 }
 threaten_war = {
+	  condition = {
+        allow = {
+            always = no
+        }
+
+		potential = {
+			
+		}
+    }
 	effect = {
 		change_asha_vahishta = { value = -10 }
 	}
@@ -677,10 +699,15 @@ warsubsidy = {
 	condition = {
 		tooltip = b_warsubsidy_action
 		potential = {
-
+			NOT = {
+				OR = {
+					FROM = { is_colonial_nation = yes }
+					FROM = { is_subject_of = ROOT }
+				}
+			}	
 		}
 		allow = {
-	
+			always = no	
 		}
 	}	
 }
@@ -689,27 +716,15 @@ offerloan = {
 	condition = {
 		tooltip = b_offerloan_action
 		potential = {
-
+			NOT = {
+				OR = {
+					FROM = { is_colonial_nation = yes }
+					FROM = { is_subject_of = ROOT }
+				}
+			}	
 		}
 		allow = {
 			always = no	
-		}
-	}
-}
-
-warningaction = {
-		condition = {
-		potential = {
-			
-		}
-		allow = {
-			always = no
-		}
-		
-
-	effect = {
-		change_asha_vahishta = { value = 1 }
-
 		}
 	}
 }
@@ -743,10 +758,15 @@ takeondebt = {
 	condition = {
 		tooltip = b_takeondebt_action
 		potential = {
-
+			NOT = {
+				OR = {
+					FROM = { is_colonial_nation = yes }
+					FROM = { is_subject_of = ROOT }
+				}
+			}	
 		}
 		allow = {
-
+			always = no	
 		}
 	}
 

@@ -20,3 +20,14 @@ has_state_edict_enabled = {
 		has_state_edict = urbanization_state_edict
 	}
 }
+
+
+is_receiving_transfer_trade = {
+	any_country = {
+		AND = {
+			ai = no
+			is_colonial_nation = no
+			transfers_trade_power_to = ROOT
+		}	
+	}
+}

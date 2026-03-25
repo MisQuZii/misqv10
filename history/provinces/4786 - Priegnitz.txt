@@ -3,7 +3,7 @@
 owner = BRA
 controller = BRA
 add_core = BRA
-fort_15th = no
+fort_15th = yes
 culture = saxon
 religion = catholic
 hre = yes

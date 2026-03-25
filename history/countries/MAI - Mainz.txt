@@ -5,6 +5,8 @@ religion = catholic
 technology_group = western
 capital = 78	# Mainz
 fixed_capital = 78 # Cannot move capital away from this province & no power cost to move to it
+historical_rival = HAB
+historical_rival = HES
 
 1396.1.1 = {
 	monarch = {

@@ -209,7 +209,7 @@ KoK_ARB_hedjaz_najd_bedouin_1 = {
 								}
 							}
 						}
-						361 = { add_building = manufactory }
+						361 = { add_or_upgrade_university_building = yes }
 					"
 					option_2 = "
 						if = {
@@ -255,6 +255,7 @@ KoK_ARB_hedjaz_najd_bedouin_1 = {
 								}
 							}
 						}
+						add_or_upgrade_university_building = yes
 					"
 					option_2 = "
 						add_prestige_or_monarch_power = { amount = 10 }

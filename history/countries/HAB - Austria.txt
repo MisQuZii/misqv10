@@ -4,13 +4,10 @@ government_rank = 1
 primary_culture = austrian
 religion = catholic
 technology_group = western
-elector = yes
 capital = 134 # Wien
 historical_friend = HUN
 historical_rival = TUR
-historical_rival = MBZ
-historical_rival = TTL	
-historical_rival = AUG
+historical_rival = FRA
 national_focus = ADM
 add_truce_with = VEN
 add_truce_with = HUN
@@ -20,11 +17,14 @@ add_truce_with = MLO
 add_truce_with = HSA
 add_truce_with = SIC
 add_truce_with = ROT
-add_truce_with = MBZ
-add_truce_with = TTL
-add_truce_with = SWI
-add_truce_with = AUG
-add_truce_with = ING
+
+add_truce_with = PAL
+add_truce_with = NUM
+add_truce_with = WUR
+add_truce_with = ANS
+add_truce_with = WBG
+add_truce_with = MAI
+
 add_accepted_culture = slovene
 
 1395.8.29 = {

@@ -105,6 +105,30 @@ bng_slot_1 = {
 				}
 				add_permanent_claim = ROOT
 			}
+
+			if = {
+				limit = {
+					num_of_subjects = 1
+				}
+				every_subject_country = {
+					add_liberty_desire = -25
+				}
+			}
+			else = {
+				add_prestige = 20
+			}
+
+			custom_tooltip = "We will get ducats equal to 2x the development of subjects with their capital in the Bengal Region"
+			add_subjects_development_ducats = {
+				multiplier = 2
+				trigger = {
+					capital_scope = {
+						region = bengal_region
+					}
+				}
+			}
+
+			
 		}
 		ai_weight = {
 			factor = 500	#Reasonable conquest
@@ -147,6 +171,9 @@ bng_slot_1 = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT	
 			}
+			4467 = {
+				owned_by = ROOT
+			}
 		}
 		effect = {
 			add_prestige = 20
@@ -156,6 +183,13 @@ bng_slot_1 = {
 				desc = EST_VAL_BNG_RAJPUTS_WEAKENED
 				duration = -1
 			}
+
+			4467 = {
+				change_trade_goods = gold
+				add_base_production = 5
+			}
+
+
 		}
 		ai_weight = {
 			factor = 500	#Reasonable conquest
@@ -194,7 +228,7 @@ bng_slot_1 = {
 			add_mercantilism = 2
 			add_country_modifier = {
 				name = "bng_arabian_sea_trade"
-				duration = 7300
+				duration = -1
 			}
 		}
 		ai_weight = {
@@ -223,9 +257,9 @@ bng_slot_2 = {
 		provinces_to_highlight = {
 		}
 		trigger = {
-			mil_tech = 4
+			#mil_tech = 4
 			army_size_percentage = 1
-			total_development = 200
+			#total_development = 200
 		}
 		effect = {
 			bihar_area = {
@@ -263,6 +297,33 @@ bng_slot_2 = {
 				}
 				add_permanent_claim = ROOT
 			}
+			
+			custom_tooltip = "We get a permanent claim on all of Orissas, Kochs and Arakans directly owned provinces."
+			hidden_effect = {
+				ORI = {
+					every_owned_province = {
+						add_permanent_claim = ROOT
+					}
+				}
+				KMT = {
+					every_owned_province = {
+						add_permanent_claim = ROOT
+					}
+				}
+				ARK = {
+					every_owned_province = {
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+
+			country_event = {
+				id = kielak_events.31
+			}
+			
+
+			
+
 		}
 		ai_weight = {
 			factor = 500	#Tall
@@ -306,6 +367,11 @@ bng_slot_2 = {
 			}
 		}
 		effect = {
+
+			add_country_modifier = {
+				name = kielak_bengal_morale_mission
+				duration = 3650
+			}
 			upper_doab_area = {
 				limit = {
 					NOT = { is_permanent_claim = ROOT	}
@@ -640,6 +706,14 @@ bng_slot_3 = {
 				}
 				add_permanent_claim = ROOT
 			}
+
+			burma_region = {
+				add_permanent_claim = ROOT
+			}
+
+			2040 = {
+				center_of_trade = 2
+			}
 		}
 		ai_weight = {
 			factor = 50	#For the love of everything what is holy, Bengal should stop trying to go east...
@@ -893,7 +967,7 @@ bng_slot_4 = {
 			add_stability_or_adm_power = yes
 			add_country_modifier = {	
 				name = "converted_bengal"
-				duration = 7300
+				duration = -1
 			}
 		}
 		ai_weight = {
@@ -940,10 +1014,30 @@ bng_slot_5 = {
 		icon = mission_modernize_production
 		required_missions = { bng_mint_towns }
 		provinces_to_highlight = {
+			OR = {
+				province_id = 561
+				province_id = 564
+				province_id = 568
+				province_id = 2048
+			}
 		}
 		trigger = {
 			textile = 5
 			plantations = 5
+			561 = {
+				has_production_building_trigger = yes
+			}
+			564 = {
+				has_production_building_trigger = yes
+			}
+			568 = {
+				has_production_building_trigger = yes
+			}
+			2048 = {
+				has_production_building_trigger = yes
+			}
+			
+
 		}
 		effect = {
 			add_dip_power = 50
@@ -951,6 +1045,22 @@ bng_slot_5 = {
 				name = "bng_textiles"
 				duration = 7300
 			}
+
+			561 = {
+				add_or_upgrade_production_building = yes
+			}
+			564 = {
+				add_or_upgrade_production_building = yes
+			}
+			568 = {
+				add_or_upgrade_production_building = yes
+			}
+			2048 = {
+				add_or_upgrade_production_building = yes
+			}
+
+			
+			
 		}
 		ai_weight = {
 			factor = 500	#Tall
@@ -963,9 +1073,13 @@ bng_slot_5 = {
 		provinces_to_highlight = {
 		}
 		trigger = {
-			NOT = {
-				piety = -0.33
+			OR = {
+				NOT = {
+					piety = -0.33
+				}
+				piety = 0.33
 			}
+			
 			temple = 5
 			estate_loyalty = {
 				estate = estate_church
@@ -976,7 +1090,8 @@ bng_slot_5 = {
 			add_country_modifier = {
 				name = "bng_sufi_mystic_settlers"
 				duration = 7300
-			}	
+			}
+			add_stability = 1	
 		}
 		ai_weight = {
 			factor = 500	#Tall

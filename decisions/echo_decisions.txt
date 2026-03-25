@@ -9,11 +9,11 @@ country_decisions = {
 			OR = {
 				province_id = 219
 				province_id = 343
-				province_id = 2301
+				province_id = 151
 				province_id = 183
 				province_id = 134
-				province_id = 382
-				province_id = 97
+				province_id = 361
+				province_id = 236
 				province_id = 50
 				province_id = 295
 				province_id = 465
@@ -31,14 +31,6 @@ country_decisions = {
 				province_id = 600
 				province_id = 636
 				province_id = 667
-				province_id = 649
-				province_id = 584
-				province_id = 2121
-				province_id = 416
-				province_id = 390
-				province_id = 2762
-				province_id = 341
-				province_id = 284
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
@@ -153,7 +145,7 @@ country_decisions = {
 				adm_power = 100
 				dip_power = 100
 				mil_power = 100
-				splendor = 50
+				splendor = 200
 				if = {
 					limit = { tag = POR }
 					hidden_trigger = {
@@ -203,18 +195,6 @@ country_decisions = {
 				NOT = { has_country_modifier = echo_grand_captain_cooldown }
 				NOT = { has_country_modifier = echo_grand_captain_cooldown_100 }
 			}
-			custom_trigger_tooltip = { #ICA 
-				tooltip = GC_infantry_leader_cooldown_tooltip
-				NOT = { has_country_modifier = gc_infantry_leader_cooldown }
-			}
-			custom_trigger_tooltip = { #CCA 
-				tooltip = GC_cavalry_leader_cooldown_tooltip
-				NOT = { has_country_modifier = gc_cavalry_leader_cooldown }
-			}
-			custom_trigger_tooltip = { #ACA 
-				tooltip = GC_arty_officer_cooldown_tooltip
-				NOT = { has_country_modifier = gc_arty_officer_cooldown }
-			}
 		}
 		effect = {
 		}
@@ -244,9 +224,243 @@ country_decisions = {
 				clr_country_flag = hide_extra_decisions
 			}
 	}
-	
-	
-	
+	show_bad_production_provinces = {
+		color = { 41  233  249 }
+		potential = {
+			ai = no
+			adm_tech = 11
+			dip_tech = 11
+			mil_tech = 11
+			NOT = {has_country_flag = hide_extra_decisions}
+		}
+		provinces_to_highlight = {
+			NOT = { trade_goods = grain }
+			OR = {
+				AND = {
+					OR = {
+						has_building = wharf
+						has_building = weapons
+						has_building = textile
+						has_building = tradecompany
+						has_building = farm_estate
+						has_building = mills
+						has_building = plantations
+					}
+					NOT = {has_production_building_trigger = yes }
+				}	
+				AND = {
+					NOT = {
+						OR = {
+							has_building = wharf
+							has_building = weapons
+							has_building = textile
+							has_building = tradecompany
+							has_building = farm_estate
+							has_building = mills
+							has_building = plantations
+						}
+					}
+					has_production_building_trigger = yes 
+				}	
+			}
+			OR = {
+				owned_by = ROOT 
+				is_core = ROOT 
+			}
+		}
+		allow = {
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					NOT = { trade_goods = grain }
+						OR = {
+							AND = {
+								OR = {
+									has_building = wharf
+									has_building = weapons
+									has_building = textile
+									has_building = tradecompany
+									has_building = farm_estate
+									has_building = mills
+									has_building = plantations
+								}
+								NOT = {has_production_building_trigger = yes }
+							}	
+							AND = {
+								NOT = {
+									OR = {
+										has_building = wharf
+										has_building = weapons
+										has_building = textile
+										has_building = tradecompany
+										has_building = farm_estate
+										has_building = mills
+										has_building = plantations
+									}
+								}
+								has_production_building_trigger = yes 
+							}	
+						}
+						OR = {
+							owned_by = ROOT 
+							is_core = ROOT 
+						}	
+				}
+				add_province_modifier = { 
+					name = bad_building_production
+					duration = 3650 
+				}
+			}
+			every_owned_province = {
+					limit = {
+						has_province_modifier = bad_building_production
+						has_production_building_trigger = yes
+						OR = {
+							has_building = wharf
+							has_building = weapons
+							has_building = textile
+							has_building = tradecompany
+							has_building = farm_estate
+							has_building = mills
+							has_building = plantations
+						}
+					}
+					remove_province_modifier = bad_building_production
+			}	
+		}
+	}
+	show_bad_manpower_provinces = {
+		color = { 41  233  249 }
+		potential = {
+			ai = no
+			adm_tech = 15
+			NOT = {has_country_flag = hide_extra_decisions}
+		}
+		provinces_to_highlight = {
+			OR = {
+				trade_goods = grain
+				trade_goods = fish
+				trade_goods = livestock
+				trade_goods = wine
+				trade_goods = wool
+			}
+			NOT = { has_building = soldier_households }
+			OR = {
+				owned_by = ROOT 
+				is_core = ROOT 
+			}
+		}
+		allow = {
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						trade_goods = grain
+						trade_goods = fish
+						trade_goods = livestock
+						trade_goods = wine
+						trade_goods = wool
+					}
+					NOT = { has_building = soldier_households }
+					OR = {
+						owned_by = ROOT 
+						is_core = ROOT 
+					}
+				}
+				add_province_modifier = { 
+					name = bad_building_soldier_household
+					duration = 3650 
+				}
+			}
+			every_owned_province = {
+					limit = {
+						has_province_modifier = bad_building_soldier_household
+						has_building = soldier_households
+					}
+					remove_province_modifier = bad_building_soldier_household
+				}	
+		}
+	}
+	show_bad_temples = {
+		color = { 41  233  249 }
+		potential = {
+			ai = no
+			adm_tech = 11
+			NOT = {has_country_flag = hide_extra_decisions}
+		}
+		provinces_to_highlight = {
+			OR = {
+				has_building = temple
+				has_building = cathedral
+			}
+			NOT = { base_tax = 5 }
+			NOT = { num_free_building_slots = 1 }
+			OR = {
+				NOT = { has_manpower_building_trigger = yes }
+				NOT = { has_forcelimit_building_trigger = yes  }
+				NOT = {
+					OR = {
+						has_building = wharf
+						has_building = weapons
+						has_building = textile
+						has_building = tradecompany
+						has_building = farm_estate
+						has_building = mills
+						has_building = plantations
+					}
+				}
+				NOT = {has_production_building_trigger = yes }		
+			}	
+			OR = {
+				owned_by = ROOT 
+				is_core = ROOT 
+			}
+		}
+		allow = {
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					has_tax_building_trigger = yes
+					NOT = { base_tax = 5 }
+					NOT = { num_free_building_slots = 1 }
+					OR = {
+						NOT = { has_manpower_building_trigger = yes }
+						NOT = { has_forcelimit_building_trigger = yes  }
+						NOT = {
+							OR = {
+								has_building = wharf
+								has_building = weapons
+								has_building = textile
+								has_building = tradecompany
+								has_building = farm_estate
+								has_building = mills
+								has_building = plantations
+							}
+						}
+					NOT = {has_production_building_trigger = yes }		
+					}	
+					OR = {
+						owned_by = ROOT 
+						is_core = ROOT 
+					}
+				}
+				add_province_modifier = { 
+					name = bad_building_temple
+					duration = 3650 
+				}
+			}
+			every_owned_province = {
+					limit = {
+						has_province_modifier = bad_building_temple
+						has_tax_building_trigger = no	
+					}
+					remove_province_modifier = bad_building_temple
+			}			
+		}
+	}
 
 
 	development_counter = {
@@ -299,7 +513,7 @@ country_decisions = {
 				NOT = {
 					check_variable = {
 						which = ruler_total_skill
-						value = 9
+						value = 10
 					}
 				}
 				NOT = {
@@ -320,13 +534,14 @@ country_decisions = {
 			major = yes
 			#######
 			potential = {
-					always = yes
+					always = no
 					is_at_war = no
 					ai = no
 					religion_group = muslim
 					has_border_with_religious_enemy = yes
 			}
 			allow = {
+					reform_level = 5
 					religion_group = muslim
 					NOT = { has_country_modifier = jihad }
 					has_border_with_religious_enemy = yes

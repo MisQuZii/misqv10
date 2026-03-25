@@ -382,84 +382,15 @@ mnd_mlc_2 = {
 			is_capital = yes
 			owned_by = MNG
 		}
+
 		trigger = {
-			if = {
-				limit = {
-					MNG = { 
-						exists = yes 
-						is_emperor_of_china = yes 
-					}
-					is_subject = no 
-				}
-				MNG = {
-					is_at_war = no
-				}
-				MNG = {
-					OR = { 
-						is_rival = ROOT 
-						AND = {
-							has_opinion = {
-								who = ROOT
-								value = 100
-							}
-							if = {
-								limit = { has_dlc = "Leviathan" }
-								trust = { 
-									who = ROOT 
-									value = 65 
-								}
-							}
-						}
-					}
-				}
-			}
-			else = {
-				any_country = {
-					total_development = 300
-					alliance_with = ROOT
-				}
-			}
+			grown_by_development = 50
 		}
+
 		effect = {
-#		if = {
-#			limit = {
-#				MNG = { 
-#					exists = yes 
-#					is_emperor_of_china = yes 
-#					is_subject = no 
-#				}
-#				is_subject = no 
-#			}
-#			MNG = {
-#				create_subject = {
-#					subject_type = tributary_state
-#					subject = ROOT
-#				}
-#			}
-#			add_favors = {
-#				who = MNG 
-#				amount = 15
-#			}
-#			change_dip = 1 
-#		}
-		#else_if = {
-	#		limit = {
-	#			exists = MNG
-	#			NOT = { has_dlc = "Mandate of Heaven" }
-	#			MNG = { is_subject = no }
-#				is_subject = no 
-#			}
-#			MNG = {
-#				create_guarantee = ROOT
-#			}
-#		}
-			#else_if = {
-			#limit = { 
-				#MNG = { is_subject = yes }
-			#}
-				add_dip_power = 100
-#		}
+			add_dip_power = 100
 		}
+	
 	}	
 	mnd_mlc_champa = {
 		icon = mission_kowtow
@@ -635,31 +566,19 @@ mnd_mlc_2 = {
 		required_missions = { mnd_mlc_tributaries }
 		provinces_to_highlight = {
 			OR = {
-					area = banten_area
-					area = west_java_area
+				owned_by = MAJ
+				area = surabaya_area
 			}
 		}
 		trigger = {
-			calc_true_if = {
-				amount = 6
-				all_province = {
-					OR = {
-						area = banten_area
-						area = west_java_area
-					}
-					country_or_non_sovereign_subject_holds = ROOT
-				}
+			NOT = { exists = MAJ }
+			surabaya_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
 			custom_tooltip = mlc_cb_tt
-			add_country_modifier = {
-				name = onurotuzbir
-				duration = 3650
-			 }
-			 add_treasury = 1000
-			 add_manpower = 30.0
-			 add_war_exhaustion = -10
 		}
 	}
 }

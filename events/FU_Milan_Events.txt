@@ -149,8 +149,8 @@ country_event = {
 		}
 		hidden_effect = { set_country_flag = mlo_formed_lom }
 		change_government = monarchy
-		override_country_name = LOB
-		country_event = { id = ideagroups.1 }
+		#override_country_name = LOB
+		#country_event = { id = ideagroups.1 }
 	}
 
 	option = {
@@ -181,8 +181,8 @@ country_event = {
 		change_government_reform_progress = 100
 		add_republican_tradition = 3 
 		add_devotion = 10
-		override_country_name = LOB
-		country_event = { id = ideagroups.1 }
+		#override_country_name = LOB
+		#country_event = { id = ideagroups.1 }
 	}
 }
 

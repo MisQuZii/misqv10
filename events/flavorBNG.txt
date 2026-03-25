@@ -241,7 +241,7 @@ country_event = {
 			}
 			spawn_rebels = {
 				type = pretender_rebels
-				size = 3
+				size = 2
 				religion = sunni
 				culture = afghani
 				leader = "Sher Shah"
@@ -275,7 +275,7 @@ country_event = {
 			}
 			hidden_effect = { add_ruler_personality_ancestor = { key = inspiring_leader } }
 		}
-		add_stability = -2
+		add_stability = -1
 		#custom_tooltip = flavor_bng.6.b.tt
 		#add_legitimacy = -35
 	}

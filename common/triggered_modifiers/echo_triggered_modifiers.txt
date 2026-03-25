@@ -1,54 +1,54 @@
-# Splendid_Court= {
-# 	potential = {
-# 		current_age = age_of_discovery
-# 		ai = no
-# 	}
+Splendid_Court= {
+	potential = {
+		current_age = age_of_discovery
+		ai = no
+	}
 	
 
-# 	trigger = {
-# 		NOT = {is_colonial_nation = yes }
-# 		is_at_war = no
-# 		OR = {
-# 			has_adm_advisor_3 = yes
-# 			has_dip_advisor_3 = yes
-# 			has_mil_advisor_3 = yes
-# 		}	
-# 	}
-# 	advisor_cost = -0.1
-# 	development_cost = -0.05
-# }
+	trigger = {
+		NOT = {is_colonial_nation = yes }
+		is_at_war = no
+		OR = {
+			has_adm_advisor_3 = yes
+			has_dip_advisor_3 = yes
+			has_mil_advisor_3 = yes
+		}	
+	}
+	advisor_cost = -0.1
+	development_cost = -0.05
+}
 
-#Steppe_rule = {
-#	potential = {
-#		ai = no
-#		is_nomad= yes
-#		religion = sunni
-#		current_age = age_of_discovery
-#	}
-#	
-#
-#	trigger = {	
-#		religion = sunni
-#		current_age = age_of_discovery
-#	}
-#	cav_to_inf_ratio = 0.25
-#	horde_unity = 5
-#}
-#Steppe_rule_2 = {
-#	potential = {
-#		ai = no
-#		is_nomad= yes
-#		religion = tengri_pagan_reformed
-#		current_age = age_of_discovery
-#	}
-#	
-#
-#	trigger = {	
-#		religion = tengri_pagan_reformed
-#		current_age = age_of_discovery
-#	}
-#	horde_unity = 5
-#}
+Steppe_rule = {
+	potential = {
+		ai = no
+		is_nomad= yes
+		religion = sunni
+		current_age = age_of_discovery
+	}
+	
+
+	trigger = {	
+		religion = sunni
+		current_age = age_of_discovery
+	}
+	cav_to_inf_ratio = 0.25
+	horde_unity = 5
+}
+Steppe_rule_2 = {
+	potential = {
+		ai = no
+		is_nomad= yes
+		religion = tengri_pagan_reformed
+		current_age = age_of_discovery
+	}
+	
+
+	trigger = {	
+		religion = tengri_pagan_reformed
+		current_age = age_of_discovery
+	}
+	horde_unity = 5
+}
 
 Minor = {
 	potential = {
@@ -67,16 +67,16 @@ Minor = {
 	}
 	
 	trigger = {
-		NOT = {total_own_and_non_tributary_subject_development = 300 }	
-		NOT = { is_emperor = yes }
-		NOT = { is_colonial_nation = yes }
-		NOT = {is_great_power = yes}
-		
+		NOT = {total_own_and_non_tributary_subject_development = 400 }	
+		#NOT = { is_emperor = yes }
+		NOT = { is_colonial_nation = yes }	
 	}
+	advisor_cost = -0.25
 	interest = -0.25
-	global_regiment_cost = -0.2
-	mercenary_cost = -0.25
-	merc_maintenance_modifier = -0.25
+	global_regiment_cost = -0.1
+	#mercenary_cost = -0.25
+	#merc_maintenance_modifier = -0.25
+	monthly_reform_progress_modifier = 0.025
 	ae_impact = -0.1
 	fort_maintenance_modifier = -0.67
 }
@@ -123,59 +123,59 @@ Minor = {
 #		mercenary_manpower = 0.1
 #		expand_infrastructure_cost_modifier = -0.25
 #	}
- #Great_power_dominance = {
-	#potential = {
-			#ROOT = {
-				#ai = no	
-			#}	
-	#}
-	#trigger  = {
-		#NOT = { great_power_rank = 4 }
-				#OR = {
-					#NOT = { num_of_allies = 1 }
-				#}
-				#NOT = { is_hegemon = yes }
-				#NOT = { is_colonial_nation = yes }	
-				#NOT = { is_lacking_institutions = yes }
-	#}
-	#army_tradition_decay = -0.003
-	#navy_tradition_decay = -0.005
-#}
-#HRE_backup = {	
-#	potential = {
-#				NOT = {is_year = 1530}
-#				OR = {
-#					tag = HAB
-#					tag = AHU
-#					was_tag = HAB
-#				}
-#				was_player = yes
-#				NOT = { is_emperor = yes }
-#				ROOT = {
-#					ai = no	
-#				}
-#			}
-#	trigger  = {
-#		OR = {
-#			tag = HAB
-#			tag = AHU
-#			was_tag = HAB
-#		}	
-#		NOT = { is_emperor = yes }
-#	}
-#	global_manpower = 15
-#	land_forcelimit = 15
-#	global_tax_income = 36
-#	spy_offence = 0.1					#minor bonus on spies.
-#	advisor_pool = 1
-#	diplomatic_upkeep = 1
-#	free_leader_pool = 1
-#	prestige = 1
-#	province_warscore_cost = -0.1
-#	papal_influence = 1
-#	ae_impact = -0.1
-#	governing_capacity = 400
-#}
+Great_power_dominance = {
+	potential = {
+			ROOT = {
+				ai = no	
+			}	
+	}
+	trigger  = {
+		NOT = { great_power_rank = 4 }
+				OR = {
+					NOT = { num_of_allies = 1 }
+				}
+				NOT = { is_hegemon = yes }
+				NOT = { is_colonial_nation = yes }	
+				NOT = { is_lacking_institutions = yes }
+	}
+	army_tradition_decay = -0.003
+	navy_tradition_decay = -0.005
+}
+HRE_backup = {	
+	potential = {
+				NOT = {is_year = 1530}
+				OR = {
+					tag = HAB
+					tag = AHU
+					was_tag = HAB
+				}
+				was_player = yes
+				NOT = { is_emperor = yes }
+				ROOT = {
+					ai = no	
+				}
+			}
+	trigger  = {
+		OR = {
+			tag = HAB
+			tag = AHU
+			was_tag = HAB
+		}	
+		NOT = { is_emperor = yes }
+	}
+	global_manpower = 15
+	land_forcelimit = 15
+	global_tax_income = 36
+	spy_offence = 0.1					#minor bonus on spies.
+	advisor_pool = 1
+	diplomatic_upkeep = 1
+	free_leader_pool = 1
+	prestige = 1
+	province_warscore_cost = -0.1
+	papal_influence = 1
+	ae_impact = -0.1
+	governing_capacity = 400
+}
 
 # War_chest = {
 # 	potential = {
@@ -221,20 +221,20 @@ Minor = {
 # 	reinforce_speed = 0.1
 # }
 
-#Ahead_of_time = {
-	#potential = {
-		#ROOT = {
-				#ai = no	
-			#}
-	#}
-	#trigger = {
-		#NOT = { is_lacking_institutions = yes }
-	#}
-	#monthly_reform_progress_modifier = 0.25
-	#yearly_innovativeness = 0.3
-	#army_tradition = 0.5
-	#expand_infrastructure_cost_modifier = -0.15
-#}
+Ahead_of_time = {
+	potential = {
+		ROOT = {
+				ai = no	
+			}
+	}
+	trigger = {
+		NOT = { is_lacking_institutions = yes }
+	}
+	monthly_reform_progress_modifier = 0.25
+	yearly_innovativeness = 0.3
+	army_tradition = 0.5
+	expand_infrastructure_cost_modifier = -0.15
+}
 # TUR = {
 #	potential = {
 #		tag = TUR
@@ -574,11 +574,21 @@ Berber_Raids = {
 					alliance_with = MOR
 				}
 			}	
-			NOT = { is_lacking_institutions = yes }	
+			NOT = { is_lacking_institutions = yes }
+			NOT = {	
+				maghreb_region = {
+						owner = {
+							OR = {
+							  culture_group = latin
+							  culture_group = iberian
+							  }
+						}
+				}											
+			}			
 		}
 	}
 	defensiveness = 0.15
-	available_province_loot = 0.5
+	available_province_loot = 1
 	coast_raid_range = 1
 }
 
@@ -627,38 +637,38 @@ Berber_Raids = {
 #	global_colonial_growth = 20
 #	colonists = 1
 # }
-#Stop_the_raids = {
-#	potential = {
-#		OR = {
-#			tag = CAS
-#			tag = POR
-#		}
-#		current_age = age_of_discovery
-#	}
-#
-#	trigger = {
-#			OR = {
-#					great_power_rank = 5
-#					 is_great_power = no
-#					}
-#			OR = {		
-#				AND = {		
-#					tag = CAS		
-#					alliance_with = POR
-#					TUN = { alliance_with = MOR }
-#				}
-#				AND = {		
-#					tag = POR		
-#					alliance_with = CAS
-#					TUN = { alliance_with = MOR }
-#				}
-#			}	
-#			NOT = { is_lacking_institutions = yes }		
-#		
-#	}
-#	navy_tradition = 0.5
-#	army_tradition = 0.5
-#}
+Stop_the_raids = {
+	potential = {
+		OR = {
+			tag = CAS
+			tag = POR
+		}
+		current_age = age_of_discovery
+	}
+
+	trigger = {
+			OR = {
+					great_power_rank = 5
+					 is_great_power = no
+					}
+			OR = {		
+				AND = {		
+					tag = CAS		
+					alliance_with = POR
+					TUN = { alliance_with = MOR }
+				}
+				AND = {		
+					tag = POR		
+					alliance_with = CAS
+					TUN = { alliance_with = MOR }
+				}
+			}	
+			NOT = { is_lacking_institutions = yes }		
+		
+	}
+	navy_tradition = 0.5
+	army_tradition = 0.5
+}
 Merc_payments = {
 	potential = {
 		ai = no
@@ -671,4 +681,29 @@ Merc_payments = {
 		}
 	}
 	mercenary_manpower = -0.01
+}
+qolu_ai_sieges = {
+	potential = {
+		OR = {
+			AND = {
+				ai = yes
+				is_subject_of_type = daimyo_vassal
+			}
+			AND = {
+				ai = yes
+				is_subject = no
+			}
+		}
+		#ai = yes
+		#is_subject = no
+	}
+
+	trigger = {
+		always = yes
+	}
+
+	defensiveness = -0.5
+	global_autonomy = -0.1
+	yearly_corruption = -0.1
+	diplomatic_upkeep = -2
 }

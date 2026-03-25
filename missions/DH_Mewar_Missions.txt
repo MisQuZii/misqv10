@@ -46,6 +46,9 @@ mer_western_expansion = {
 			owns = 4464 #Bundi
 		}
 		effect = {
+			create_general = {
+				tradition = 40
+			}
 			patan_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -68,27 +71,6 @@ mer_western_expansion = {
 				add_permanent_claim = ROOT
 			}
 			malwa_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			upper_doab_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-				lower_doab_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-				oudh_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
@@ -215,11 +197,11 @@ mer_delhi = {
 		position = 2
 		required_missions = { mer_marwar_rivalry }
 		provinces_to_highlight = {
-			area = upper_doab_area
+			area = malwa_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			upper_doab_area = {
+			malwa_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}

@@ -109,7 +109,7 @@ shogunate_mechanic = {
 			}
 			cooldown_years = 10
 			ai_chance = {
-				factor = 10
+				factor = 6
 				modifier = {
 					factor = 0
 					not = { legitimacy = 99 }

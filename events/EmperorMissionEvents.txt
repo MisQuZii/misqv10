@@ -435,7 +435,7 @@ country_event = {
 	}
 }
 
-# The Duke of Alençon by Daniel Tolman
+# The Duke of Alenï¿½on by Daniel Tolman
 
 country_event = {
 	id = emp_mission_events.10
@@ -459,16 +459,17 @@ country_event = {
 	
 	immediate = {
 		hidden_effect = {
-			if = {
-				limit = {
-					NOT = {
-						1879 = {
-							NOT = { is_core = ALE }
-						}
-					}
-				}
-				1879 = { add_core = ALE	}
-			}
+			1879 = { add_core = ALE	}
+			# if = {
+			# 	limit = {
+			# 		NOT = {
+			# 			1879 = {
+			# 				NOT = { is_core = ALE }
+			# 			}
+			# 		}
+			# 	}
+			# 	1879 = { add_core = ALE	}
+			# }
 		}
 	}
 	

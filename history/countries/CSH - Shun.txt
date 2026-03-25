@@ -3,8 +3,9 @@ add_government_reform = chinese_warlord
 technology_group = chinese
 religion = confucianism
 primary_culture = xibei
+add_accepted_culture = sichuanese
 capital = 2180 # Fengyuan
-set_estate_privilege = estate_burghers_mountain_expansion
+
 
 
 1443.1.1 = {

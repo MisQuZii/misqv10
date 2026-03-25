@@ -151,6 +151,12 @@ vassal = {
 
 #Vijayanagar
 
+# alliance = { #Vijayanagara and the Reddys
+# 	first = VIJ
+# 	second = YOR
+# 	start_date = 1443.1.1
+# 	end_date = 1448.1.1
+# }
 
 #Vassal of Vijayanagara
 vassal = {
@@ -502,6 +508,18 @@ vassal = {
 	end_date = 1858.1.1
 }
 
+vassal = {
+	first = AFG
+	second = KSH
+	start_date = 1414.1.1
+	end_date = 1765.1.1
+}
+vassal = {
+	first = AFG
+	second = LDK
+	start_date = 1414.1.1
+	end_date = 1765.1.1
+}
 
 #Bikaner
 

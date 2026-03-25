@@ -337,7 +337,7 @@ aq_qoyunlu_second = {
 			add_dip_power = 50
 			add_country_modifier = {
 				name = turkoman_ended_the_ayyubids
-				duration = 3650
+				duration = 7300
 			}
 			shahrizor_area = {
 				limit = {
@@ -354,13 +354,6 @@ aq_qoyunlu_second = {
 				add_permanent_claim = ROOT
 			}
 			iraq_arabi_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			azerbaijan_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }

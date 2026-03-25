@@ -220,6 +220,7 @@ country_decisions = {
 			NOT = { owned_by = ROOT }
 		}
 		allow = {
+			total_development = 500
 			owns = 704		# Liaoxi
 			owns = 726		# Liaodong
 			owns = 1816		# Beijing
@@ -231,16 +232,24 @@ country_decisions = {
 			NOT = {
 				has_ruler_modifier = tribal_succession_crisis
 			}
-
 			if = {
 				limit = {
-					has_dlc = "Common Sense"
+					has_dlc = "Mandate of Heaven"
+					any_country = {
+						is_emperor_of_china = yes
+					}
 				}
-				government_rank = 3
+				is_emperor_of_china = yes
 			}
-			else = {
-				total_development = 700
-			}
+			# else_if = {
+			# 	limit = {
+			# 		has_dlc = "Common Sense"
+			# 	}
+			# 	government_rank = 3
+			# }
+			# else = {
+			# 	total_development = 1000
+			# }
 		}
 		effect = {
 			custom_tooltip = manchu_culture_tt_2

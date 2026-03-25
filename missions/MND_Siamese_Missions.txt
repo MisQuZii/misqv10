@@ -101,11 +101,11 @@ mnd_siam_1 = {
 		trigger = {
 			capital_scope = {
 				development = 50
-				NOT = {
-					any_province = {
-						higher_development_than = PREV
-					}
-				}
+				# NOT = {
+				# 	any_province = {
+				# 		higher_development_than = PREV
+				# 	}
+				# }
 			}
 		}
 		effect = {
@@ -293,6 +293,12 @@ mnd_siam_3 = {
 			army_size_percentage = 0.8
 		}
 		effect = {
+
+			add_manpower = 10
+			sukhothai_area = {
+				add_permanent_claim = ROOT
+			}
+
 			if = {
 				limit = {
 					exists = KHM
@@ -351,11 +357,11 @@ mnd_siam_3 = {
 						is_subject_of = ROOT
 					}
 				}
-				NOT = {
-					KHM = {
-						liberty_desire = 50
-					}
-				}
+				# NOT = {
+				# 	KHM = {
+				# 		liberty_desire = 50
+				# 	}
+				# }
 			}
 			cambodia_area = {
 				type = all
@@ -376,7 +382,7 @@ mnd_siam_3 = {
 					num_of_subjects = 1
 				}
 				every_subject_country = {
-					add_liberty_desire = -25
+					add_liberty_desire = -100
 				}
 			}
 			else = {
@@ -404,27 +410,30 @@ mnd_siam_3 = {
 			}
 		}
 		effect = {
-				vientiane_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
+				indo_china_region = {
 					add_permanent_claim = ROOT
 				}
-				champasak_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-				north_laos_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
+				# vientiane_area = {
+				# 	limit = {
+				# 		NOT = { is_core = ROOT }
+				# 		NOT = { is_permanent_claim = ROOT }
+				# 	}
+				# 	add_permanent_claim = ROOT
+				# }
+				# champasak_area = {
+				# 	limit = {
+				# 		NOT = { is_core = ROOT }
+				# 		NOT = { is_permanent_claim = ROOT }
+				# 	}
+				# 	add_permanent_claim = ROOT
+				# }
+				# north_laos_area = {
+				# 	limit = {
+				# 		NOT = { is_core = ROOT }
+				# 		NOT = { is_permanent_claim = ROOT }
+				# 	}
+				# 	add_permanent_claim = ROOT
+				# }
 			}
 	}
 	mnd_siam_subjugate_the_lao = {
@@ -454,20 +463,24 @@ mnd_siam_3 = {
 			}
 		}
 		effect = {
-				vietnam_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
+				add_country_modifier = {
+					name = kielak_ayu_int_mission
+					duration = 3650
 				}
-				red_river_delta_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}		
+				# vietnam_area = {
+				# 	limit = {
+				# 		NOT = { is_core = ROOT }
+				# 		NOT = { is_permanent_claim = ROOT }
+				# 	}
+				# 	add_permanent_claim = ROOT
+				# }
+				# red_river_delta_area = {
+				# 	limit = {
+				# 		NOT = { is_core = ROOT }
+				# 		NOT = { is_permanent_claim = ROOT }
+				# 	}
+				# 	add_permanent_claim = ROOT
+				# }		
 		}
 	}
 	mnd_siam_subjugate_vietnam = {
@@ -591,6 +604,10 @@ mnd_siam_3 = {
 				add_dip_power = 100
 				add_mil_power = 100
 				add_prestige = 50
+				add_country_modifier = {
+					name = kielak_ayu_china_mission
+					duration = -1
+				}
 			}
 		}
 	}
@@ -665,11 +682,11 @@ mnd_siam_4 = {
 						is_subject_of = ROOT
 					}
 				}
-				NOT = {
-					LNA = {
-						liberty_desire = 50
-					}
-				}
+				# NOT = {
+				# 	LNA = {
+				# 		liberty_desire = 50
+				# 	}
+				# }
 			}
 			northern_thai_area = {
 				type = all
@@ -725,6 +742,13 @@ mnd_siam_4 = {
 			add_country_modifier = {
 				name = siam_accepted_mon
 				duration = -1
+			}
+
+			586 = {
+				add_great_project_tier = {
+					type = kanbawzathadi_palace
+					tier = 1
+				}
 			}
 		}
 	}

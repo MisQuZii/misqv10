@@ -6,7 +6,7 @@ echo_dnieper_buh_estuary_pmod = {
 	picture = "estuary_icon"
 }
 echo_production_hub_grain_pmod = {
-	trade_value_modifier = 0.65
+	trade_value_modifier = 1
 	local_development_cost = -0.15
 }
 
@@ -28,7 +28,7 @@ echo_provincial_investment_cmod = {
 # General Modifiers
 
 free_colonist = {
-	colonists = 1
+	colonists = 2
 	range = 10
 	trade_range_modifier = 1
 	global_colonial_growth = 35
@@ -92,9 +92,4 @@ echo_por_colonist = {
 }
 
 enacted_states_general_reform = {
-}
-
-
-university_war_score_cost = { 
-	province_warscore_cost = 0.30
 }

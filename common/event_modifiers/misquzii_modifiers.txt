@@ -1,3 +1,0 @@
-misquzii_state_dev = {
-    local_development_cost = -0.1
-}

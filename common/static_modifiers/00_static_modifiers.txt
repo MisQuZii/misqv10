@@ -53,29 +53,12 @@ difficulty_very_hard_player = {
 ##########################################################################
 
 difficulty_very_easy_ai = {
-	development_cost = 0.5 
-	defensiveness = -0.3
-	global_autonomy = -0.1
-	yearly_corruption = -0.1
-	diplomatic_upkeep = -2
 }
 
 difficulty_easy_ai = {
-	    development_cost = 0.5 
-	defensiveness = -0.3
-	global_autonomy = -0.1
-	yearly_corruption = -0.1
-	diplomatic_upkeep = -2
 }
 
 difficulty_normal_ai = {
-    development_cost = 0.5 
-	defensiveness = -0.3
-	global_autonomy = -0.1
-	yearly_corruption = -0.1
-	diplomatic_upkeep = -2
-	merchants = -2
-	
 }
 
 difficulty_hard_ai = {
@@ -135,6 +118,7 @@ in_capital_state = {
 	local_institution_spread = 0.05
 	local_state_maintenance_modifier = -0.5
 	local_governing_cost_increase = -30
+	local_build_cost = -0.05
 	local_development_cost = -0.05
 	local_has_qizilbash = yes
 }
@@ -226,10 +210,10 @@ blockaded = {
 	ship_recruit_speed = 0.5
 	local_monthly_devastation = 0.5
 	trade_goods_size_modifier = -0.25 
-	local_tax_modifier = -0.5
-	province_trade_power_modifier = -0.5
-	local_manpower_modifier = -0.5
-	local_sailors_modifier = -0.5
+	local_tax_modifier = -1
+	province_trade_power_modifier = -1
+	local_manpower_modifier = -1.5
+	local_sailors_modifier = -1
 	local_institution_spread = -0.1
 }
 
@@ -275,9 +259,9 @@ development = {
 	local_sailors = 60			# special case, affected by autonomy & set to 0 by code if not port
 	province_trade_power_value = 0.2
 	local_amount_of_banners = 0.05
-	local_amount_of_cawa = 0.1
+	local_amount_of_cawa = 0.125
 	local_amount_of_carolean = 0.1
-	local_amount_of_hussars = 0.025
+	local_amount_of_hussars = 0.02
 }
 
 development_scaled = {
@@ -367,15 +351,16 @@ march_bonus = {
 	country_diplomatic_power = 1
 	country_military_power = 1
 	advisor_cost = -0.25
+	development_cost = -0.25
 	technology_cost = -0.15
 	global_manpower = 2.5
 	global_sailors = 1250
-	global_manpower_modifier = 0.15
+	global_manpower_modifier = 0.25
 	global_tax_income = 18
 	global_regiment_cost = -0.3
 	global_regiment_recruit_speed = -0.5
 	land_forcelimit = 2.5
-	#land_forcelimit_modifier = 0.25
+	land_forcelimit_modifier = 0.25
 	naval_forcelimit_modifier = 0.4
 	war_exhaustion = -0.2
 	fort_maintenance_modifier = -0.25
@@ -617,20 +602,12 @@ base_values = {
 	sunk_ship_morale_hit_recieved = -0.9
 	max_possible_parliament_seats = 30
 	naval_attrition = -0.5
-	allowed_galleon_fraction = 1
-	has_galleon = yes
-	has_voc_indiamen = yes
-	allowed_voc_indiamen_fraction = 1
-	has_geobukseon = yes
-	allowed_geobukseon_fraction = 1
-	possible_mil_policy = -2
-	possible_adm_policy = -2
-	possible_dip_policy = -2
 }
 
 # AI 'cheats' that compensate for flaws in its long-term decision making, removing these may severely cripple the AI
 ai_nation = {
 	may_return_manpower_on_disband = yes
+	possible_mil_policy = 1
 	free_policy = 6
 	diplomats = 1 							# ai has to reserve a diplomat for short term action so it gets an extra to put it on equal footing with player
 	free_leader_pool = 1					# ai needs to have enough pool for 1 general & 1 admiral
@@ -774,7 +751,7 @@ bankruptcy = {
 	#technology_cost = 0.5
 	#idea_cost = 0.5
 	imperial_mandate = -0.1
-	defensiveness = -1
+	#defensiveness = -1
 	can_not_build_buildings = yes
 	great_project_upgrade_cost = 0.5
 	monthly_russian_modernization = -1
@@ -796,7 +773,6 @@ peace = {
 	monthly_militarized_society = -0.1
 	monthly_ottoman_decadence = 0.1
 	monthly_asha_vahishta = 0.25
-	global_supply_limit_modifier = 6.0
 	
 }
 
@@ -1047,7 +1023,7 @@ devotion = {
 	papal_influence = 2
 	monthly_fervor_increase = 2
 	church_power_modifier = 0.5
-	harmonization_speed = 0.5
+	#harmonization_speed = 0.5
 	monthly_piety_accelerator = 0.01
 	yearly_authority = 0.5
 	yearly_patriarch_authority = 0.01
@@ -1223,7 +1199,7 @@ curia_controller = {
 	prestige = 1							#1% extra prestige yearly
 	stability_cost_modifier = -0.1			#10% cheaper stability
 	advisor_pool = 2
-	advisor_cost = -0.1
+	advisor_cost = -0.15
 	free_leader_pool = 1
 	ae_impact = -0.2
 	technology_cost = -0.05
@@ -1257,9 +1233,9 @@ total_occupation = {
 }
 
 total_blockaded = {
-	war_exhaustion = 0.2					#increases exhaustion.
-	global_trade_power = -0.50
-	trade_steering = -0.50
+	war_exhaustion = 0.4					#increases exhaustion.
+	global_trade_power = -0.75
+	trade_steering = -0.75
 }
 
 uncontested_cores = {
@@ -1374,17 +1350,12 @@ is_great_power = {						#Only works with Rights of Man DLC enabled
 }
 
 in_golden_era = {
-	#land_morale = 0.1
-	#naval_morale = 0.1
-	leader_siege = 1
-	leader_land_shock= 1
-	army_tradition_from_battle = 0.5
-	global_manpower = 2.5
-	mercenary_cost = -0.2
-	merc_maintenance_modifier = -0.15
-	prestige_from_land = 0.5
-	manpower_recovery_speed = 0.1
-	monarch_military_power = 1
+	land_morale = 0.1
+	naval_morale = 0.1
+	#max_general_fire = 1
+	#max_general_shock = 1
+	max_absolutism = 5
+	max_revolutionary_zeal = 10
 }
 
 absolutism = {
@@ -1402,7 +1373,6 @@ high_army_professionalism = {
 	fire_damage = 0.10
 	shock_damage = 0.10
 	discipline = 0.05
-	morale_damage_received = -0.1
 	#drill_decay_modifier = -0.5
 	allowed_samurai_fraction = 0.1
 	reinforce_speed = 0.33
@@ -1432,7 +1402,6 @@ mamluks_modifier = {
 }
 
 geobukseon_modifier = {
-
 }
 
 man_of_war_modifier = {
@@ -1442,14 +1411,12 @@ galleon_modifier = {
 }
 
 galleass_modifier = {
-	}
+}
 
 caravel_modifier = {
-
-	}
+}
 
 voc_indiamen_modifier = {
-	
 }
 
 power_projection = {
@@ -1504,12 +1471,13 @@ gbr_colonial_investment = {
 crown_colony_overlord = {
 	merchants = 1
 	#global_trade_power = 0.05
+	global_tariffs = -0.05
 }
 
 private_enterprise_overlord = {
 	merchants = 1
 	#global_trade_power = 0.05
-	global_tariffs = -0.05
+	global_tariffs = -0.1
 }
 
 self_governing_colony_overlord = {
@@ -1523,20 +1491,24 @@ crown_colony_subject = {
 	global_colonial_growth = 10
 	manpower_recovery_speed = 0.1
 	land_forcelimit_modifier = 0.1
+	colonists = 1
 }
 
 private_enterprise_subject = {
-	global_ship_trade_power = 0.2
-	global_trade_goods_size_modifier = 0.2
+	global_ship_trade_power = 0.1
+	global_trade_goods_size_modifier = 0.1
 	naval_tradition_from_trade = 0.1
-	ship_power_propagation = 0.1
+	#ship_power_propagation = 0.1
+	colonists = 1
+	global_colonial_growth = 10
 }
 
 self_governing_colony_subject = {
 	colonists = 1
 	#development_cost = -0.1
-	liberty_desire = 25
+	liberty_desire = 20
 	#global_ship_trade_power = -0.2
+	global_colonial_growth = 10
 }
 
 march_subject = {
@@ -1578,7 +1550,7 @@ subject_nation = {
 }
 
 vassal_nation = {
-	development_cost = 0.5
+	#development_cost = 0.5
 }
 
 primitive_nation = {
@@ -1828,9 +1800,9 @@ high_harmony = {
 	meritocracy = 1
 	legitimacy = 0.5
 	devotion = 1
-	harmonization_speed = 1
+	#harmonization_speed = 1
 	yearly_corruption = -0.5
-	global_manpower_modifier = 0.2
+	global_manpower_modifier = 0.15
 }
 
 low_harmony = {
@@ -1879,7 +1851,7 @@ overlord_sankin_kotai = {
 }
 
 subject_sankin_kotai = {
-	global_autonomy = -0.20
+	global_autonomy = 0.1
 }
 
 overlord_expel_ronin = {
@@ -1953,13 +1925,13 @@ equipped_streltsy_modifier_weaker = {
 }
 
 equipped_streltsy_modifier = {
-	infantry_power = 0.1
+	infantry_power = 0.05
 	is_streltsy_modifier = yes
 }
 
 prepared_streltsy_modifier = {
-	reinforce_speed = 0.2
-	reinforce_cost_modifier = -0.1
+	reinforce_speed = 0.1
+	reinforce_cost_modifier = -0.05
 	is_streltsy_modifier = yes
 }
 
@@ -1990,7 +1962,7 @@ outward_focus_modifier = {
 	colony_development_boost = 1
 	#range = 0.25
 	burghers_loyalty_modifier = 0.05
-	harmonization_speed = 0.25
+	#harmonization_speed = 0.25
 }
 
 expansion_focus_modifier = {
@@ -2013,7 +1985,7 @@ hanafi_scholar_modifier = {
 	religion = yes
 	is_scholar_modifier = yes # Tells the AI and will only show the alert if country has none
 	expire_message_type = "RELIGIOUS_SCHOLAR_EXPIRY"
-	advisor_cost = -0.1
+	adm_tech_cost_modifier = -0.05
 }
 
 hanbali_scholar_modifier = {
@@ -2021,7 +1993,7 @@ hanbali_scholar_modifier = {
 	religion = yes
 	is_scholar_modifier = yes # Tells the AI and will only show the alert if country has none
 	expire_message_type = "RELIGIOUS_SCHOLAR_EXPIRY"
-	manpower_in_true_faith_provinces = 0.15
+	ae_impact = -0.1
 }
 
 maliki_scholar_modifier = {
@@ -2045,7 +2017,10 @@ ismaili_scholar_modifier = {
 	religion = yes
 	is_scholar_modifier = yes # Tells the AI and will only show the alert if country has none
 	expire_message_type = "RELIGIOUS_SCHOLAR_EXPIRY"
-    global_tax_modifier = 0.15
+	horde_unity = 1
+	legitimacy = 1
+	republican_tradition = 0.5
+	devotion = 1
 }
 
 jafari_scholar_modifier = {
@@ -2053,7 +2028,7 @@ jafari_scholar_modifier = {
 	religion = yes
 	is_scholar_modifier = yes # Tells the AI and will only show the alert if country has none
 	expire_message_type = "RELIGIOUS_SCHOLAR_EXPIRY"
-	drill_gain_modifier = 0.33
+	morale_damage_received = -0.1
 }
 
 zaidi_scholar_modifier = {
@@ -2061,7 +2036,7 @@ zaidi_scholar_modifier = {
 	religion = yes
 	is_scholar_modifier = yes # Tells the AI and will only show the alert if country has none
 	expire_message_type = "RELIGIOUS_SCHOLAR_EXPIRY"
-	shock_damage = 0.10
+	shock_damage_received = -0.1
 }
 
 ########################################
@@ -2070,8 +2045,8 @@ zaidi_scholar_modifier = {
 regiment_drill_modifier = { # Used by individual regiments
 	shock_damage = 0.1
 	fire_damage = 0.1
-	fire_damage_received = -0.15
-	shock_damage_received = -0.15
+	fire_damage_received = -0.25
+	shock_damage_received = -0.25
 }
 
 army_drill_modifier = { # Used by an entire army, is the average of all subunits drill
@@ -2080,21 +2055,22 @@ army_drill_modifier = { # Used by an entire army, is the average of all subunits
 }
 
 janissary_regiment = {
-	infantry_fire = 0.05
+	assault_fort_ability = 0.25
 	drill_gain_modifier = 0.5
 	reinforce_cost_modifier = 1
 }
 
 cawa_regiment = {
 	shock_damage_received = -0.1
+	morale_damage_received = -0.1
 	land_attrition = -0.5
-	reinforce_speed = 0.3
+	reinforce_speed = 0.5
 }
 
 hussars_regiment = {
-	cavalry_shock = 0.35
-	morale_damage = 0.15
-	reinforce_speed = -0.3
+	cavalry_shock = 0.75
+	morale_damage = 0.25
+	reinforce_speed = -0.5
 }
 
 marine_regiment = {
@@ -2116,8 +2092,8 @@ streltsy_regiment = {
 }
 
 tercio_regiment = {
-	infantry_power = 0.1
-	infantry_fire = 0.1
+	shock_damage_received = -0.3
+	#morale_damage_received = -0.1
 }
 
 musketeer_regiment = {
@@ -2132,40 +2108,44 @@ samurai_regiment = {
 
 qizilbash_regiment = {
 	fire_damage_received = -0.05
-	land_maintenance_modifier = -0.25
+	#land_maintenance_modifier = -0.25
 }
 
 mamluks_regiment = {
 	drill_gain_modifier = 1
 	morale_damage = 0.15
-	reinforce_speed = 0.33
-	drill_decay_modifier = -0.20 
+	reinforce_speed = 0.33 
 }
 
 geobukseon_ship = {
-can_transport_units = yes
+	#ship_durability = 0.1
+	galley_power = 0.1
 }
 
 man_of_war_ship = {
 	#engagement_cost = -1
 	#naval_maintenance_modifier = 0.5
 	naval_morale_damage = 0.1
-	can_transport_units = yes
 }
 
 galleon_ship = {
-can_transport_units = yes
+	hull_size_modifier = 0.1
+	#heavy_ship_power = 0.1
 }
 
 galleass_ship = {
-  can_transport_units = yes
+	galley_power = 0.1
 }
 
 caravel_ship = {
- can_transport_units = yes
+	movement_speed_in_fleet_modifier = 1 
+	naval_attrition = -0.25
+	ship_trade_power_modifier = 0.33
 }
 
 voc_indiamen_ship = {
+	number_of_cannons_modifier = 0.33
+	ship_trade_power_modifier = 0.2
 	can_transport_units = yes
 }
 
@@ -2260,7 +2240,7 @@ reverse_under_governing_capacity_modifier = {
 }
 
 lost_hegemony = {
-	all_power_cost	= 0.10
+	#all_power_cost	= 0.10
 }
 
 at_peace_revolutionary = { # Applied if at peace while reactionaries are bordering you
@@ -2272,27 +2252,28 @@ expanded_infrastructure = {
 	allowed_num_of_manufactories = 1
 	regiment_recruit_speed = -0.125
 	ship_recruit_speed = -0.125
-	local_defensiveness = 0.1
-	garrison_growth = 0.1
+	#local_defensiveness = 0.1
+	#garrison_growth = 0.1
 	local_development_cost = -0.1
-	local_production_efficiency = 0.1
-	local_tax_modifier = 0.1
+	local_production_efficiency = 0.075
+	local_tax_modifier = 0.075
 	local_manpower_modifier = 0.1
 	local_sailors_modifier = 0.1
 	local_ship_repair = 0.1
 	local_autonomy = -0.025
+	local_build_cost = -0.05
 	local_build_time = -0.1
 	province_trade_power_modifier = 0.1
 	trade_goods_size_modifier = 0.05
-	local_governing_cost_increase = 15
+	local_governing_cost_increase = 10
 	local_governing_cost = 0.1
 	local_great_project_upgrade_cost = -0.125
-	land_forcelimit = 1
-	naval_forcelimit = 1
+	land_forcelimit = 0.75
+	naval_forcelimit = 0.75
 }
 
 centralize_state = {
-	statewide_governing_cost = -0.1
+	statewide_governing_cost = -0.15
 	local_prosperity_growth = 0.25
 	local_state_maintenance_modifier = -0.2
 	picture = "centralize_state"
@@ -2300,7 +2281,7 @@ centralize_state = {
 
 # Applied once for each guru teaching
 guru_teaching = {
-	global_missionary_strength = -0.01
+	#global_missionary_strength = -0.01
 }
 
 diplomatic_reputation = {

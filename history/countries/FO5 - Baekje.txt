@@ -1,5 +1,5 @@
 government = monarchy
-add_government_reform = confucian_bureaucracy
+add_government_reform = autocracy_reform
 government_rank = 1
 technology_group = chinese
 religion = confucianism
@@ -8,4 +8,3 @@ capital = 733
 fixed_capital = 733
 add_truce_with = MJZ
 historical_rival = MJZ
-historical_rival = ASK

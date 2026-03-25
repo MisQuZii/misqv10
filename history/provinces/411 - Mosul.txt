@@ -1,7 +1,7 @@
 #411 - Mosul
 
-owner = AKK
-controller = AKK
+owner = QAR
+controller = QAR
 culture = kurdish
 religion = sunni
 capital = "Al Mawsil"
@@ -11,7 +11,8 @@ base_tax = 4
 base_production = 4
 base_manpower = 4
 is_city = yes
-add_core = AKK
+#fort_15th = yes
+add_core = QAR
 #add_core = QAR
 #add_core = BHT
 discovered_by = east_african

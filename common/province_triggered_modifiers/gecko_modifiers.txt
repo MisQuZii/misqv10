@@ -105,15 +105,14 @@ the_motherland_calls = {
 	}
 }
 
-conquest_of_kayseri = {
+conquest_of_constantinople = {
 	potential = {
 		normal_or_historical_nations = yes
 	}
 	trigger = {
 		owner = {
 			NOT = { tag = TUR }
-			NOT = { tag = OTR }
-			karaman_area = {
+			thrace_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = PREV
 			}	
@@ -121,8 +120,9 @@ conquest_of_kayseri = {
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes
 	}
+	infantry_power = 0.05
 	cavalry_power = 0.05
-	possible_policy = 1
+	
 	#Province scope
 	on_activation = {
 	
@@ -155,8 +155,9 @@ conquest_of_paris = {
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes
 	}
-	land_morale = 0.05
-	possible_policy = 1
+	discipline = 0.025
+	land_morale = 0.025
+	
 	#Province scope
 	on_activation = {
 	
@@ -167,23 +168,33 @@ conquest_of_paris = {
 	}
 }
 
-conquest_of_baghdad = {
+conquest_of_pandurs_house = {
 	potential = {
 		normal_or_historical_nations = yes
 	}
 	trigger = {
 		owner = {
-				iraq_arabi_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = PREV
+			NOT = { tag = BUR }
+			NOT = { tag = LOT }
+			NOT = { tag = NED }
+			NOT = { 	
+					has_global_modifier_value = {
+					which = discipline
+					value = 0.31
+					}
 				}
-			}
+			north_brabant_area	= {
+				type = all
+				country_or_non_sovereign_subject_holds = PREV
+			}	
+				
+		}
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes
-		}	
-     yearly_innovativeness = 0.5
-	 development_cost = -0.025
-	possible_policy = 1
+	}
+	discipline = 0.025
+	land_morale = 0.025
+	
 	#Province scope
 	on_activation = {
 	
@@ -193,7 +204,6 @@ conquest_of_baghdad = {
 	
 	}
 }
-
 
 conquest_of_vienna = {
 	potential = {
@@ -203,7 +213,6 @@ conquest_of_vienna = {
 		owner = {
 			NOT = { tag = HAB }
 			NOT = { tag = AHU }
-			NOT = { tag = SGF }
 			NOT = { 	
 					has_global_modifier_value = {
 					which = discipline
@@ -219,8 +228,9 @@ conquest_of_vienna = {
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes
 	}
-	defensiveness = 0.15
-	possible_policy = 1
+	discipline = 0.025
+	land_morale = 0.025
+	
 	#Province scope
 	on_activation = {
 	
@@ -231,7 +241,7 @@ conquest_of_vienna = {
 	}
 }
 
-conquest_of_damascus = {
+conquest_of_cairo = {
 	potential = {
 		normal_or_historical_nations = yes
 	}
@@ -240,7 +250,7 @@ conquest_of_damascus = {
 				NOT = { tag = MAM }
 				NOT = { tag = MAM2 }
 				NOT = { tag = EGY }
-				syria_area = {
+				bahari_area = {
 					type = all
 					country_or_non_sovereign_subject_holds = PREV
 				}
@@ -260,9 +270,9 @@ conquest_of_damascus = {
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes	
 	}	
-	infantry_power = 0.025
-	cavalry_power = 0.025
-	possible_policy = 1
+	infantry_power = 0.05
+	cavalry_power = 0.05
+	
 	#Province scope
 	on_activation = {
 	
@@ -299,10 +309,9 @@ conquest_of_fez = {
 		}
 				
 
-		gold_depletion_chance_modifier = -0.5
-		monthly_gold_inflation_modifier = -0.5
-		land_morale = 0.05
-	    possible_policy = 1
+	discipline = 0.025
+	land_morale = 0.025
+	
 	#Province scope
 	on_activation = {
 	
@@ -312,13 +321,21 @@ conquest_of_fez = {
 	
 	}
 }
-conquest_of_amsterdam = {
+conquest_of_london = {
 	potential = {
 		normal_or_historical_nations = yes
 	}
 	trigger = {
 		owner = {
-				holland_area = {
+				NOT = { tag = ENG }
+				NOT = { tag = GBR }
+				NOT = { 	
+					has_global_modifier_value = {
+					which = discipline
+					value = 0.31
+					}
+				}
+				home_counties_area = {
 					type = all
 					country_or_non_sovereign_subject_holds = PREV
 				}
@@ -326,8 +343,9 @@ conquest_of_amsterdam = {
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes
 		}	
-     development_cost = -0.05
-	 possible_policy = 1
+	land_morale = 0.025
+	discipline = 0.025
+	
 	#Province scope
 	on_activation = {
 	
@@ -353,7 +371,7 @@ conquest_of_berlin = {
 		has_owner_accepted_culture = yes
 	}
 	yearly_army_professionalism = 0.0025
-    possible_policy = 1
+ 
 	
 	#Province scope
 	on_activation = {
@@ -393,9 +411,9 @@ conquest_of_moscow = {
 		has_owner_accepted_culture = yes
 		
 	}	
-	cav_to_inf_ratio = 0.1
-	special_unit_forcelimit = 0.15
-	possible_policy = 1
+	infantry_power = 0.05
+	cavalry_power = 0.05
+	
 	#Province scope
 	on_activation = {
 	
@@ -406,7 +424,41 @@ conquest_of_moscow = {
 	}
 }
 
+conquest_of_tabriz = {
+	potential = {
+		always = no
+		normal_or_historical_nations = yes
+		OR = {
+				religion = sunni
+				religion = shiite
+				religion = ibadi
+			}
+	}
 
+	trigger = {
+		owner = {
+				NOT = { tag = QAR }
+				tabriz_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = PREV
+				}
+			}
+		has_owner_accepted_culture = yes	
+		controlled_by = ROOT	
+		}	
+	infantry_power = 0.05
+	cavalry_power = 0.05
+ 
+	
+	#Province scope
+	on_activation = {
+	
+	}
+	
+	on_deactivation = {
+	
+	}
+}
 conquest_of_nogay = {
 	potential = {
 		normal_or_historical_nations = yes
@@ -422,9 +474,8 @@ conquest_of_nogay = {
 		has_owner_accepted_culture = yes	
 	}	
 	#horde_unity = 0.5
-	cavalry_cost = -0.1
+	#land_morale = 0.025
 	merchants = 1
-	possible_policy = 1
 	#Province scope
 	on_activation = {
 	
@@ -445,10 +496,6 @@ conquest_of_delhi = {
 	}
 	trigger = {
 		owner = {
-			AND = {
-					NOT = { tag = MER }
-					NOT = { tag = RJP }
-				}
 				NOT = { 	
 					has_global_modifier_value = {
 					which = discipline
@@ -463,8 +510,9 @@ conquest_of_delhi = {
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes	
 	}	
-	infantry_power = 0.025
-	possible_policy = 1
+	discipline = 0.025
+	land_morale = 0.025
+	
 	#Province scope
 	on_activation = {
 	
@@ -500,8 +548,9 @@ conquest_of_pest = {
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes		
 		}	
+	land_morale = 0.025
 	discipline = 0.025
-	possible_policy = 1
+	
 	#Province scope
 	on_activation = {
 	
@@ -517,6 +566,13 @@ conquest_of_rome = {
 	}
 	trigger = {
 		owner = {
+				NOT = { tag = ITA }
+				NOT = { 	
+					has_global_modifier_value = {
+					which = discipline
+					value = 0.31
+					}
+				}
 				lazio_area = {
 					type = all
 					country_or_non_sovereign_subject_holds = PREV
@@ -525,9 +581,9 @@ conquest_of_rome = {
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes		
 		}	
-	papal_influence = 2.0
-	local_defender_dice_roll_bonus = 1
-	possible_policy = 1
+	land_morale = 0.025
+	discipline = 0.025
+	
 	#Province scope
 	on_activation = {
 	
@@ -545,6 +601,18 @@ conquest_of_warszawa = {
 		owner = {
 				NOT = { tag = POL }
 				NOT = { tag = PLC }
+				NOT = { 	
+					has_global_modifier_value = {
+					which = infantry_power
+					value = 0.41
+					}
+				}
+				NOT = { 	
+					has_global_modifier_value = {
+					which = cavalry_power
+					value = 0.61
+					}
+				}
 				mazovia_area = {
 					type = all
 					country_or_non_sovereign_subject_holds = PREV
@@ -553,8 +621,9 @@ conquest_of_warszawa = {
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes	
 		}	
-	discipline = 0.025
-	possible_policy = 1
+	infantry_power = 0.05
+	cavalry_power = 0.05
+	
 	#Province scope
 	on_activation = {
 	
@@ -570,6 +639,13 @@ conquest_of_copenhagen = {
 	}
 	trigger = {
 		owner = {
+				NOT = { tag = DAN }
+				NOT = { 	
+					has_global_modifier_value = {
+					which = discipline
+					value = 0.31
+					}
+				}
 				denmark_area = {
 					type = all
 					country_or_non_sovereign_subject_holds = PREV
@@ -578,10 +654,9 @@ conquest_of_copenhagen = {
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes
 	}	
+	land_morale = 0.025
+	discipline = 0.025
 	
-     ship_trade_power_modifier = 0.20
-	 province_trade_power_value = 60.0		
-	possible_policy = 1
 	#Province scope
 	on_activation = {
 	
@@ -592,9 +667,81 @@ conquest_of_copenhagen = {
 	}
 }
 
+conquest_of_herat = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		controlled_by = ROOT
+		has_owner_accepted_culture = yes
+		owner = {	
+			herat_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = PREV
+				}	
+			NOT = { 	
+					has_global_modifier_value = {
+					which = infantry_power
+					value = 0.41
+					}
+				}
+				NOT = { 	
+					has_global_modifier_value = {
+					which = cavalry_power
+					value = 0.61
+					}
+				}		
+		}
+	}
+	infantry_power = 0.05
+	cavalry_power = 0.05
+	
+	#Province scope
+	on_activation = {
+	
+	}
+	
+	on_deactivation = {
+	
+	}
+}
 
+conquest_of_frankfurt = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+				NOT = { tag = HES }
+				NOT = { tag = WES }
+				NOT = { 	
+					has_global_modifier_value = {
+					which = discipline
+					value = 0.31
+					}
+				}
+				hesse_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = PREV
+				}	
+			}
+		controlled_by = ROOT
+		has_owner_accepted_culture = yes		
+		}	
+	land_morale = 0.025
+	discipline = 0.025
+	
+	#Province scope
+	on_activation = {
+	
+	}
+	
+	on_deactivation = {
+	
+	}
+}
 
-conquest_of_prague = {
+conquest_of_prague= {
 	potential = {
 		normal_or_historical_nations = yes
 	}
@@ -606,17 +753,11 @@ conquest_of_prague = {
 				}	
 			}
 		has_owner_accepted_culture = yes
-		controlled_by = ROOT
-		NOT = {
-			OR = {
-				tag = HAB
-				tag = AUH
-			}
-			
-			}	
+		controlled_by = ROOT	
 		}	
 	artillery_levels_available_vs_fort = 1
-	possible_policy = 1
+	siege_ability = 0.1
+	
 	#Province scope
 	on_activation = {
 	
@@ -648,13 +789,9 @@ conquest_of_toledo = {
 			}
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes		
-	}	
-
-		gold_depletion_chance_modifier = -0.5
-		monthly_gold_inflation_modifier = -0.5
-		land_morale = 0.05
-		possible_policy = 1
-
+		}	
+	discipline = 0.025
+	land_morale = 0.025
 	
 	#Province scope
 	on_activation = {
@@ -666,6 +803,43 @@ conquest_of_toledo = {
 	}
 }
 
+conquest_of_ava = {
+
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+				NOT = { tag = AVA }
+				NOT = { tag = MNG }
+				NOT = { 	
+					has_global_modifier_value = {
+					which = discipline
+					value = 0.31
+					}
+				}
+				upper_burma_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = PREV
+				}	
+			}
+		controlled_by = ROOT
+		has_owner_accepted_culture = yes		
+		}	
+	discipline = 0.025
+	land_morale = 0.025
+	
+	#Province scope
+	on_activation = {
+	
+	}
+	
+	on_deactivation = {
+	
+	}
+
+
+}
 
 conquest_of_ayutthaya = {
 
@@ -677,6 +851,12 @@ conquest_of_ayutthaya = {
 				NOT = { tag = AYU }
 				NOT = { tag = SIA }
 				NOT = { tag = MNG }
+				# NOT = { 	
+				# 	has_global_modifier_value = {
+				# 	which = discipline
+				# 	value = 0.31
+				# 	}
+				# }
 				central_thai_area = {
 					type = all
 					country_or_non_sovereign_subject_holds = PREV
@@ -685,9 +865,9 @@ conquest_of_ayutthaya = {
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes		
 		}	
-	vassal_income = 0.2
-	reduced_liberty_desire_on_same_continent = 15
-	possible_policy = 1
+	#discipline = 0.025
+	land_morale = 0.05
+	
 	#Province scope
 	on_activation = {
 	
@@ -722,10 +902,10 @@ conquest_of_brunei = {
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes		
 		}	
-	ship_durability = 0.025
-	naval_morale = 0.025
-	possible_policy = 1
-	
+	#ship_durability = 0.025
+	#naval_morale = 0.025
+	merchants = 1
+	trade_steering = 0.1
 	#Province scope
 	on_activation = {
 	
@@ -747,12 +927,12 @@ b_conquest_of_beijing = {
 	trigger = {
 		owner = {
 				NOT = { tag = MNG }
-				NOT = { 	
-					has_global_modifier_value = {
-					which = discipline
-					value = 0.31
-					}
-				}
+				# NOT = { 	
+				# 	has_global_modifier_value = {
+				# 	which = discipline
+				# 	value = 0.31
+				# 	}
+				# }
 				hebei_area= {
 					type = all
 					country_or_non_sovereign_subject_holds = PREV
@@ -761,10 +941,10 @@ b_conquest_of_beijing = {
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes		
 		}	
-	discipline = 0.025
-	land_morale = 0.025
-	imperial_mandate = 0.04
-	possible_policy = 1
+	#discipline = 0.025
+	#land_morale = 0.025
+	#imperial_mandate = 0.02
+	merchants = 1
 	
 	#Province scope
 	on_activation = {
@@ -778,22 +958,25 @@ b_conquest_of_beijing = {
 
 }
 
-conquest_of_herat = {
+Easter_egg = {
 	potential = {
 		normal_or_historical_nations = yes
 	}
 	trigger = {
 		owner = {
-				herat_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = PREV
-				}
-			}
+			NOT = { tag = CRI }		#update this every time so it matches the nation pandur is playing
+			NOT = { tag = GLH }		#so he gets fucked and doesnt get this
+			NOT = { 	
+					has_global_modifier_value = {
+					which = discipline
+					value = 0.32
+					}
+				}								
+		}
 		controlled_by = ROOT
 		has_owner_accepted_culture = yes
-		}	
-     yearly_innovativeness = 0.25
-	 possible_policy = 1
+	}
+	discipline = 0.001
 	
 	#Province scope
 	on_activation = {
@@ -804,565 +987,3 @@ conquest_of_herat = {
 	
 	}
 }
-
-
-conquest_of_frankfurt = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-			hesse_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = PREV
-				}
-				NOT = { tag = HES }
-				NOT = { tag = WES }
-				NOT = { tag = NGF }
-			}
-		controlled_by = ROOT	
-		}	
-
-	land_morale = 0.025
-	discipline = 0.025
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-conquest_of_bern = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-			romandie_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = PREV
-				}
-				NOT = { tag = SWI }
-				NOT = { tag = SWA }
-				NOT = { tag = SGF }
-			}
-		controlled_by = ROOT	
-		}	
-
-	mercenary_manpower = 0.2
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-conquest_of_sana = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-			upper_yemen_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = PREV
-				}
-				NOT = { tag = RAS }
-				NOT = { tag = ARB }
-			}
-		controlled_by = ROOT	
-		}	
-
-	land_morale = 0.05
-	special_unit_forcelimit = 0.1
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-conquest_of_gonder = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-				NOT = { tag = ETH }
-				NOT = { tag = AKS }
-			}
-		controlled_by = ROOT	
-		}	
-
-	gold_depletion_chance_modifier = -0.5
-	fire_damage_received = -0.025
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-conquest_of_tunis = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-			tunisia_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = PREV
-				}
-				NOT = { tag = TUN }
-				NOT = { tag = ADU }
-			}
-		controlled_by = ROOT	
-		}	
-
-	fire_damage_received = -0.05
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-conquest_of_messina = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-			sicily_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = PREV
-				}
-				NOT = { tag = SIC }
-			}
-		controlled_by = ROOT	
-		}	
-
-	infantry_power = 0.05
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-conquest_of_crimea = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-			crimea_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = PREV
-				}
-				NOT = { tag = CRI }
-				NOT = { tag = GLH }
-				NOT = { tag = BUK }
-			}
-		controlled_by = ROOT	
-		}	
-
-	special_unit_forcelimit = 0.1
-	cav_to_inf_ratio = 0.1
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-conquest_of_kuqa = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-				NOT = { tag = YUA }
-				NOT = { tag = CHG }
-			}
-		controlled_by = ROOT	
-		}	
-
-    trade_steering = 0.33
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-
-conquest_of_ava = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-				NOT = { tag = AVA }
-			}
-		controlled_by = ROOT	
-		}	
-
-    backrow_artillery_damage = 0.1
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-
-conquest_of_ternate = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-			spice_islands_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = PREV
-				}
-			}
-		controlled_by = ROOT	
-		}	
-
-    trade_goods_size_modifier = 0.1
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-conquest_of_taiwan = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-			taiwan_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = PREV
-				}
-			}
-		controlled_by = ROOT	
-		}	
-
-    development_cost = -0.05
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-conquest_of_hawaii = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-			northern_polynesia_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = PREV
-				}
-			}
-		controlled_by = ROOT	
-		}	
-
-    global_colonial_growth = 15
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-conquest_of_nanjing = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-			NOT = { tag = WUU }
-			south_jiangsu_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = PREV
-				}
-			}
-		controlled_by = ROOT	
-		}	
-    shock_damage_received = -0.1
-    imperial_mandate = 0.04
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-conquest_of_canton = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-			NOT = { tag = YUE }
-			guangdong_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = PREV
-				}
-			}
-		controlled_by = ROOT	
-		}	
-    shock_damage_received = -0.1
-    imperial_mandate = 0.04
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-conquest_of_kongo = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		controlled_by = ROOT	
-		}	
-
-    global_colonial_growth = 15
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-conquest_of_zanzibar = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		controlled_by = ROOT	
-		}	
-
-    envoy_travel_time = -0.5
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-conquest_of_greenland = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		controlled_by = ROOT	
-		}	
-
-    envoy_travel_time = -0.5
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-
-
-conquest_of_tabriz = {
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-			tabriz_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = PREV
-				}
-			}
-		controlled_by = ROOT	
-		}	
-
-    trade_efficiency = 0.1
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-
-conquest_of_bure = {	
-	potential = {
-		normal_or_historical_nations = yes
-	}
-
-	trigger = {
-		owner = {
-			NOT = { tag = SON }
-			NOT = { tag = PR2 }
-			
-			manding_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = PREV
-				}
-			}
-		controlled_by = ROOT	
-		}	
-
-    trade_efficiency = 0.1
-	possible_policy = 1
- 
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-}
-
-
-
-
-
-
-

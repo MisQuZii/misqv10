@@ -21,7 +21,7 @@ country_decisions = {
 			NOT = { tag = PAP }
 			NOT = { tag = NED }
 			NOT = { tag = HLR }
-			NOT = { tag = BUR }
+			tag = BUR
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -54,6 +54,7 @@ country_decisions = {
 			}
 		}
 		allow = {
+			#adm_tech = 10
 			adm_tech = 8
 			is_free_or_tributary_trigger = yes
 			is_nomad = no

@@ -1049,66 +1049,6 @@ tur_conquest_of_europe = {
 			factor = 250
 		}
 	}
-		repulse_turk_gank = {
-        icon = mission_cossack_cavalry
-        required_missions = {  }
-		position = 14
-        trigger = {
-            NOT = {
-                is_year = 1460
-            }
-
-        OR = {
-            AND = { 
-                is_in_war = {
-                    attackers = MAM
-                }
-                is_in_war = {
-                    attackers = HUN
-                }
-            }
-            AND = { 
-                is_in_war = {
-                    attackers = MAM
-                }
-                is_in_war = {
-                    attackers = AKK
-                }
-            }
-            AND = { 
-                is_in_war = {
-                    defenders = MAM
-                }
-                is_in_war = {
-                    attackers = HUN
-                }
-            }
-			AND = { 
-                is_in_war = {
-                    defenders = MAM
-                }
-                is_in_war = {
-                    attackers = AKK
-                }
-            }
-        }
-    }
-        effect = {
-            define_conquistador = {
-                shock = 6
-                fire = 4
-                manuever = 4
-                siege = 2
-                name = "II. Murat"
-                trait = defensive_planner_personality
-                }
-
-                add_country_modifier = {
-                name = "anti_turko_gank"
-                duration = 3650
-                }
-            }
-        } 
 }
 
 tur_african_conquest = {
@@ -4532,12 +4472,6 @@ tur_persian_conquest = {
 				}
 				add_permanent_claim = ROOT
 			}
-			define_general = {
-    shock = 4
-    fire = 2
-    manuever = 2
-    siege = 2
-   }
 		}
 
 		ai_weight = {
@@ -4553,10 +4487,14 @@ tur_persian_conquest = {
 		}
 		position = 4
 		provinces_to_highlight = {
-            province_id = 382
+			region = anatolia_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			382 = { is_core = ROOT}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = anatolia_region
+				value = 40
+			}
 		}
 		effect = {
 			country_event_with_insight = {
@@ -4584,16 +4522,9 @@ tur_persian_conquest = {
 					NOT = { is_permanent_claim = ROOT }
 				}
 				add_permanent_claim = ROOT
-			} 
-			add_country_modifier = {
-				name = onurotuzbir
-				duration = 3650
-			 }
-			 add_treasury = 1000
-			 add_manpower = 30.0
-			 add_war_exhaustion = -10
-		} 
-        
+			}
+		}
+
 		ai_weight = {
 			factor = 250
 		}
@@ -5929,5 +5860,4 @@ tur_stagnation_slot_5 = {
 			factor = 250
 		}
 	}
-
 }
