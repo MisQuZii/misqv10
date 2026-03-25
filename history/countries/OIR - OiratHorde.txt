@@ -5,6 +5,9 @@ religion = tengri_pagan_reformed
 primary_culture = oirats
 capital = 718
 add_accepted_culture = khalkha
+add_truce_with = HMI
+add_truce_with = ODS
+add_truce_with = KHA
 
 #Khans of the Oirats (Kalmyks, Dzungars)
 1399.1.1 = {
@@ -52,9 +55,9 @@ add_accepted_culture = khalkha
 		leader = {
 			name = "Esen Taishi"
 			type = general
-			fire = 1
-			shock = 0
-			manuever = 0
+			fire = 2
+			shock = 5
+			manuever = 5
 			siege = 0
 			personality = goal_oriented_personality
 		}

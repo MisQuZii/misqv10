@@ -5,6 +5,8 @@ religion = hinduism
 technology_group = indian
 capital = 541	# Vijayanagara
 add_truce_with = BAH
+add_accepted_culture = tamil
+add_truce_with = YOR
 
 
 change_rajputs_or_marathas_or_nobles_land_share_effect = {
@@ -137,14 +139,14 @@ change_rajputs_or_marathas_or_nobles_land_share_effect = {
 		name = "Devaraya II"
 		dynasty = "Sangama"
 		ADM = 3
-		DIP = 3
-		MIL = 4
+		DIP = 4
+		MIL = 5
 	}
 	clear_scripted_personalities = yes
 	add_ruler_personality = scholar_personality
-	add_ruler_personality = tolerant_personality
+	add_ruler_personality = inspiring_leader_personality
 	#add_ruler_personality = righteous_personality
-	add_heir_personality = naive_personality
+	add_heir_personality = fertile_personality
 	heir = {
 		name = "Mallikarjuna"
 		monarch_name = "Mallikarjuna"
@@ -152,9 +154,9 @@ change_rajputs_or_marathas_or_nobles_land_share_effect = {
 		birth_date = 1424.1.1
 		death_date = 1465.1.1
 		claim = 95
-		ADM = 2
-		DIP = 2
-		MIL = 1
+		ADM = 3
+		DIP = 3
+		MIL = 4
 	}
 }
 
@@ -274,8 +276,8 @@ change_rajputs_or_marathas_or_nobles_land_share_effect = {
 
 1491.1.1 = {
 	heir = {
-		name = "Vîra Narasimha"
-		monarch_name = "Vîra Narasimha"
+		name = "Vï¿½ra Narasimha"
+		monarch_name = "Vï¿½ra Narasimha"
 		dynasty = "Tuluva"
 		birth_date = 1483.1.1
 		death_date = 1509.8.9
@@ -286,9 +288,9 @@ change_rajputs_or_marathas_or_nobles_land_share_effect = {
 	}
 }
 
-1503.1.1 = {	#1503 - 1505 Vîra Narasimha acts as regent of Immadhi Narisimha who dies in 1505 leaving Vîra as Raja
+1503.1.1 = {	#1503 - 1505 Vï¿½ra Narasimha acts as regent of Immadhi Narisimha who dies in 1505 leaving Vï¿½ra as Raja
 	monarch = {
-		name = "Vîra Narasimha"
+		name = "Vï¿½ra Narasimha"
 		dynasty = "Tuluva"
 		ADM = 2
 		DIP = 2
@@ -377,8 +379,8 @@ change_rajputs_or_marathas_or_nobles_land_share_effect = {
 
 1542.1.1 = {
 	heir = {
-		name = "Sâdashiva"
-		monarch_name = "Sâdashiva"
+		name = "Sï¿½dashiva"
+		monarch_name = "Sï¿½dashiva"
 		dynasty = "Tuluva"
 		birth_date = 1522.1.1
 		death_date = 1565.1.1
@@ -391,7 +393,7 @@ change_rajputs_or_marathas_or_nobles_land_share_effect = {
 
 1543.1.1 = {	#Final coronation of Sadashiva by Rama Raya who remains the power behind the throne
 	monarch = {
-		name = "Sâdashiva"
+		name = "Sï¿½dashiva"
 		dynasty = "Tuluva"
 		ADM = 0
 		DIP = 0
@@ -520,8 +522,8 @@ change_rajputs_or_marathas_or_nobles_land_share_effect = {
 
 1614.10.1 = {
 	heir = {
-		name = "Râma"
-		monarch_name = "Râma I"
+		name = "Rï¿½ma"
+		monarch_name = "Rï¿½ma I"
 		dynasty = "Aravidu"
 		birth_date = 1590.1.1
 		death_date = 1634.1.1
@@ -534,7 +536,7 @@ change_rajputs_or_marathas_or_nobles_land_share_effect = {
 
 1615.1.1 = {
 	monarch = {
-		name = "Râma I"
+		name = "Rï¿½ma I"
 		dynasty = "Aravidu"
 		ADM = 2
 		DIP = 2

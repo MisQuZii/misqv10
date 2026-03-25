@@ -5,8 +5,6 @@ religion = sunni
 primary_culture = afghani
 capital = 451	# Kabul
 religious_school = hanafi_school
-add_truce_with = SIS
-add_truce_with = TRS
 
 #Timurid Governors of Kabul, sons of Soyurghatmish
 1443.1.1 = {
@@ -14,8 +12,8 @@ add_truce_with = TRS
 		name = "Karatshar bin Soyurghatmish"
 		culture = uzbehk
 		dynasty = "Timurid"
-		adm = 5
-		dip = 3
+		adm = 3
+		dip = 4
 		mil = 5
 	}
 }

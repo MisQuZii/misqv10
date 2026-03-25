@@ -283,7 +283,6 @@ estate_jains_indebted_to_jains = {
 	on_granted = {
 		custom_tooltip = estate_burghers_indebted_to_burghers_effect_tooltip
 		if = {
-			has_idea = kits_blessing
 			limit = { NOT = { has_government_attribute = no_mercantilism_loss_from_privilege } }
 			add_mercantilism = -1
 		}
@@ -292,62 +291,29 @@ estate_jains_indebted_to_jains = {
 		}
 		hidden_effect = {
 			add_loan = {
-				fixed_interest = 2
+				fixed_interest = 1
 				duration = 60
 				estate_loan = yes
 			}
 			add_loan = {
-				fixed_interest = 2
+				fixed_interest = 1
 				duration = 60
 				estate_loan = yes
 			}
 			add_loan = {
-				fixed_interest = 2
+				fixed_interest = 1
 				duration = 60
 				estate_loan = yes
 			}
 			add_loan = {
-				fixed_interest = 2
+				fixed_interest = 1
 				duration = 60
 				estate_loan = yes
 			}
 			add_loan = {
-				fixed_interest = 2
+				fixed_interest = 1
 				duration = 60
 				estate_loan = yes
-			}
-			if = {
-				limit = {
-					OR = { 
-					has_idea = kits_blessing
-					has_country_flag = BYZ_buff_burgher_loans_flag
-					}
-				}
-				add_loan = {
-					fixed_interest = 2
-					duration = 60
-					estate_loan = yes
-				}
-				add_loan = {
-					fixed_interest = 2
-					duration = 60
-					estate_loan = yes
-				}
-					add_loan = {
-					fixed_interest = 2
-					duration = 60
-					estate_loan = yes
-				}
-					add_loan = {
-					fixed_interest = 2
-					duration = 60
-					estate_loan = yes
-				}
-					add_loan = {
-					fixed_interest = 2	
-					duration = 60
-					estate_loan = yes
-				}
 			}
 		}
 	}
@@ -380,15 +346,53 @@ estate_jains_conscientious_objection = {
 	#loyalty = 0.1
 	can_select = {
 		ai=no
+		is_at_war = no
+		NOT = {
+			ROOT = {
+				any_owned_province = {
+					has_construction = building
+				}
+				
+			}
+		}
 	}
-	penalties = {
-		global_manpower_modifier = -0.1
-	}
+	# penalties = {
+	# 	#global_manpower_modifier = -0.1
+	# 	build_cost = 1
+	# 	build_time = 1
+	# }
 	benefits = {
-		interest = -0.75
-		can_not_declare_war = yes
+		interest = -1
+		build_cost = 1.5
+		center_of_trade_upgrade_cost = 2
+		great_project_upgrade_cost = 2
+		#build_time = 1
+		#all_power_cost = 0.05
+		#can_not_declare_war = yes
 	}
-	cooldown_years = 10
+
+	on_granted = {
+		custom_tooltip = kielak_jains_ipa_tooltip
+		hidden_effect = {
+			set_country_flag = kielak_ipa_priviledge_lose_inflation_on_repaid_loans
+		}
+	}
+
+	on_revoked = {
+		hidden_effect = {
+			clr_country_flag = kielak_ipa_priviledge_lose_inflation_on_repaid_loans
+		}
+		add_country_modifier = {
+			name = kielak_ipa_anti_abuse_debuff
+			duration = 365
+		}
+	}
+
+	cooldown_years = 5
+	on_cooldown_expires = {
+		country_event = { id = kielak_events.30 }
+	}
+
 	ai_will_do = {
 		factor = 0
 	}
@@ -1421,7 +1425,7 @@ estate_jains_promote_jain_bookkeeping = {
 		trigger = { always = yes }
 		modifier = {
 			inflation_action_cost = -0.5
-			#interest = -0.5
+			interest = -0.15
 			state_maintenance_modifier = -0.25
 		}
 	}

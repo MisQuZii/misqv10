@@ -45,13 +45,15 @@ songhai_military_slot = {
 			army_size_percentage = 1
 		}
 		effect = {
-			add_province_modifier = { 
-				name = slaves_dig_the_gold
-				duration = -1  
-				desc = annoyed_people_tooltip
-				hidden = yes
+			country_event = {
+				id = flavor_son.8
 			}
-
+			hidden_effect = {
+				set_variable = {
+					which = son_fight_counter
+					value = 0
+				}
+			}
 		}
 	}
 
@@ -515,6 +517,7 @@ songhai_maghreb_slot = {
 				set_country_flag = can_colonize_djado_and_tajarhi
 			}
 			add_stability = 1
+			add_dip_power = 50
 			add_accepted_culture_or_dip_power = { culture = tuareg dip_reward = yes }
 		}
 		ai_weight = {

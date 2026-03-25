@@ -5,7 +5,6 @@ controller = CRI
 culture = crimean
 religion = sunni
 hre = no
-fort_15th = yes
 base_tax = 1
 base_production = 1
 trade_goods = livestock

@@ -1832,10 +1832,9 @@ country_event = {
 			factor = 25
 		}
 		define_ruler = {
-			name = Kitten
 			mil = 5
 			adm = 5
-			dip = 6
+			dip = 5
 			claim = 100
 			culture = polish
 		}
@@ -2530,7 +2529,7 @@ country_event = { #Collegium Maius & the Growth of Thought
 					NOT = { has_building = university } 
 				}
 			}
-			262 = { add_building = trade_depot } 
+			262 = { add_building = university } 
 		}
 		else_if = {
 			limit = { has_dlc = "Rights of Man" } 

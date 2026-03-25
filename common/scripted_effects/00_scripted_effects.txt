@@ -5129,7 +5129,7 @@ remove_dev_from_building = {
 	if = {
 		limit = {
 			FROM = { full_idea_group = economic_ideas }
-			gained_dev_from_eco_building = { building = $building$ }
+			#gained_dev_from_eco_building = { building = $building$ }
 		}
 		add_base_$type$ = -$value$
 		if = {
@@ -5148,7 +5148,7 @@ add_dev_from_building = {
 	if = {
 		limit = {
 			FROM = { full_idea_group = economic_ideas }
-			NOT = { gained_dev_from_eco_building = { building = $building$ } }
+			#NOT = { gained_dev_from_eco_building = { building = $building$ } }
 		}
 		add_base_$type$ = $value$
 		hidden_effect = {

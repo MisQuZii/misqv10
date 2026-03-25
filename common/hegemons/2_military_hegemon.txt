@@ -30,7 +30,7 @@ military_hegemon = {
 	}
 	
 	base = {
-		global_spy_defence = 0.25
+		#global_spy_defence = 0.25
 		war_exhaustion = -0.1
 		province_warscore_cost = -0.1
 	}

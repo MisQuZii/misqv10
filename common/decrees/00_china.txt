@@ -11,6 +11,7 @@ expand_bureaucracy_decree = {
 	trigger = {
 	}
 	modifier = {
+		build_cost = -0.1
 		development_cost = -0.05
 	}
 	effect = {
@@ -40,6 +41,7 @@ improved_expand_bureaucracy_decree = {
 	trigger = {
 	}
 	modifier = {
+		build_cost = -0.1
 		build_time = -0.1
 		advisor_cost = -0.1
 	}

@@ -9,6 +9,7 @@ bah_indigenization = {
 	potential = {
 		OR = {
 			tag = BAH
+			tag = DEC
 		}
 		has_dlc = "Dharma"
 		NOT = { map_setup = map_setup_random }
@@ -181,6 +182,7 @@ bah_gharbians = {
 	potential = {
 		OR = {
 			tag = BAH
+			tag = DEC
 		}
 		has_dlc = "Dharma"
 		NOT = { map_setup = map_setup_random }
@@ -195,10 +197,6 @@ bah_gharbians = {
 				province_id = 530
 				province_id = 2089
 				province_id = 4429
-				province_id = 2030
-				province_id = 4427
-				province_id = 537
-				province_id = 541
 			}
 			NOT = { owned_by = ROOT }
 		}
@@ -206,23 +204,12 @@ bah_gharbians = {
 			owns = 530
 			owns = 2089
 			owns = 4429
-			owns = 2030
-			owns = 4427
-			owns = 537
-			541 = { is_core = ROOT}
 		}
 		effect = {
 			add_country_modifier = {
 				name = "bah_access_to_the_sea"
 				duration = 7300
 			}
-			add_country_modifier = {
-				name = onurotuzbir
-				duration = 3650
-			 }
-			 add_treasury = 1000
-			 add_manpower = 30.0
-			 add_war_exhaustion = -10
 		}
 		ai_weight = {
 			factor = 500	#Reconquest
@@ -415,6 +402,7 @@ bah_persian_branch = {
 	potential = {
 		OR = {
 			tag = BAH
+			tag = DEC
 		}
 		has_dlc = "Dharma"
 		NOT = { map_setup = map_setup_random }
@@ -652,6 +640,7 @@ bah_vijayanagari_branch = {
 	potential = {
 		OR = {
 			tag = BAH
+			tag = DEC
 		}
 		has_dlc = "Dharma"
 		NOT = { map_setup = map_setup_random }
@@ -821,6 +810,7 @@ bah_delhi_branch = {
 	potential = {
 		OR = {
 			tag = BAH
+			tag = DEC
 		}
 		has_dlc = "Dharma"
 		NOT = { map_setup = map_setup_random }
@@ -915,6 +905,7 @@ bah_coromandel_branch = {
 	potential = {
 		OR = {
 			tag = BAH
+			tag = DEC
 		}
 		has_dlc = "Dharma"
 		NOT = { map_setup = map_setup_random }

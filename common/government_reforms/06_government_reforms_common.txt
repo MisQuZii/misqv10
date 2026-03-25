@@ -4,9 +4,7 @@ united_cantons_reform = {
 	modifiers = {
 		governing_capacity = -50
 		free_policy = 1
-		mercenary_cost = -0.20
-		development_cost = -0.05
-		reduced_liberty_desire_on_same_continent = 20
+		mercenary_manpower = 0.5
 	}
 	valid_for_nation_designer = yes
 	nation_designer_cost = 40
@@ -18,14 +16,21 @@ united_cantons_reform = {
 			have_had_reform = united_cantons_reform
 		}
 	}
-		 allow = {
-			OR = {
-				has_dlc = "Common Sense"
-				has_dlc = "Domination"
+	ai = {
+		factor = 10 #unique
+		
+		modifier = {
+			factor = 2
+			NOT = {
+				num_of_cities = 11
 			}
 		}
-		has_parliament = yes
-
+		
+		modifier = {
+			factor = 0
+			is_subject = yes
+		}
+	}
 
 	custom_attributes = {
 		mercs_do_not_cost_army_professionalism = yes
@@ -1343,7 +1348,7 @@ cult_of_reason_reform = {
 	modifiers = {
 		rr_jacobins_influence = 0.1
 		idea_cost = -0.2
-		global_tax_modifier = 0.10
+		possible_policy = 1
 		free_policy = 1
 	}
 	
@@ -2303,7 +2308,7 @@ wei_suo_system_reform = {
 		}
 	}
 	modifiers = {
-		global_regiment_cost = -0.15
+		global_regiment_cost = -0.05
 	}
 	custom_attributes = {
 		improved_military_buildings = yes	#Barracks, Regimental Camps and Soldier Househols are buffed 
@@ -2432,6 +2437,7 @@ green_standard_army_reform = {
 			primary_culture = manchu_new
 			primary_culture = manchu
 		}
+		NOT = { tag = QNG }
 	}
 	trigger = {
 		if = {
@@ -3169,13 +3175,16 @@ gendarmes_reform = {
 				has_reform = gendarmes_reform
 				has_not_modifier_locking_military_tier = yes
 			}
+			OR ={
+				tag = LOT
+			}
 		}
 	}
 	modifiers = {
 		cavalry_power = 0.1 
 		nobles_loyalty_modifier = 0.05
-		cav_to_inf_ratio = 0.1
 		morale_damage = 0.1
+		cav_to_inf_ratio = 0.1
 	}
 	ai = {
 		factor = 1
@@ -4583,6 +4592,12 @@ diwan_al_khass_reform = {
 		#development_cost = -0.05
 		build_cost = -0.1
 	}
+
+	conditional = {
+		allow = {
+		}
+		claim_states = yes
+	}	
 	
 	ai = {
 		factor = 10
@@ -5329,6 +5344,12 @@ support_state_reform = {
 		republican_tradition = 0.2
 	}
 
+	conditional = {
+		allow = {
+		}
+		claim_states = yes
+	}
+
 	custom_attributes = {
 		republican_virtues = yes
 	}
@@ -5373,6 +5394,7 @@ apostolic_kingdom = {
 	}
 	legacy_equivalent = feudal_monarchy
 	valid_for_nation_designer = no
+	lock_level_when_selected = yes
 
 	nation_designer_trigger = {
 		primary_culture = hungarian
@@ -5466,6 +5488,11 @@ extend_the_unio_trium_nationum_reform = {
 	custom_attributes = {
 		seizing_land_no_rebels_from_estate_nobles = yes
 	}
+	conditional = {
+		allow = {
+		}
+		claim_states = yes
+	}	
 	modifiers = {
 		global_unrest = -1
 		nobles_privilege_slots = 1

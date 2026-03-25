@@ -15,7 +15,8 @@ economic_hegemon = {
 	base = {
 		war_exhaustion = -0.1
 		development_cost_modifier = -0.05
-		mercenary_manpower = 1.0
+		#mercenary_manpower = 1.0
+		#interest = 1.
 	}
 	
 	# At max 100% tickup.

@@ -16,7 +16,6 @@ add_core = VEN
 add_core = CEP
 
 
-
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim

@@ -1123,7 +1123,7 @@ DOM_Qing_Missions_1_b_formable = {
 				num_of_banners = 32 
 			}
 			else = { num_of_cavalry = 50 } 
-			empire_of_china_reform_passed = modernize_the_banners_decision
+			#empire_of_china_reform_passed = modernize_the_banners_decision
 			OR = {
 				national_focus = MIL 
 				army_reformer = 3 
@@ -1646,6 +1646,9 @@ DOM_Qing_Missions_2 = {
 						duration = 3650 
 					}
 				}
+			}
+			mongolia_region = {
+				add_permanent_claim = ROOT
 			}
 		}
 	}
@@ -2204,19 +2207,19 @@ ming_missions_2_b = {
 				define_advisor = {
 					name = "Buwei Zhao" 
 					type = natural_scientist
-					cost_multiplier = 0.75
+					cost_multiplier = 0.33 
 					skill = 2
 				}
 				define_advisor = {
 					name = "Yilong Ma" 
 					type = trader
-					cost_multiplier = 0.75
+					cost_multiplier = 0.33
 					skill = 2
 				}
 				define_advisor = {
 					name = "Chao Meng" 
 					type = quartermaster
-					cost_multiplier = 0.75
+					cost_multiplier = 0.33
 					skill = 2
 				}
 			}
@@ -2229,19 +2232,19 @@ ming_missions_2_b = {
 					define_advisor = {
 						name = "Buwei Zhao" 
 						type = natural_scientist
-						cost_multiplier = 0.75
+						cost_multiplier = 0.33 
 						skill = 2
 					}
 					define_advisor = {
 						name = "Yilong Ma" 
 						type = trader
-						cost_multiplier = 0.75
+						cost_multiplier = 0.33
 						skill = 2
 					}
 					define_advisor = {
 						name = "Chao Meng" 
 						type = quartermaster
-						cost_multiplier = 0.75
+						cost_multiplier = 0.33
 						skill = 2
 					}
 				}
@@ -2477,16 +2480,16 @@ DOM_Qing_Missions_2_b = {
 			else = {
 				add_legitimacy = 25
 			}
-			custom_tooltip = extinguish_ming_tt
-			hidden_effect = {
-				china_superregion = {
-					limit = {
-						NOT = { owned_by = ROOT }
-						NOT = { is_core = ROOT }
-					}
-					add_core = ROOT
-				}
-			}
+			# custom_tooltip = extinguish_ming_tt
+			# hidden_effect = {
+			# 	china_superregion = {
+			# 		limit = {
+			# 			NOT = { owned_by = ROOT }
+			# 			NOT = { is_core = ROOT }
+			# 		}
+			# 		add_core = ROOT
+			# 	}
+			# }
 			change_ruler_stat = {
 				type = adm
 				amount = 1
@@ -3155,11 +3158,16 @@ chinese_kingdoms_3 = {
 			# total_development = 1500 
 		}
 		effect = {
-			set_emperor_of_china = ROOT
+			#set_emperor_of_china = ROOT
 			# add_country_modifier = {
 			# 	name = era_of_the_great_dragon_modifier
 			# 	duration = -1 
 			# }
+			country_event = {
+				id = kielak_events.4
+			}
+			custom_tooltip = "We will be able to choose a religion to instantly harmonize."
+			
 		}
 	}
 }
@@ -4027,7 +4035,7 @@ DOM_Qing_Missions_3 = {
 				define_advisor = { 
 					type = diplomat 
 					skill = 2
-					cost_multiplier = 0.75
+					cost_multiplier = 0.5
 				}
 			}
 			
@@ -4074,7 +4082,7 @@ DOM_Qing_Missions_3 = {
 						}
 						define_advisor = { 
 							type = diplomat 
-							cost_multiplier = 0.75
+							cost_multiplier = 0.5
 						}
 					}
 					add_country_modifier = { 
@@ -4083,7 +4091,7 @@ DOM_Qing_Missions_3 = {
 					}
 					define_advisor = { 
 						type = diplomat 
-						cost_multiplier = 0.75
+						cost_multiplier = 0.5
 					}
 				}
 				else_if = {
@@ -4618,36 +4626,189 @@ DOM_Qing_Missions_3_b = {
 		position = 10
 		required_missions = {  }
 		provinces_to_highlight = {
-						superregion = china_superregion
-			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+			OR = {
+				region = south_china_region
+				region = xinan_region
+			}
+			NOT = {
+				owned_by = ROOT
+			}
 		}
 		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					superregion = china_superregion 
-					value = 85
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				OR = {
+					region = south_china_region
+					region = xinan_region
+				}
+				value = 20
 			}
-			# OR = {
-			# 	crown_land_share = 95 
-			# 	absolutism = 50 
-			# }
-			# power_projection = 50 
-			# if = {
-			# 	limit = {
-			# 		OR = {
-			# 			has_dlc = "Emperor" 
-			# 			has_dlc = "Rights of Man"
-			# 		}
-			# 	}
-			# 	NOT = { great_power_rank = 2 } 
-			# }
-			# total_development = 1500 
+			if = {
+				limit = {
+					exists = YUE
+					YUE = {
+						OR = {
+							AND = {
+								is_subject_of = MNG
+								OR = {
+									is_subject_of_type = vassal
+									is_subject_of_type = march
+								}
+							}
+							is_subject = no
+						}
+					}
+				}
+				YUE = {
+					is_at_war = no
+				}
+			}
+			if = {
+				limit = {
+					exists = WUU
+					WUU = {
+						OR = {
+							AND = {
+								is_subject_of = MNG
+								OR = {
+									is_subject_of_type = vassal
+									is_subject_of_type = march
+								}
+							}
+							is_subject = no
+						}
+					}
+				}
+				WUU = {
+					is_at_war = no
+				}
+			}
+			if = {
+				limit = {
+					exists = CDL
+					CDL = {
+						OR = {
+							AND = {
+								is_subject_of = MNG
+								OR = {
+									is_subject_of_type = vassal
+									is_subject_of_type = march
+								}
+							}
+							is_subject = no
+						}
+					}
+				}
+				CDL = {
+					is_at_war = no
+				}
+			}
 		}
 		effect = {
-			set_emperor_of_china = ROOT
-			# add_country_modifier = {
-			# 	name = era_of_the_great_dragon_modifier
-			# 	duration = -1 
-			# }
+			if = { 
+				limit = { is_emperor_of_china = yes } 
+				add_mandate = 20 
+			}
+			if = {
+				limit = {
+					exists = YUE
+					YUE = {
+						is_at_war = no
+						OR = {
+							AND = {
+								is_subject_of = MNG
+								OR = {
+									is_subject_of_type = vassal
+									is_subject_of_type = march
+								}
+							}
+							is_subject = no
+						}
+					}
+				}
+				add_casus_belli = {
+					target = YUE
+					type = cb_vassalize_mission
+					months = 180
+				}
+			}
+			else = {
+				add_prestige = 25
+				add_army_tradition = 10
+			}
+			if = {
+				limit = {
+					exists = WUU
+					WUU = {
+						is_at_war = no
+						OR = {
+							AND = {
+								is_subject_of = MNG
+								OR = {
+									is_subject_of_type = vassal
+									is_subject_of_type = march
+								}
+							}
+							is_subject = no
+						}
+					}
+				}
+				add_casus_belli = {
+					target = WUU
+					type = cb_vassalize_mission
+					months = 180
+				}
+			}
+			if = {
+				limit = {
+					exists = CDL
+					CDL = {
+						is_at_war = no
+						OR = {
+							AND = {
+								is_subject_of = MNG
+								OR = {
+									is_subject_of_type = vassal
+									is_subject_of_type = march
+								}
+							}
+							is_subject = no
+						}
+					}
+				}
+				add_casus_belli = {
+					target = CDL
+					type = cb_vassalize_mission
+					months = 180
+				}
+				if = {
+					limit = {
+						has_leader = "Wu Sangui"
+						CDL = { is_subject_of = ROOT } 
+					}
+					CDL = {
+						define_ruler = {
+							name = "Sangui"
+							dynasty = "Wu"
+							adm = 3
+							dip = 3
+							mil = 4
+						}
+						change_tag = CZH
+						on_change_tag_effect = yes
+					}
+					kill_leader = { type = "Wu Sangui" }
+				}
+			}
+			if = {	
+				limit = { 
+					has_dlc = "Rights of Man" 
+					NOT = { num_of_ruler_traits = { amount = 3 } }
+					is_emperor_of_china = yes 
+				}
+				add_ruler_personality = benevolent_personality
+			}
+			else = { add_dip_power = 50 }
 		}
 	}
 	
@@ -4681,7 +4842,7 @@ DOM_Qing_Missions_3_b = {
 			define_advisor = {
 				type = commandant 
 				skill = 3 
-				cost_multiplier = 0.75
+				cost_multiplier = 0.25 
 			}
 		}
 	}
@@ -5399,7 +5560,7 @@ DOM_Qing_Missions_4 = {
 	
 	mch_ensure_internal_stability = { 
 		icon = balance_the_estates
-		required_missions = { mch_issue_seven_grievances qng_formalize_ritual_practices }
+		required_missions = { qng_formalize_ritual_practices }
 		position = 4
 		trigger = {
 			has_adm_advisor_3 = yes 
@@ -5892,10 +6053,11 @@ DOM_Qing_Missions_4_b = {
 		position = 12
 		trigger = {
 			OR = { 
-				AND = { 
-					in_golden_age = yes 
-					monthly_income = 300 
-				}
+				# AND = { 
+				# 	in_golden_age = yes 
+				# 	monthly_income = 300 
+				# }
+				monthly_income = 300 
 				AND = {
 					grown_by_development = 1250
 					if = { 
@@ -5908,12 +6070,12 @@ DOM_Qing_Missions_4_b = {
 						NOT = { great_power_rank = 4 }
 					}
 				}
-				AND = { 
-					is_emperor_of_china = yes 
-					stability = 3 
-					imperial_mandate = 85
-					empire_of_china_num_reforms_passed = 8
-				}
+				# AND = { 
+				# 	is_emperor_of_china = yes 
+				# 	stability = 3 
+				# 	imperial_mandate = 85
+				# 	empire_of_china_num_reforms_passed = 8
+				# }
 			}
 		}
 		effect = {
@@ -6611,7 +6773,7 @@ DOM_Qing_Missions_5 = {
 	
 	mjz_mount_paektu = {
 		icon = mission_buddhist_monk_praying
-		required_missions = { mjz_break_through_korea }
+		required_missions = {  }
 		position = 2
 		provinces_to_highlight = {
 			province_id = 4201
@@ -6654,16 +6816,50 @@ DOM_Qing_Missions_5 = {
 		required_missions = { mjz_mount_paektu }
 		position = 3
 		trigger = {
+			OR = { 
+				custom_trigger_tooltip = {
+					tooltip = yellow_shamanism_tt
+					has_country_modifier = yellow_shamanism_modifier
+				}
+				custom_trigger_tooltip = {
+					tooltip = black_shamanism_tt
+					has_country_modifier = black_shamanism_modifier
+				}
+				AND = { 
+					#is_emperor_of_china = yes 
+					religion = confucianism 
+					harmony = 80 
+				}
+			}
 			religious_unity = 0.95 
 			stability = 1 
 		}
 		
-		effect = { 		
-			custom_tooltip = confucianism_reward_tt
+		effect = { 
+			custom_tooltip = yellow_shamanism_reward_tt
 			tooltip = { 
 				add_country_modifier = { 
-					name = mjz_formalized_confucian_practices_modifier 
-					duration = -1
+					name = mjz_formalized_yellow_shamanism_modifier 
+					duration = 9125 
+				}
+			}
+			
+			custom_tooltip = black_shamanism_reward_tt
+			tooltip = { 
+				add_country_modifier = { 
+					name = mjz_formalized_black_shamanism_modifier 
+					duration = 9125 
+				}
+			}
+			
+			custom_tooltip = confucianism_reward_tt
+			tooltip = { 
+				# add_country_modifier = { 
+				# 	name = mjz_formalized_confucian_practices_modifier 
+				# 	duration = -1
+				# }
+				country_event = {
+					id = kielak_events.4
 				}
 			}
 			
@@ -6684,9 +6880,12 @@ DOM_Qing_Missions_5 = {
 				}
 				else_if = { 
 					limit = { religion = confucianism }
-					add_country_modifier = { 
-						name = mjz_formalized_confucian_practices_modifier 
-						duration = -1
+					# add_country_modifier = { 
+					# 	name = mjz_formalized_confucian_practices_modifier 
+					# 	duration = -1
+					# }
+					country_event = {
+						id = kielak_events.4
 					}
 				}
 			}
@@ -6899,7 +7098,7 @@ ming_missions_5_b = {
 					limit = { mission_completed = mng_repeal_haijin_policy }
 					define_advisor = {
 						type = trader 
-						cost_multiplier = 0.75
+						cost_multiplier = 0.25
 					}
 					if = { 
 						limit = { 
@@ -7863,7 +8062,7 @@ kielak_china_slot_unique_shun_missions_1 = {
 
 
 	shun_mission_1_4 = {
-		icon = mission_unite_home_region
+		icon = mission_buddhist_monk_praying
 		required_missions = {
 			shun_mission_2_3
 		}
@@ -7908,7 +8107,7 @@ kielak_china_slot_unique_shun_missions_1 = {
 	}
 
 	shun_mission_1_5 = {
-		icon = mission_unite_home_region
+		icon = mng_pure_land
 		required_missions = {
 			shun_mission_1_4
 		}
@@ -7949,7 +8148,7 @@ kielak_china_slot_unique_shun_missions_2 = {
 
 
 	shun_mission_2_3 = {
-		icon = mission_unite_home_region
+		icon = mission_non-western_cavalry_raid
 		position = 1
 		provinces_to_highlight = {
 			region = mongolia_region
@@ -8016,7 +8215,7 @@ kielak_china_slot_unique_yue_missions_1 = {
 
 
 	yue_mission_1_4 = {
-		icon = mission_unite_home_region
+		icon = indonesian_trade
 		required_missions = {
 			yue_mission_2_3
 		}
@@ -8049,7 +8248,7 @@ kielak_china_slot_unique_yue_missions_1 = {
 	}
 
 	yue_mission_1_5 = {
-		icon = mission_unite_home_region
+		icon = mission_colonize_the_caribbean
 		required_missions = {
 			yue_mission_1_4
 		}
@@ -8101,7 +8300,7 @@ kielak_china_slot_unique_yue_missions_2 = {
 
 
 	yue_mission_2_3 = {
-		icon = mission_unite_home_region
+		icon = mission_trade_with_japan
 		position = 1
 		provinces_to_highlight = {
 			region = mongolia_region
@@ -8185,7 +8384,7 @@ kielak_china_slot_unique_qic_missions_1 = {
 
 
 	qic_mission_1_4 = {
-		icon = mission_unite_home_region
+		icon = mng_nomadic_frontier
 		required_missions = {
 			qic_mission_2_3
 		}
@@ -8214,7 +8413,7 @@ kielak_china_slot_unique_qic_missions_1 = {
 	}
 
 	qic_mission_1_5 = {
-		icon = mission_unite_home_region
+		icon = qng_balance_mandate
 		required_missions = {
 			qic_mission_1_4
 		}
@@ -8268,7 +8467,7 @@ kielak_china_slot_unique_qic_missions_2 = {
 
 
 	qic_mission_2_3 = {
-		icon = mission_unite_home_region
+		icon = mng_thirteen_provinces
 		position = 1
 		provinces_to_highlight = {
 			#region = mongolia_region
@@ -8292,6 +8491,188 @@ kielak_china_slot_unique_qic_missions_2 = {
 					duration = -1
 				}
 			}
+		}
+	}
+
+
+
+
+
+}
+
+kielak_china_slot_unique_wu_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = WUU
+
+	}
+
+
+	wu_mission_1_4 = {
+		icon = mng_shengshi_zhishi
+		required_missions = {
+			wu_mission_2_3
+		}
+		provinces_to_highlight = {
+			area = south_jiangsu_area
+		}
+
+		position = 6
+
+		trigger = {
+			AND = {
+				south_jiangsu_area = {
+					type = all
+					owned_by = ROOT
+				}
+				SZH = {
+					exists = no
+				}
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = kielak_events.7
+			}
+		}
+	}
+
+	wu_mission_1_5 = {
+		icon = mng_jing_hang_grand_canal
+		required_missions = {
+			wu_mission_1_4
+		}
+		position = 7
+		trigger = {
+			owns = 1821
+			owns = 1822
+			owns = 2145
+			owns = 684
+
+			1821 = {
+				has_great_project = {
+					type = grand_canal_4
+					tier = 3
+				}
+			}
+			
+			1822 = {
+				has_great_project = {
+					type = grand_canal_2
+					tier = 3
+				}
+			}
+
+			2145 = {
+				has_great_project = {
+					type = grand_canal_3
+					tier = 3
+				}
+			}
+			684 = {
+				has_great_project = {
+					type = grand_canal_1
+					tier = 3
+				}
+			}
+
+			
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = kielak_wu_grand_canal_master
+				duration = -1
+			}
+		}
+	}
+
+
+
+
+}
+
+kielak_china_slot_unique_wu_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = WUU
+
+	}
+
+
+	wu_mission_2_3 = {
+		icon = mng_survey_ocean_shores
+		position = 1
+		provinces_to_highlight = {
+			area = fujian_area
+		}
+
+		trigger = {
+
+			OR = {
+				MIN= {
+					is_subject_of = ROOT
+					fujian_area = {
+						type = all
+						owned_by = THIS
+					}
+				}
+
+				fujian_area = {
+					owned_by = ROOT
+					is_core = ROOT
+				}
+			}
+			
+		}
+
+		effect = {
+			custom_tooltip = "If we complete this mission via subject, we will get an event that lets us decide between converting some of our subjects tax and production development into manpower development in our own provinces, to fortify our subjects borders, or to gain cores on its lands. If we complete this mission through conquest the whole state will produce tea, produce more goods and be cheaper to develop."
+			if = {
+				limit = { 
+					MIN= {
+						is_subject_of = ROOT
+						fujian_area = {
+							type = all
+							owned_by = THIS
+						}
+					}
+				}
+
+				country_event = {
+					id = kielak_events.6
+				}
+			}
+
+			else_if = {
+				limit = { 
+					fujian_area = {
+						type = all
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+
+				2153 = {
+					change_trade_goods = tea
+				}
+
+				every_owned_province = {
+					limit = {
+						area = fujian_area
+					}
+					add_province_modifier = {
+						name = kielak_dragons_eylashes_tea
+						duration = -1
+					}
+				}
+			}
+			
 		}
 	}
 

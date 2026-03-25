@@ -527,12 +527,25 @@ japanse_missions_the_empire = {
 		icon = mission_japanese_fort
 		
 		trigger = {
-			grown_by_states = 2
+			ai=no
+			#grown_by_states = 2
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = japan_region
+				value = 10
+			}
 		}
 		effect = {
 			add_country_modifier = {
 				name = JAP_sengoku_contender
 				duration = 7300
+			}
+
+			japan_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
 			}
 		}
 	}
@@ -746,27 +759,13 @@ japanse_missions_domestic = {
 		icon = mission_japanese_samurai
 		required_missions = { }
 		trigger = {
-			ai = no
-			army_tradition = 1
+			army_tradition = 40
 		}
 		effect = {
-				  japan_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			   }
 			add_country_modifier = {
 				name = "strengthened_bushido"
 				duration = 7300
 			}
-			define_general = {
-            shock = 3
-            fire = 3
-            manuever = 2
-            siege = 3
-}
 		}
 	}
 	
@@ -857,8 +856,17 @@ japanse_missions_domestic = {
 			}
 		}
 		effect = {
-			add_stability = 1
-			state_maintenance_modifier = -0.5
+			1015 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
 		}
 	}
 	JAP_construct_the_gokaido = {

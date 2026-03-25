@@ -830,7 +830,7 @@ lubeck_missions_2 = {
 					}
 				}
 				4742 = { change_trade_goods = gold }
-				45 = { 
+				capital_scope = { 
 					change_trade_goods = gold 
 					remove_province_modifier = hsa_lubeck_herring_market_modifier2
 					remove_province_modifier = hsa_lubeck_herring_market_modifier
@@ -849,7 +849,7 @@ lubeck_missions_2 = {
 				}
 			}
 			else = {
-				45 = { 
+				capital_scope = { 
 					add_base_tax = 2 
 					add_base_production = 2 
 					add_base_manpower = 2
@@ -1157,7 +1157,7 @@ lubeck_missions_3 = {
 				type = treasurer
 				skill = 3 
 				culture = tuscan
-				cost_multiplier = 0.75
+				cost_multiplier = 0.3
 				name = "Luca Pacioli" 
 			}
 			add_adm_power = 100 
@@ -2078,10 +2078,10 @@ lubeck_missions_5 = {
 				has_flagship = yes 
 			}
 			else = { navy_tradition = 60 }
-			custom_trigger_tooltip = {
-				tooltip = hsa_enacted_adler_von_lubeck_decision_tt
-				has_country_flag = adler_built
-			}
+			#custom_trigger_tooltip = {
+			#	tooltip = hsa_enacted_adler_von_lubeck_decision_tt
+			#	has_country_flag = adler_built
+			#}
 			num_of_heavy_ship = 25
 			custom_trigger_tooltip = {
 				tooltip = hsa_largest_fleet_from_rivals_or_naval_ideas_tt

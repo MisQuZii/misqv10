@@ -1840,7 +1840,7 @@ gbr_new_world_dominance = {	#Permanent
 	trade_efficiency = 0.1
 }
 
-gbr_wwwwwwwwd_civil_war = {	#Permanent
+gbr_resolved_civil_war = {	#Permanent
 	legitimacy = 0.5
 	republican_tradition = 0.3
 	devotion = 0.5
@@ -1866,7 +1866,7 @@ ave_anglo_french_imperium = {	#Permanent
 
 gbr_end_of_the_villeinage = {
 	global_prosperity_growth = 0.25
-	global_tax_modifier = 0.15
+	development_cost = -0.1
 }
 
 gbr_exploration_spirit = {
@@ -2045,7 +2045,8 @@ spa_hispaniola_discovered = {
 }
 
 spa_rb_morale = {
-	allowed_tercio_fraction = 0.3
+	land_morale = 0.05
+	naval_morale = 0.05
 }
 
 spa_rb_culture_shift = {
@@ -2148,7 +2149,7 @@ fra_colonial_enthusiasm_2 = {
 # Omani missions
 
 oma_buildforces_mod = {
-	siege_ability = 0.1
+	land_morale = 0.05
 	recover_army_morale_speed = 0.1
 }
 
@@ -2161,16 +2162,13 @@ oma_maritime_mod = {
 
 three_koreas_mod = {
 	local_tax_modifier = 0.1
-	#expand_infrastructure_cost_modifier = -0.2
-	#global_trade_goods_size_modifier = 0.2
-	local_build_cost = -0.1
+	local_development_cost = -0.1
 }
 
 # Orissan Missions
 
 ori_coastal_trade = {
-	expand_infrastructure_cost_modifier = -0.2
-	global_trade_goods_size_modifier = 0.2
+	trade_efficiency = 0.15
 }
 
 ori_diamonds_golconda = {
@@ -2217,12 +2215,7 @@ strengthened_shinobi = {
 	global_spy_defence = 0.33
 }
 strengthened_bushido = {
-	core_creation = -0.15
-	province_warscore_cost = -0.20
-	manpower_recovery_speed = 0.30
-	war_exhaustion = -0.3
-	global_monthly_devastation = -0.5
-	advisor_cost = -0.2
+	discipline = 0.015
 }
 divine_wind_modifier = {
 	navy_tradition = 0.25
@@ -2954,13 +2947,14 @@ converted_bengal = {
 }
 
 mint_towns_bng = {
-	production_efficiency = 0.1
-	inflation_reduction = 0.1
+	production_efficiency = 0.2
+	inflation_reduction = 0.2
 }
 
 bng_textiles = {
 	dip_tech_cost_modifier = -0.1
 	global_institution_spread = 0.2
+	global_trade_goods_size_modifier = 0.1
 }
 
 bng_sufi_mystic_settlers = {
@@ -2976,6 +2970,7 @@ bng_proto_industrial_shipyards = {
 
 garjat_fealty = {
 	diplomatic_reputation = 2
+	vassal_income = 0.15
 }
 
 bng_orissa_conquest = {
@@ -4325,8 +4320,7 @@ JAP_sengoku_contender = {
 # New Korean Missions
 
 hwacha_firepower_bonus = {
-	fire_damage = 0.10
-	infantry_fire = 0.25
+	fire_damage = 0.25
 }
 
 kor_conquest_manchuria = {
@@ -4396,7 +4390,7 @@ korea_in_balance = {
 }
 
 kor_developed_capital = {
-	advisor_cost = -0.1
+	advisor_cost = -0.20
 	legitimacy = 0.5
 }
 
@@ -4417,7 +4411,9 @@ kor_manchurian_expedition = {
 }
 
 kor_factional_upheaval = {
-   manpower_recovery_speed = 0.2
+	church_loyalty_modifier = -0.1
+	nobles_loyalty_modifier = -0.1
+	burghers_loyalty_modifier = -0.1
 }
 
 kor_factional_unity = {
@@ -4452,8 +4448,9 @@ kni_ark_of_the_covenant = {
 }
 
 kni_ten_commandments = {
-	reduced_liberty_desire_on_same_continent = 20
-	vassal_forcelimit_bonus = 0.5
+	papal_influence = 1
+	monthly_fervor_increase = 1
+	church_power_modifier = 0.5
 }
 
 malta_fort = {
@@ -6280,9 +6277,7 @@ malay_tolerance_own = {
 }
 
 malay_united_nusantara = {
-	global_sailors_modifier = 0.5
-	discipline = 0.1
-	is_marine_modifier = yes
+	infantry_power = 0.1
 }
 
 malay_military_domination = {
@@ -8907,7 +8902,7 @@ mjz_formalized_black_shamanism_modifier = {
 	tolerance_own = 2 
 }
 mjz_formalized_confucian_practices_modifier = {
-	harmonization_speed = 0.1
+	imperial_mandate = 0.05
 }
 mjz_horde_diplomatic_ties_modifier = {
 	horde_unity = 0.5
@@ -9675,7 +9670,7 @@ jap_shinto_warriors_modifier = {
 	manpower_in_true_faith_provinces = 0.1
 	enforce_religion_cost = -0.5
 	missionaries = 1 
-	land_morale = 0.05
+	land_morale = 0.15
 	religion = yes
 }
 
@@ -9757,8 +9752,8 @@ jap_firearm_production_modifier = {
 }
 
 jap_high_quality_weapons_modifier = {
-	 special_unit_forcelimit = 0.4
-	 infantry_power = 0.1
+	army_tradition = 1 
+	global_regiment_cost = -0.05
 }
 
 jap_trade_west_modifier = {
@@ -9993,9 +9988,8 @@ ara_victory_over_provence_modifier = {
 }
 
 ara_crushed_the_catalan_estates_modifier = {
-	vassal_forcelimit_bonus = 1
-	reduced_liberty_desire_on_same_continent = 25
-	
+	harsh_treatment_cost = -0.25
+	all_estate_loyalty_equilibrium = 0.1
 }
 
 ara_unshackled_modifier = {
@@ -10642,6 +10636,7 @@ turkoman_era_of_white_sheep2 = {
 turkoman_ended_the_ayyubids = {
 	diplomatic_reputation = 1
 	prestige = 1
+	global_tax_income = 36
 }
 
 turkmen_new_turkoman_power = {
@@ -13864,7 +13859,7 @@ boh_premyslid_heritage_2 = {
 boh_premyslid_heritage_3 = {
 	governing_capacity = 200
 	diplomatic_annexation_cost = -0.15
-	global_tax_modifier = 0.10
+	possible_policy = 1
 }
 
 czech_nationalism = {

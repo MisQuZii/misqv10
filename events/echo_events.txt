@@ -8,17 +8,17 @@ country_event = {
     title = echo.2.t
     desc = echo.2.d
     picture = COURT_eventPicture
-    
+
     trigger = {
-		great_power_rank = 6	
+		great_power_rank = 5
 		adm_tech = 5
-	    NOT = { is_lacking_institutions = yes }
+		
 		NOT = {
 			has_country_modifier = echo_development
 		}	
     }
     mean_time_to_happen = {
-        months = 24
+        months = 120
     }
 	
     option = {
@@ -177,73 +177,59 @@ country_event = {
 	}
 }
 country_event = { #Recruit Adm Advisor
-    id = echo.10
-    title = echo.10.title
-    desc = echo.10.desc
-    picture = AULIC_COUNCIL_eventPicture
+	id = echo.10
+	title = echo.10.title
+	desc = echo.10.desc
+	picture = AULIC_COUNCIL_eventPicture
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
-    option = {
-        name = echo.10.a
-        hire_advisor = {
-            type = philosopher
-            skill = 1
-        }
-        add_treasury = -33
-    }
-    option = {
-        name = echo.10.b
-        hire_advisor = {
-            type = natural_scientist
-            skill = 1
-        }
-        add_treasury = -33
-    }
-    option = {
-        name = echo.10.c
-        hire_advisor = {
-            type = artist
-            skill = 1
-        }
-        add_treasury = -33
-    }
-    option = {
-        name = echo.10.d
-        hire_advisor = {
-            type = treasurer
-            skill = 1
-        }
-        add_treasury = -33
-    }
-    option = {
-        name = echo.10.e
-        hire_advisor = {
-            type = theologian
-            skill = 1
-        }
-        add_treasury = -33
-    }
-    option = {
-        name = echo.10.f
-        hire_advisor = {
-            type = master_of_mint
-            skill = 1
-        }
-        add_treasury = -33
-    }
-    option = {
-        name = echo.10.g
-        hire_advisor = {
-            type = inquisitor
-            skill = 1
-        }
-        add_treasury = -33
-    }
-    option = {
-        name = echo.10.h
-        #nothing
-    }
+	option = {
+		name = echo.10.a
+
+		add_adm_power = -25
+		create_advisor = philosopher
+	}
+	option = {
+		name = echo.10.b
+
+		add_adm_power = -25
+		create_advisor = natural_scientist
+	}
+	option = {
+		name = echo.10.c
+
+		add_adm_power = -25
+		create_advisor = artist
+	}
+	option = {
+		name = echo.10.d
+
+		add_adm_power = -25
+		create_advisor = treasurer
+	}
+	option = {
+		name = echo.10.e
+
+		add_adm_power = -25
+		create_advisor = theologian 
+	}
+	option = {
+		name = echo.10.f
+
+		add_adm_power = -25
+		create_advisor = master_of_mint
+	}
+	option = {
+		name = echo.10.g
+
+		add_adm_power = -25
+		create_advisor = inquisitor
+	}
+	option = {
+		name = echo.10.h
+		#nothing
+	}
 }
 
 country_event = { #Recruit Dip advisor
@@ -257,65 +243,44 @@ country_event = { #Recruit Dip advisor
 	option = {
 		name = echo.11.a
 
-		             hire_advisor = {
-            type = statesman
-            skill = 1
-        }
-        add_treasury = -33
+		add_dip_power = -25
+		create_advisor = statesman
 	}
 	option = {
 		name = echo.11.b
 
-		             hire_advisor = {
-            type = naval_reformer
-            skill = 1
-        }
-        add_treasury = -33
+		add_dip_power = -25
+		create_advisor = naval_reformer
 	}
 	option = {
 		name = echo.11.c
 
-		             hire_advisor = {
-            type = trader
-            skill = 1
-        }
-        add_treasury = -33
+		add_dip_power = -25
+		create_advisor = trader
 	}
 	option = {
 		name = echo.11.d
 
-		             hire_advisor = {
-            type = spymaster
-            skill = 1
-        }
-        add_treasury = -33
+		add_dip_power = -25
+		create_advisor = spymaster
 	}
 	option = {
 		name = echo.11.e 
 
-		             hire_advisor = {
-            type = colonial_governor
-            skill = 1
-        }
-        add_treasury = -33
+		add_dip_power = -25
+		create_advisor = colonial_governor
 	}
 	option = {
 		name = echo.11.f
 
-		             hire_advisor = {
-            type = diplomat
-            skill = 1
-        }
-        add_treasury = -33
+		add_dip_power = -25
+		create_advisor = diplomat
 	}
 	option = {
 		name = echo.11.g
 
-		             hire_advisor = {
-            type = navigator
-            skill = 1
-        }
-        add_treasury = -33
+		add_dip_power = -25
+		create_advisor = navigator
 	}
 	option = {
 		name = echo.11.h
@@ -333,137 +298,72 @@ country_event = { #Recruit Mil Advisor
 
 	option = {
 		name = echo.12.a
-             hire_advisor = {
-            type = army_reformer
-            skill = 1
-        }
-        add_treasury = -33
-    }
 
+		add_mil_power = -25
+		create_advisor = army_reformer
+	}
 	option = {
 		name = echo.12.b
-             hire_advisor = {
-            type = army_organiser
-            skill = 1
-        }
-        add_treasury = -33
+
+		add_mil_power = -25
+		create_advisor = army_organiser
 	}
 	option = {
 		name = echo.12.c
-             hire_advisor = {
-            type = commandant
-            skill = 1
-        }
-        add_treasury = -33
+
+		add_mil_power = -25
+		create_advisor = commandant
 	}
 	option = {
 		name = echo.12.d
 
-		             hire_advisor = {
-            type = quartermaster
-            skill = 1
-        }
-        add_treasury = -33
+		add_mil_power = -25
+		create_advisor = quartermaster
 	}
 	option = {
 		name = echo.12.e
 
-		             hire_advisor = {
-            type = recruitmaster
-            skill = 1
-        }
-        add_treasury = -33
+		add_mil_power = -25
+		create_advisor = recruitmaster
 	}
 	option = {
 		name = echo.12.f
 
-		             hire_advisor = {
-            type = fortification_expert
-            skill = 1
-        }
-        add_treasury = -33
+		add_mil_power = -25
+		create_advisor = fortification_expert
 	}
 	option = {
 		name = echo.12.g
 
-		             hire_advisor = {
-            type = grand_captain
-            skill = 1
-        }
-        add_treasury = -33
+		add_mil_power = -25
+		create_advisor = grand_captain
 	}
 	option = {
 		name = echo.12.h
 		#nothing
 	}
-option = {
-		name = gecko.11.d
-		
-		             hire_advisor = {
-            type = gc_drill_master
-            skill = 1
-        }
-        add_treasury = -33	
-	}
-	option = {
-		name = gecko.11.e
-		
-		             hire_advisor = {
-            type = siege_specialist
-            skill = 1
-        }
-        add_treasury = -33
-	}
-	option = {
-		name = gecko.11.f
-		
-		             hire_advisor = {
-            type = infantry_leader
-            skill = 1
-        }
-        add_treasury = -33		
-	}
-	option = {
-		name = gecko.11.g
-		
-		             hire_advisor = {
-            type = cavalry_leader
-            skill = 1
-        }
-        add_treasury = -33
-	}
-	option = {
-		name = gecko.11.k
-		
-		             hire_advisor = {
-            type = gc_arty_officer
-            skill = 1
-        }
-        add_treasury = -33	
-	}
-
 }
 
-# ###remove we stand alone dev event####
-# country_event = {
-#     id = echo.13
-#     title = echo.13.t
-#     desc = echo.13.d
-#     picture = COURT_eventPicture
-# 	hidden = yes
-#     trigger = {
-# 			great_power_rank = 4	
-# 			has_country_modifier = echo_development	
-#     }
-#     mean_time_to_happen = {
-#         months = 1
-#     }
+###remove we stand alone dev event####
+country_event = {
+    id = echo.13
+    title = echo.13.t
+    desc = echo.13.d
+    picture = COURT_eventPicture
+	hidden = yes
+    trigger = {
+			is_great_power = yes	
+			has_country_modifier = echo_development	
+    }
+    mean_time_to_happen = {
+        months = 1
+    }
 	
-#     option = {
-# 		name = echo.2.a
-# 		remove_country_modifier = echo_development
-# 	}
-# }
+    option = {
+		name = echo.2.a
+		remove_country_modifier = echo_development
+	}
+}
 
 country_event = {
     id = echo.14 #
@@ -480,6 +380,9 @@ country_event = {
 			loyalty = 10
 		}
 		reapply_estate_privilege = { privilege = estate_burghers_financial_demand }
+		hidden_effect = {
+			remove_country_modifier = kielak_ipa_anti_abuse_debuff
+		}
 	}
 	option = {
 		name = echo.14.b
@@ -637,3 +540,21 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = echo.23
+	title = echo.23.t
+	desc = echo.23.d
+	picture = BATTLE_eventPicture
+	hidden = yes
+	trigger = {
+		is_march = yes
+		NOT = {has_country_flag = march_ideas_taken}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	option = {
+		swap_free_idea_group = yes
+		set_country_flag = march_ideas_taken
+	}
+}

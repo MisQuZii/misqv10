@@ -3,7 +3,7 @@ illius_qui_se_pro_divini = {
         crusades_after_age_limit
     }
 	modifier = {
-		expand_infrastructure_cost_modifier = -0.15
+		ae_impact = -0.1
 	}
 	potential = {
 	}
@@ -52,7 +52,8 @@ praeclara_carissimi = {
 
 immensa_aeterni_dei = {
     modifier = {
-        advisor_cost = -0.1
+        embracement_cost = -0.1
+        global_institution_spread = 0.25
     }
     mechanics = {
         cardinals_spread_institution
@@ -73,7 +74,7 @@ immensa_aeterni_dei = {
 
 libertas_ecclesiae = {
     modifier = {
-        technology_cost = -0.1
+        technology_cost = -0.05
     }
 	potential = {
 	}

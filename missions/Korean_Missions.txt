@@ -17,11 +17,20 @@ korea_nomad_group = {
 			factor = 0.75
 		}
 		
+		provinces_to_highlight = {
+			province_id = 4201
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
 		
 		trigger = {
-             stability = 1
+			4201 = {
+				owned_by = ROOT
+				is_core = ROOT
 			}
-		
+		}
 		
 		effect = {
 			add_prestige = 15
@@ -57,67 +66,10 @@ korea_nomad_group = {
 			}
 		}
 	}
-
-		goguryeo_restoration = {
-		icon = mission_conquer_50_development
-		required_missions = { kor_conquer_changbai }
-		position = 2
-		
-		provinces_to_highlight = {
-			OR = {
-				area = korea_region
-			}
-
-		}
-		
-		trigger = { #not including Furdan is deliberate as it isn't on the maps of historical Goguryeo
-			korea_region = {
-				type = all
-				owned_by = root
-				is_core = root
-			}
-		}
-		
-		effect = {
-		   duration = 7650
-			add_prestige = 25
-			korea_region = {
-				limit = {
-					owned_by = ROOT
-				}
-				add_province_modifier = {
-					name = "three_koreas_mod"
-					duration = 10950
-				}
-			}
-			add_country_modifier = {
-				name = ori_coastal_trade
-				duration = 7650
-			 }
-			manchuria_region = {
-				limit = {
-					owned_by = ROOT
-					NOT = { culture = korean }
-					NOT = { culture = korean_new }
-				}
-				add_province_modifier = {
-					name = "kor_manchurian_korea"
-					duration = 36500
-				}
-			}
-			manchuria_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = root
-			}
-		}
-	}
 	
 	kor_seize_southern_manchuria = {
 		icon = mission_manchu_warrior
-		required_missions = { goguryeo_restoration }
+		required_missions = { kor_conquer_changbai }
 		position = 3
 		
 		ai_weight = {
@@ -187,7 +139,72 @@ korea_nomad_group = {
 		}
 	}
 	
-
+	goguryeo_restoration = {
+		icon = mission_conquer_50_development
+		required_missions = { kor_seize_southern_manchuria }
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				area = ningguta_area
+				area = jilin_area
+				area = liaoning_area
+			}
+			OR = {
+				NOT = { owned_by = root }
+				NOT = { is_core = root }
+			}
+		}
+		
+		trigger = { #not including Furdan is deliberate as it isn't on the maps of historical Goguryeo
+			ningguta_area = {
+				type = all
+				owned_by = root
+				is_core = root
+			}
+			jilin_area = {
+				type = all
+				owned_by = root
+				is_core = root
+			}
+			liaoning_area = {
+				type = all
+				owned_by = root
+				is_core = root
+			}
+		}
+		
+		effect = {
+			add_prestige = 25
+			korea_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = "three_koreas_mod"
+					duration = 18250
+				}
+			}
+			manchuria_region = {
+				limit = {
+					owned_by = ROOT
+					NOT = { culture = korean }
+					NOT = { culture = korean_new }
+				}
+				add_province_modifier = {
+					name = "kor_manchurian_korea"
+					duration = 18250
+				}
+			}
+			manchuria_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = root
+			}
+		}
+	}
 
 	kor_end_manchuria = {
 		icon = mission_steppe_warriors
@@ -371,10 +388,17 @@ kor_military_missions_2 = {
 		position = 2
 		required_missions = { kor_build_army_mission }
 		trigger = {
-				has_global_modifier_value = {
+			has_global_modifier_value = {
 					which = discipline
 					value = 0.05
-			}
+				}
+			# custom_trigger_tooltip = {
+			# 	tooltip = have_at_least_5_more_discipline
+			# 	has_global_modifier_value = {
+			# 		which = discipline
+			# 		value = 0.05
+			# 	}
+			# }
 		}
 		effect = {
 			capital_scope = { add_base_manpower = 1 }
@@ -387,31 +411,22 @@ kor_military_missions_2 = {
 		icon = mission_asian_cannon
 		position = 3
 		required_missions = { kor_harness_seokleon }
-		provinces_to_highlight = {
-			OR = {
-					area = taiwan_area
-					area = luzon_area
-					area = southern_luzon_area
-					area = spice_islands_area
-			}
-			NOT = { country_or_non_sovereign_subject_holds = root }
-		}
 		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+			num_of_artillery = 30
+			#artillery_fraction = 0.3
+			num_of_owned_provinces_with = {
 				value = 8
 				OR = {
-					area = taiwan_area
-					area = luzon_area
-					area = southern_luzon_area
-					area = spice_islands_area
+					has_building = regimental_camp
+					has_building = conscription_center
 				}
+			}
 		}
-	 }
 		effect = {
 			add_mil_power = 50
 			add_country_modifier = {
 				name = hwacha_firepower_bonus
-				duration = -1
+				duration = 10950
 			}
 		}
 	}
@@ -535,7 +550,7 @@ korea_conquer_china_group = {
 						NOT = {
 							num_of_owned_provinces_with = {
 								superregion = china_superregion
-								value = 15
+								value = 30
 							}
 						}
 					}
@@ -743,7 +758,6 @@ kor_fortify_missions = {
 					province_id = 2742
 				}
 				OR = {
-					has_building = fort_15th
 					has_building = fort_16th
 					has_building = fort_17th
 					has_building = fort_18th
@@ -802,8 +816,15 @@ kor_fortify_missions = {
 		
 		trigger = {
 			num_of_owned_provinces_with = {
-				value = 1
-				has_building = fort_15th
+				value = 5
+
+				OR = {
+					has_building = fort_15th
+					has_building = fort_16th
+					has_building = fort_17th
+					has_building = fort_18th
+				}
+				
 			}
 		}
 		effect = {
@@ -1097,7 +1118,10 @@ kor_turtle_ships_tree = {
 		required_missions = { kor_japanese_piracy }
 
 		trigger = {
-         num_of_galley = 30
+			has_global_modifier_value = {
+				which = ship_durability
+				value = 0.025
+			}
 		}
 		effect = {
 			add_country_modifier = {
@@ -1244,7 +1268,7 @@ kor_harmony_with_japan = {
 				type = theologian
 				religion = shinto
 				skill = 3
-				cost_multiplier = 0.75
+				cost_multiplier = 0.25
 			}
 		}
 	}
@@ -2007,17 +2031,17 @@ korean_missions_eoc_2 = {
 			tooltip = {
 				define_advisor = {
 					type = natural_scientist
-					cost_multiplier = 0.75
+					cost_multiplier = 0.33 
 					skill = 2
 				}
 				define_advisor = {
 					type = trader
-					cost_multiplier = 0.75
+					cost_multiplier = 0.33
 					skill = 2
 				}
 				define_advisor = {
 					type = quartermaster
-					cost_multiplier = 0.75
+					cost_multiplier = 0.33
 					skill = 2
 				}
 			}
@@ -2029,17 +2053,17 @@ korean_missions_eoc_2 = {
 				else = { 
 					define_advisor = {
 						type = natural_scientist
-						cost_multiplier = 0.75
+						cost_multiplier = 0.33 
 						skill = 2
 					}
 					define_advisor = {
 						type = trader
-						cost_multiplier = 0.75
+						cost_multiplier = 0.33
 						skill = 2
 					}
 					define_advisor = {
 						type = quartermaster
-						cost_multiplier = 0.75
+						cost_multiplier = 0.33
 						skill = 2
 					}
 				}
@@ -2994,7 +3018,7 @@ korean_missions_eoc_5 = {
 			tooltip = {
 				define_advisor = {
 					type = trader 
-					cost_multiplier = 0.75
+					cost_multiplier = 0.1 
 				}
 				if = { 
 					limit = { 
@@ -3012,7 +3036,7 @@ korean_missions_eoc_5 = {
 					limit = { mission_completed = mng_repeal_haijin_policy }
 					define_advisor = {
 						type = trader 
-						cost_multiplier = 0.75
+						cost_multiplier = 0.1 
 					}
 					if = { 
 						limit = { 

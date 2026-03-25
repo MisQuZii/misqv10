@@ -12,7 +12,6 @@ capital = 149 # Edirne
 national_focus = MIL
 add_army_professionalism = 0.1
 religious_school = hanafi_school
-add_manpower = 10
 
 change_estate_land_share = {
 	estate = estate_church
@@ -42,7 +41,7 @@ change_estate_land_share = {
 	
 1444.1.1 = {
 	monarch = {
-		name = "Mehmet II Fatih"
+		name = "Mousa II Fatih"
 		dynasty = Osmanoglu
 		birth_date = 1432.3.30
 		adm = 6

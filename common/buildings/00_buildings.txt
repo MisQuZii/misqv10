@@ -445,6 +445,7 @@ shipyard = {
 		has_port = yes
 	}
 	modifier = {
+		local_sailors_modifier = 1
 		naval_forcelimit = 2
 		ship_recruit_speed = -0.25
 		local_ship_repair = 0.25
@@ -780,7 +781,8 @@ coastal_defence = {
 		has_port = yes
 	}
 	modifier = {
-		blockade_force_required = 0.5
+		blockade_force_required = 0.05
+		hostile_disembark_speed = 1.0
 		block_slave_raid = yes
 	}
 
@@ -802,16 +804,15 @@ coastal_defence = {
 # Tier 2, 16th Century Buildings
 ################################################
 courthouse = {
-	cost = 80
+	cost = 100
 	time = 12
 	modifier = {
 		#local_state_maintenance_modifier = -0.1
 		local_autonomy = -0.1
+		local_governing_cost = -0.125
+		local_governing_cost_increase = -5
 		local_friendly_movement_speed = 0.1
 		allowed_num_of_buildings = 1
-		local_tax_modifier = 0.1
-		local_governing_cost = -0.15
-		local_governing_cost_increase = -2
 	}
 	on_built = {
 		bastard_dev_cost_terrain_add_from_buildings = yes
@@ -851,14 +852,14 @@ courthouse = {
 }
 
 dock = {
-	cost = 80
+	cost = 100
 	time = 12
 	build_trigger = {
 		has_port = yes
 	}
 	modifier = {
-		allowed_num_of_buildings = 1
-		local_sailors_modifier = 0.5
+		trade_value_modifier = 0.15
+		trade_value = 0.1
 		local_has_man_of_war = yes
 		local_has_galleass = yes
 	}
@@ -938,7 +939,7 @@ dock = {
 }
 
 regimental_camp = {
-	cost = 100
+	cost = 150
 	time = 12
 	modifier = {
 		land_forcelimit = 0.75
@@ -1307,7 +1308,7 @@ naval_battery = {
 		has_port = yes
 	}
 	modifier = {
-		blockade_force_required = 1.0
+		blockade_force_required = 0.01
 		hostile_disembark_speed = 2.0
 		hostile_fleet_attrition = 5
 		block_slave_raid = yes
@@ -1507,55 +1508,27 @@ cathedral = {
 
 
 university = {
-	cost = 1200
-	time = 24
-	one_per_area = yes
+	cost = 150
+	time = 12
 	modifier = {
 		local_development_cost = -0.10
-	}
-    build_trigger = {
-		development = 25
-		NOT = {
-			area_for_scope_province = {
-				owner = {
-					tag = ROOT
-				}
-				OR = {
-					has_building = university
-					has_construction = university
-				}
-			}
-		}
-	}
-	
-	keep_trigger = {
-		NOT = {
-			area_for_scope_province = {
-				NOT = { province_id = root }
-				owner = {
-					tag = ROOT
-				}
-				OR = {
-					has_building = university
-					has_construction = university
-				}
-			}
-		}
+		allowed_num_of_buildings = 1
 	}
 
 	on_built = {
-		area = {
-			add_province_modifier = {
-				name = misquzii_state_dev
-				duration = -1
-			}
+		bastard_dev_cost_add_from_buildings = yes
+		add_development_from_building = {
+			building = university
+			type = tax
+			value = 2
 		}
 	}
 	on_destroyed = {
-		area = {
-			remove_province_modifier = {
-				name = misquzii_state_dev
-			}
+		bastard_dev_cost_remove_from_buildings = yes
+		remove_development_from_building = {
+			building = university
+			type = tax
+			value = 2
 		}
 	}
 	on_obsolete = {
@@ -1703,7 +1676,7 @@ grand_shipyard = {
 		local_ship_cost = -0.20
 		local_has_man_of_war = yes
 		local_has_galleass = yes
-		local_sailors_modifier = 1
+		local_sailors_modifier = 2
 	}
 
 	on_built = {
@@ -2141,13 +2114,13 @@ fort_17th = {
 # Tier 4, 18th Century Buildings
 ################################################
 stock_exchange = {
-	cost = 4000
+	cost = 400
 	time = 12
-	one_per_country = yes
-	potential = {is_colonial_nation=no}
+
+	make_obsolete = trade_depot
+
 	modifier = {
-		reduced_liberty_desire_on_other_continent = 10
-		colonists = 1
+		province_trade_power_modifier = 1.25
 	}
 
 	on_built = {
@@ -2272,11 +2245,10 @@ town_hall = {
 	modifier = {
 		#local_state_maintenance_modifier = -0.2
 		local_autonomy = -0.2
+		local_governing_cost = -0.25
 		allowed_num_of_buildings = 1
 		local_friendly_movement_speed = 0.2
 		local_governing_cost_increase = -10
-		local_governing_cost = -0.1
-		
 	}
 
 	on_built = {
@@ -2378,7 +2350,7 @@ town_hall = {
 }
 
 drydock = {
-	cost = 200
+	cost = 300
 	time = 12
 
 	make_obsolete = dock
@@ -2388,8 +2360,8 @@ drydock = {
 	}
 
 	modifier = {
-		allowed_num_of_buildings = 1
-		local_sailors_modifier = 1
+		trade_value_modifier = 0.3
+		trade_value = 0.2
 		local_has_man_of_war = yes
 		local_has_galleass = yes
 	}
@@ -2845,7 +2817,7 @@ fort_18th = {
 ################################################
 
 manufactory = {
-	cost = 300
+	cost = 400
 	time = 60
 	modifier = {
 		trade_goods_size = 0.8
@@ -3192,61 +3164,40 @@ mills = {
 }
 
 furnace = {
-	cost = 300
-	time = 12
+	manufactory = {
+		coal
+	}
 
-	# build_trigger = {
-	# 	has_port = yes
-	# }
-	build_trigger = {
-				development = 30
-				is_prosperous = yes
-				base_production = 10
-			}
-	
+	potential = {
+		has_dlc = "Rule Britannia"
+	}
 
 	modifier = {
-		local_production_efficiency = 0.2
-	    trade_value = 6
+		global_trade_goods_size_modifier = 0.05 #National Bonus
 	}
-	# bonus_modifier = {
-	# 	local_sailors = 250
-	# 	ship_recruit_speed = -0.1
-	# 	local_ship_cost = -0.05
-	# }
-	onmap = no
+	onmap = yes
 	show_separate = yes # Means as a manufactory it will be shown according to the old way
 	on_built = {
 		bastard_dev_cost_add_from_buildings = yes
 		add_development_from_building = {
-			building = furnace
-			type = manpower
+			building = manufactory
+			type = production
 			value = 2
-		}
-		add_dev_from_building = {
-			building = furnace 
-			type = manpower 
-			value = 1 
 		}
 	}
 	on_destroyed = {
 		bastard_dev_cost_remove_from_buildings = yes
 		remove_development_from_building = {
-			building = furnace
-			type = manpower
+			building = manufactory
+			type = production
 			value = 2
-		}
-		remove_dev_from_building = {
-			building = furnace 
-			type = manpower 
-			value = 1 
 		}
 	}
 	on_obsolete = {
 	}
 
 	ai_will_do = {
-		factor = 1
+		factor = 3000
 	}
 }
 
@@ -3410,27 +3361,35 @@ soldier_households = {
 }
 
 impressment_offices = {
-	cost = 300
+	cost = 400
 	time = 12
+
+	manufactory = {
+		all
+	}
 
 	# build_trigger = {
 	# 	has_port = yes
 	# }
 	build_trigger = {
-		has_port = yes
 		area_for_scope_province = {
 				owner = {
 					tag = ROOT
 				}
+				type = all
+				has_manpower_building_trigger = yes
+				development = 30
+				is_prosperous = yes
+				base_manpower = 10
 			}
 	}
 
 	modifier = {
-		#local_manpower_modifier = 1
-		local_sailors_modifier = 1
-		 local_sailors = 100
-		 ship_recruit_speed = -0.1
-		 local_ship_cost = -0.1
+		local_manpower_modifier = 0.75
+		local_sailors_modifier = 1.5
+		# local_sailors = 750
+		# ship_recruit_speed = -0.1
+		# local_ship_cost = -0.05
 	}
 	# bonus_modifier = {
 	# 	local_sailors = 250
@@ -3446,11 +3405,11 @@ impressment_offices = {
 			type = manpower
 			value = 2
 		}
-		add_dev_from_building = {
-			building = impressment_offices 
-			type = manpower 
-			value = 1 
-		}
+		# add_dev_from_building = {
+		# 	building = impressment_offices 
+		# 	type = manpower 
+		# 	value = 1 
+		# }
 	}
 	on_destroyed = {
 		bastard_dev_cost_remove_from_buildings = yes
@@ -3459,11 +3418,11 @@ impressment_offices = {
 			type = manpower
 			value = 2
 		}
-		remove_dev_from_building = {
-			building = impressment_offices 
-			type = manpower 
-			value = 1 
-		}
+		# remove_dev_from_building = {
+		# 	building = impressment_offices 
+		# 	type = manpower 
+		# 	value = 1 
+		# }
 	}
 	on_obsolete = {
 	}
@@ -3475,8 +3434,8 @@ impressment_offices = {
 
 
 state_house = {
-	cost = 300
-	time = 24
+	cost = 500
+	time = 60
 
 	build_trigger = {
 		NOT = {
@@ -3508,7 +3467,7 @@ state_house = {
 	}
 
 	modifier = {
-		local_tax_modifier = 1.5
+		local_centralize_state_cost = -0.33
 	}
 	
 	onmap = no
@@ -3552,13 +3511,21 @@ state_house = {
 }
 
 armory = {
-	cost = 5000
+	cost = 500
 	time = 60
-    one_per_country = yes
-	build_trigger = {
-        development = 45
-	}
 
+	build_trigger = {
+		area_for_scope_province = {
+				owner = {
+					tag = ROOT
+				}
+				type = all
+				has_forcelimit_building_trigger = yes
+				development = 30
+				is_prosperous = yes
+				base_manpower = 10
+			}
+	}
 	
 	on_built = {
 		bastard_dev_cost_add_from_buildings = yes
@@ -3569,7 +3536,7 @@ armory = {
 	on_obsolete = {
 	}
 	modifier = {
-		possible_policy = 1
+		land_forcelimit = 3
 		
 	}
 	onmap = no

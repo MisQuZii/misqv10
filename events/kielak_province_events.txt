@@ -1,0 +1,90 @@
+namespace = kielak_province_events
+
+province_event = { #Conial one time expand infra buff
+	id = kielak_province_events.1
+	title = kielak_province_events.1.t
+	picture = FEAST_eventPicture
+	desc = kielak_province_events.1.d
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = kielak_province_events.1_option_a
+		if = {
+			limit = { 
+				NOT = { trade_goods = gold }
+			}
+			add_base_production = 5
+		}
+	}
+
+	option = {
+		name = kielak_province_events.1_option_b
+		add_or_upgrade_tax_building = yes
+		add_base_tax = 3	
+	}
+
+	option = {
+		name = kielak_province_events.1_option_c
+		if = {
+			limit = { 
+				has_manpower_building_trigger = no
+			}
+
+			add_building = barracks
+			add_base_manpower = 2
+		}
+
+		else = {
+			add_base_manpower = 5
+		}
+		
+	}
+
+	option = {
+		name = kielak_province_events.1_option_d
+		province_event = {
+			id = kielak_province_events.2
+		}
+	}
+
+}
+
+province_event = { #Colonial one time trade good change
+	id = kielak_province_events.2
+	title = kielak_province_events.2.t
+	picture = FEAST_eventPicture
+	desc = kielak_province_events.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = kielak_province_events.2_option_a
+		change_trade_goods = ivory
+	}
+	option = {
+		name = kielak_province_events.2_option_b
+		change_trade_goods = cocoa
+	}
+	option = {
+		name = kielak_province_events.2_option_c
+		change_trade_goods = dyes
+	}
+	option = {
+		name = kielak_province_events.2_option_d
+		change_trade_goods = silk
+	}
+	option = {
+		name = kielak_province_events.2_option_e
+		change_trade_goods = gems
+	}
+
+	option = {
+		name = kielak_province_events.2_option_f
+		province_event = {
+			id = kielak_province_events.1
+		}
+	}
+
+}

@@ -1,0 +1,626 @@
+country_decisions = {
+
+	alaska_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = became_nw_formable }
+			was_never_end_game_tag_trigger = yes
+			is_colonial_nation = yes
+			cascadia_region = {
+				owned_by = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			region = cascadia_region
+			region = hudson_bay_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 12
+			is_at_war = no
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 35
+				OR = {
+					region = cascadia_region
+					region = hudson_bay_region
+				}
+				
+			}
+			NOT = { exists = ALA }
+		}
+		effect  = {
+			change_tag = ALA
+			remove_non_electors_emperors_from_empire_effect = yes
+			
+			
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = became_nw_formable
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+
+	brazil_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = became_nw_formable }
+			was_never_end_game_tag_trigger = yes
+			is_colonial_nation = yes
+			brazil_region = {
+				owned_by = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			region = brazil_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 12
+			is_at_war = no
+
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 55
+				region = brazil_region
+				
+			}
+
+			NOT = { exists = BRZ }
+		}
+		effect  = {
+			change_tag = BRZ
+			remove_non_electors_emperors_from_empire_effect = yes
+			
+			
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = became_nw_formable
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	canada_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = became_nw_formable }
+			was_never_end_game_tag_trigger = yes
+			is_colonial_nation = yes
+			canada_region = {
+				owned_by = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			region = canada_region
+			region = hudson_bay_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 12
+			is_at_war = no
+
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 45
+				OR = {
+					region = canada_region
+					region = hudson_bay_region
+				}
+				
+			}
+
+			NOT = { exists = CAN }
+		}
+		effect  = {
+			change_tag = CAN
+			remove_non_electors_emperors_from_empire_effect = yes
+			
+			
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = became_nw_formable
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	chile_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = became_nw_formable }
+			was_never_end_game_tag_trigger = yes
+			is_colonial_nation = yes
+			la_plata_region = {
+				owned_by = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			region = la_plata_region
+			region = upper_peru_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 12
+			is_at_war = no
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 45
+				OR = {
+					region = la_plata_region
+					region = upper_peru_region
+				}
+				
+			}
+			NOT = { exists = CHL }
+		}
+		effect  = {
+			change_tag = CHL
+			remove_non_electors_emperors_from_empire_effect = yes
+			
+			
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = became_nw_formable
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}		
+
+	illinois_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = became_nw_formable }
+			was_never_end_game_tag_trigger = yes
+			is_colonial_nation = yes
+			mississippi_region = {
+				owned_by = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			region = mississippi_region
+			region = great_lakes_region
+			region = great_plains_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 12
+			is_at_war = no
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 45
+				OR = {
+					region = mississippi_region
+					region = great_lakes_region
+					region = great_plains_region
+				}
+				
+				
+			}
+
+			NOT = { exists = ILI }
+		}
+		effect  = {
+			change_tag = ILI
+			remove_non_electors_emperors_from_empire_effect = yes
+			
+			
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = became_nw_formable
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	mexico_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = became_nw_formable }
+			was_never_end_game_tag_trigger = yes
+			is_colonial_nation = yes
+			mexico_region = {
+				owned_by = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			region = mexico_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 12
+			is_at_war = no
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 45
+				region = mexico_region
+				
+			}
+			NOT = { exists = MEX }
+		}
+		effect  = {
+			change_tag = MEX
+			remove_non_electors_emperors_from_empire_effect = yes
+			
+			
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = became_nw_formable
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	peru_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = became_nw_formable }
+			was_never_end_game_tag_trigger = yes
+			is_colonial_nation = yes
+			peru_region = {
+				owned_by = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			region = peru_region
+			region = upper_peru_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 12
+			is_at_war = no
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 45
+				OR = {
+					region = peru_region
+					region = upper_peru_region
+				}
+				
+			}
+			NOT = { exists = PEU }
+		}
+		effect  = {
+			change_tag = PEU
+			remove_non_electors_emperors_from_empire_effect = yes
+			
+			
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = became_nw_formable
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	sonora_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = became_nw_formable }
+			was_never_end_game_tag_trigger = yes
+			is_colonial_nation = yes
+			california_region= {
+				owned_by = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			region = california_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 12
+			is_at_war = no
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 30
+				region = california_region
+				
+			}
+			NOT = { exists = SNA }
+		}
+		effect  = {
+			change_tag = SNA
+			remove_non_electors_emperors_from_empire_effect = yes
+			
+			
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = became_nw_formable
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	upca_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = became_nw_formable }
+			was_never_end_game_tag_trigger = yes
+			is_colonial_nation = yes
+			central_america_region = {
+				owned_by = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			region = central_america_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 12
+			is_at_war = no
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 25
+				region = central_america_region
+			}
+
+			NOT = { exists = CAM }
+		}
+		effect  = {
+			change_tag = CAM
+			remove_non_electors_emperors_from_empire_effect = yes
+			
+			
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = became_nw_formable
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	venezuela_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = became_nw_formable }
+			was_never_end_game_tag_trigger = yes
+			is_colonial_nation = yes
+			colombia_region = {
+				owned_by = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			region = colombia_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 12
+			is_at_war = no
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 45
+				region = colombia_region
+			}
+			NOT = { exists = VNZ }
+		}
+		effect  = {
+			change_tag = VNZ
+			remove_non_electors_emperors_from_empire_effect = yes
+			
+			
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = became_nw_formable
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	vermont_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = became_nw_formable }
+			was_never_end_game_tag_trigger = yes
+			is_colonial_nation = yes
+			northeast_america_region = {
+				owned_by = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			region = northeast_america_region
+			region = southeast_america_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 12
+			is_at_war = no
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 60
+				OR = {
+					region = northeast_america_region
+					region = southeast_america_region
+				}
+				
+			}
+			NOT = { exists = VRM }
+		}
+		effect  = {
+			change_tag = VRM
+			remove_non_electors_emperors_from_empire_effect = yes
+			
+			
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = became_nw_formable
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	west_indies_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = became_nw_formable }
+			was_never_end_game_tag_trigger = yes
+			is_colonial_nation = yes
+			carribeans_region = {
+				owned_by = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			region = carribeans_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 12
+			is_at_war = no
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 25
+				region = carribeans_region
+				
+			}
+
+			NOT = { exists = WSI }
+		}
+		effect  = {
+			change_tag = WSI
+			remove_non_electors_emperors_from_empire_effect = yes
+			
+			
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = became_nw_formable
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+
+
+

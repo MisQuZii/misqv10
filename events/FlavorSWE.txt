@@ -54,7 +54,7 @@ country_event = {
 			}
 			add_reform_progress_small_effect = yes
 		}
-		# Claim Skï¿½ne
+		# Claim Skåne
 		if = {
 			limit = {
 				NOT = { owns = 6 }
@@ -97,10 +97,10 @@ country_event = {
 		1 = {	# Stockholm
 			add_base_tax = 2
 		}
-		2 = {	#ï¿½stergï¿½tland
+		2 = {	#Östergötland
 			add_base_tax = 1
 		}
-		7 = {	#Vï¿½stergï¿½tland
+		7 = {	#Västergötland
 			add_base_tax = 1
 		}
 		27 = {	#Finland
@@ -298,7 +298,7 @@ country_event = {
 }
 
 
-# The Parliament of Vï¿½sterï¿½s
+# The Parliament of Västerås
 country_event = {
 	id = flavor_swe.2
 	title = flavor_swe.2.t
@@ -340,7 +340,7 @@ country_event = {
 
 }
 
-# Jï¿½ran Persson
+# Jöran Persson
 country_event = {
 	id = flavor_swe.3281
 	title = "flavor_swe.EVTNAME3281"
@@ -380,7 +380,7 @@ country_event = {
 		}
 		define_advisor = {
 			type = spymaster
-			name = "Jï¿½ran Persson"
+			name = "Jöran Persson"
 			culture = swedish
 			location = 4
 			discount = yes
@@ -430,7 +430,7 @@ country_event = {
 		}
 		define_advisor = {
 			type = statesman
-			name = "Per Brahe den ï¿½ldre"
+			name = "Per Brahe den äldre"
 			culture = swedish
 			discount = yes
 			location = 1
@@ -1847,7 +1847,7 @@ country_event = {
 	}
 }
 
-# Carl von Linnï¿½
+# Carl von Linné
 country_event = {
 	id = flavor_swe.5033
 	title = "flavor_swe.EVTNAME5033"
@@ -3229,7 +3229,7 @@ country_event = {
 	}
 }
 
-# Pillage of Lï¿½beck
+# Pillage of Lübeck
 country_event = {
 	id = flavor_swe.110
 	title = flavor_swe.110.t
@@ -3618,8 +3618,8 @@ country_event = {
 		name = "flavor_swe.119.a"
 		add_adm_power = 200
 		change_innovativeness = 3
-		1 = { add_building = counting_house }
-		6 = { add_building = counting_house }
+		1 = { add_building = university }
+		6 = { add_building = university }
 	}
 }
 
@@ -4201,10 +4201,10 @@ country_event = {
 		1 = {	# Stockholm
 			add_base_tax = 2
 		}
-		2 = {	#ï¿½stergï¿½tland
+		2 = {	#Östergötland
 			add_base_tax = 1
 		}
-		7 = {	#Vï¿½stergï¿½tland
+		7 = {	#Västergötland
 			add_base_tax = 1
 		}
 		27 = {	#Finland

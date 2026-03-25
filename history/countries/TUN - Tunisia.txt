@@ -8,8 +8,6 @@ fixed_capital = 341 # Cannot move capital away from this province & no power cos
 religious_school = maliki_school
 add_truce_with = GRA
 add_truce_with = SIC
-add_truce_with = SAR
-add_truce_with = COR
 historical_rival = GRA
 change_estate_land_share = {
 	estate = estate_nobles
@@ -36,7 +34,7 @@ change_estate_land_share = {
 
 1488.1.1 = {
 	monarch = {
-		name = "Yahyï¿½ III"
+		name = "Yahyâ III"
 		dynasty = "Hafsid"
 		adm = 2
 		dip = 0
@@ -70,8 +68,8 @@ change_estate_land_share = {
 
 1489.1.1 = {
 	heir = {
-		name = "Zakariyï¿½'"
-		monarch_name = "Zakariyï¿½ II"
+		name = "Zakariyâ'"
+		monarch_name = "Zakariyâ II"
 		dynasty = "Hafsid"
 		birth_date = 1470.1.1
 		death_date = 1494.5.17
@@ -84,7 +82,7 @@ change_estate_land_share = {
 
 1490.10.15 = {
 	monarch = {
-		name = "Zakariyï¿½' II"
+		name = "Zakariyâ' II"
 		dynasty = "Hafsid"
 		adm = 1
 		dip = 2

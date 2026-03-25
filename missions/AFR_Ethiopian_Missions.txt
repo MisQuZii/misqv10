@@ -1153,7 +1153,7 @@ ethiopia_slot_aksumite_empire = {
 		position = 4
 		provinces_to_highlight = {
 			region = horn_of_africa_region
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { owned_by = ROOT }
 			is_empty = no
 		}
 		trigger = {
@@ -1161,7 +1161,7 @@ ethiopia_slot_aksumite_empire = {
 				type = all
 				OR = {
 					is_empty = yes
-					country_or_non_sovereign_subject_holds = ROOT
+					owned_by = ROOT
 				}
 			}
 		}

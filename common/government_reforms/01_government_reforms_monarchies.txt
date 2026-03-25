@@ -598,6 +598,7 @@ chinese_warlord = {
 		#liberty_desire = 50
 		#province_warscore_cost = 0.2
 		core_creation = -0.1
+		num_accepted_cultures = 2
 	}
 	
 	ai = {
@@ -2195,34 +2196,6 @@ beylik_government = {
 	}
 }
 
-silk_road_empire = { #tier 1
-	icon = "asian_scripture"
-	lock_level_when_selected = yes
-	potential = {
-
-		OR ={ tag = BUK tag = TRS}
-
-		}
-	modifiers = {
-		trade_steering = 0.2
-		global_trade_power = 0.1
-		trade_range_modifier = 0.25
-		movement_speed = 0.1	
-		governing_capacity = 150
-		fort_maintenance_modifier = -0.2
-		
-	}
-	government_abilities = {
-		tribal_federation_mechanic
-	}
-	custom_attributes = {
-		enables_plutocratic_idea_group = yes
-	}
-	ai = {
-		factor = 0.75 #generic
-	}
-}
-
 al_andalusia_government = {
 	icon = "noble_muslim"
 	allow_normal_conversion = yes
@@ -2940,11 +2913,13 @@ nayankara_reform = {
 			religion = buddhism
 			religion = vajrayana
 			religion = mahayana
+			tag = MLW
 		}
 		OR = {
 			culture_group = dravidian
 			primary_culture = oriya
 			primary_culture = sinhala
+			tag = MLW
 		}
 	}
 	valid_for_nation_designer = yes
@@ -3084,9 +3059,9 @@ korean_monarchy = {
 		}
 	}
 	modifiers = {
-		development_cost_in_primary_culture = -0.10
+		development_cost_in_primary_culture = -0.05
+		same_culture_advisor_cost = -0.1
 		global_institution_spread = 0.15
-		fire_damage = 0.05
 	}
 	effect = {
 		hidden_effect = {
@@ -4962,6 +4937,11 @@ deccani_society_reform = {
 	modifiers = {
 		free_dip_policy = 1
 	}
+	conditional = {
+		allow = {
+		}
+		claim_states = yes
+	}		
 	ai = {
 		factor = 3
 	}
@@ -5295,7 +5275,7 @@ centralize_reform = {
 				tooltip = less_than_15_provinces_on_same_continent
 				NOT = {
 					num_of_owned_provinces_with = {
-						#same_continent = ROOT
+						same_continent = ROOT
 						value = 15
 					}
 				}
@@ -5307,7 +5287,7 @@ centralize_reform = {
 				tooltip = less_than_25_provinces_on_same_continent
 				NOT = {
 					num_of_owned_provinces_with = {
-						#same_continent = ROOT
+						same_continent = ROOT
 						value = 20
 					}
 				}
@@ -5319,7 +5299,7 @@ centralize_reform = {
 				tooltip = less_than_35_provinces_on_same_continent
 				NOT = {
 					num_of_owned_provinces_with = {
-						#same_continent = ROOT
+						same_continent = ROOT
 						value = 35
 					}
 				}
@@ -5331,7 +5311,7 @@ centralize_reform = {
 				tooltip = less_than_50_provinces_on_same_continent
 				NOT = {
 					num_of_owned_provinces_with = {
-						#same_continent = ROOT
+						same_continent = ROOT
 						value = 50
 					}
 				}
@@ -5345,7 +5325,7 @@ centralize_reform = {
 				tooltip = less_than_15_provinces_on_same_continent
 				NOT = {
 					num_of_owned_provinces_with = {
-						#same_continent = ROOT
+						same_continent = ROOT
 						value = 15
 					}
 				}
@@ -5357,7 +5337,7 @@ centralize_reform = {
 				tooltip = less_than_25_provinces_on_same_continent
 				NOT = {
 					num_of_owned_provinces_with = {
-						#same_continent = ROOT
+						same_continent = ROOT
 						value = 25
 					}
 				}
@@ -5369,7 +5349,7 @@ centralize_reform = {
 				tooltip = less_than_35_provinces_on_same_continent
 				NOT = {
 					num_of_owned_provinces_with = {
-						#same_continent = ROOT
+						same_continent = ROOT
 						value = 35
 					}
 				}
@@ -5381,7 +5361,7 @@ centralize_reform = {
 				tooltip = less_than_50_provinces_on_same_continent
 				NOT = {
 					num_of_owned_provinces_with = {
-						#same_continent = ROOT
+						same_continent = ROOT
 						value = 50
 					}
 				}
@@ -6664,7 +6644,7 @@ peoples_kingdom_reform = {
 	icon = "peasant_republic"
 	allow_normal_conversion = yes
 	modifiers = {
-		global_tax_modifier = 0.10
+		possible_policy = 1
 	}
 	ai = {
 		factor = 1

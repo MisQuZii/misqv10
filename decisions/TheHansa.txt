@@ -45,6 +45,7 @@ country_decisions = {
 				tag = BRE 
 				tag = HAM 
 				tag = HSA
+				tag = HAN
 			}
 			normal_or_historical_nations = yes
 			OR = {

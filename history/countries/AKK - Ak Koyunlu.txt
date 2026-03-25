@@ -6,13 +6,8 @@ religion = sunni
 technology_group = muslim
 capital = 418
 religious_school = hanafi_school
-add_truce_with = ARL
-add_truce_with = SRV
 add_truce_with = QOM
-add_truce_with = TUR
-add_truce_with = MAM
-add_truce_with = MSY
-add_treasury = 200
+add_accepted_culture = kurdish
 1396.1.1 = {
 	monarch = {
 		name = "Qara Y�l�q Osman"
@@ -92,9 +87,11 @@ add_treasury = 200
 			fire = 4	
 			shock = 4	
 			manuever = 4	
-			siege = 0
+			siege = 2
 		}
+		
 	}
+	add_piety = -1.0
 	clear_scripted_personalities = yes
 	add_heir_personality = bold_fighter_personality
 }

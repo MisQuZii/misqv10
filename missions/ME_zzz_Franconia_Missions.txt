@@ -204,6 +204,7 @@ FKN_Gen_Missions_3 = {
 					add_shock = 1
 				}
 			}
+			add_treasury = 100
 		}
 	}
 	
@@ -304,6 +305,11 @@ FKN_Gen_Missions_3 = {
 				add_prosperity = 50
 			}
 			add_yearly_manpower = 1
+			add_treasury = 100
+			add_inflation = -5
+			67 = {
+				add_or_upgrade_fort_building = yes
+			}
 		}
 	}
 	
@@ -612,7 +618,7 @@ FKN_Missions_1 = {
 				skill = 1
 				culture = ROOT
 				religion = ROOT
-				cost_multiplier = 0.25
+				cost_multiplier = 0.5
 			}
 			add_papal_influence = 25
 			add_church_power = 25

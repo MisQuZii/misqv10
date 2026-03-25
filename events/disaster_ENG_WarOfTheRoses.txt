@@ -1186,6 +1186,7 @@ country_event = {
 		name = war_of_the_roses.100.a
 		add_stability_or_adm_power = yes
 		add_prestige = 50
+		add_manpower = 10
 		hidden_effect = {
 			if = {
 				limit = {

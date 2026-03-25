@@ -1,4 +1,4 @@
-#Hälsingland-Gästrikland-Medelpad, from Gävle to Näs
+#Hï¿½lsingland-Gï¿½strikland-Medelpad, from Gï¿½vle to Nï¿½s
 
 add_core = SWE
 owner = SWE

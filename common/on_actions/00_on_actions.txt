@@ -5,15 +5,14 @@ on_startup = {
 	emperor = {
 		save_global_event_target_as = Emperor
 	}
-	 if = {
-	 	limit = { is_emperor_of_china = yes }
-	 	save_global_event_target_as = EmperorOfChina
-	 }
+	# if = {
+	# 	limit = { is_emperor_of_china = yes }
+	# 	save_global_event_target_as = EmperorOfChina
+	# }
 	events = {
-
 		muslim_school_events.20 #Pick School
 		#flavor_got.1 #Event for Gotland to select their mission tree
-		flavor_mng.42 #Event for the starting situation of the Ming 
+		#flavor_mng.42 #Event for the starting situation of the Ming 
 		#flavor_fra.15000 #Make the French Revolution happen if starting in 1789
 		flavor_mos.1 #Event regarding the Tatar Yoke
 		flavor_fra.206 # Setup the general for missions
@@ -27,10 +26,20 @@ on_startup = {
 	gecko_mercs = { update = yes on_startup = yes }
 	development_counter = { on_startup = yes }
 	educate_ruler = { update = yes on_startup = yes }
-
 	#Add Cardinals at game Start to Capitals of all Catholic Player Slots
 	add_cardinals_to_player_slots = yes #found in kielak_scripted_effects.txt
 
+	if = {
+		limit = {
+			AND = {
+				tag = HAB
+				ai = no
+			}
+		}
+		country_event = {
+			id = kielak_events.28
+		}
+	}
 
 	if = {
 		limit = {
@@ -41,6 +50,15 @@ on_startup = {
 		}
 		country_event = {
 			id = kielak_events.2
+		}
+	}
+
+	if = {
+		limit = {
+			tag = CXI
+		}
+		country_event = {
+			id = kielak_events.5
 		}
 	}
 
@@ -1160,6 +1178,22 @@ on_bankruptcy = {
 	add_dip_power = 100
 	add_mil_power = 100
 	add_war_exhaustion = -20
+
+	if = {
+		limit = {
+			has_estate_privilege = estate_burghers_indebted_to_burghers
+
+		}
+		remove_estate_privilege = estate_burghers_indebted_to_burghers
+	}
+
+	if = {
+		limit = {
+			has_estate_privilege = estate_jains_indebted_to_jains
+
+		}
+		remove_estate_privilege = estate_jains_indebted_to_jains
+	}
 }
 
 # country (country annexing, root = target)
@@ -1831,6 +1865,23 @@ on_adm_development = {
 			80 = {  } 
 		}
 	}
+
+	if = {
+		limit = { owner = { has_country_flag = kielak_brazil_tax_dev_can_dev_mil } }
+		random_list = {
+			5 = { add_base_manpower = 1 }
+			95 = { }
+		}
+	}
+
+	if = {
+		limit = { owner = { has_country_flag = kielak_brazil_tax_dev_can_dev_mil_2 } }
+		random_list = {
+			10 = { add_base_manpower = 1 }
+			90 = { }
+		}
+	}
+
 }
 
 # province
@@ -1875,6 +1926,18 @@ on_dip_development = {
 			80 = {  } 
 		}
 	}
+
+	if = {
+		limit = {
+			has_terrain = jungle
+			owner = { has_country_flag = kielak_central_america_jungle_dev_clicks }
+		}
+		random_list = {
+			10 = { add_base_production = 1 } 
+			90 = {  } 
+		}
+	}
+
 }
 
 # province
@@ -1919,6 +1982,27 @@ on_mil_development = {
 			80 = {  } 
 		}
 	}
+
+	if = { 
+		limit = { 
+			owner = { has_country_flag = kielak_chile_mana_cashback_on_dev }
+		}
+		random_list = {
+			5 = { add_scaled_local_mil_power = 2 } 
+			95 = {  } 
+		}
+	}
+
+	if = { 
+		limit = { 
+			owner = { has_country_flag = kielak_chile_mana_cashback_on_dev_2 }
+		}
+		random_list = {
+			5 = { add_scaled_local_mil_power = 3 } 
+			95 = {  } 
+		}
+	}
+
 }
 
 on_overextension_pulse = {
@@ -4652,18 +4736,6 @@ on_province_owner_change = {
 		}
 		remove_building = fort_15th
 	}
-	if = {
-        every_owned_province = {
-            limit = {
-                has_building = university
-            }
-            add_province_modifier = { 
-            name = university_war_score_cost
-            duration = -1
-            }
-
-        }
-    }
 }
 
 # country
@@ -5358,6 +5430,15 @@ on_loan_repaid = {
 		}
 		add_inflation = -0.05
 	}
+
+	if = {
+		limit = { 
+			FROM = {
+				has_country_flag = kielak_ipa_priviledge_lose_inflation_on_repaid_loans
+			}
+		}
+		add_inflation = -0.05
+	}
 	
 }
 
@@ -5743,6 +5824,46 @@ on_capital_moved = {
 
 #ROOT = province that was expanded in, FROM = country that did it
 on_expanded_infrastructure = {
+	if = {
+		limit = {
+			FROM = { has_country_flag = kielak_expand_infra_buff_flag }
+		}
+
+		province_event = {
+			id = kielak_province_events.1
+		}
+		
+		FROM = {
+			clr_country_flag = kielak_expand_infra_buff_flag
+		}
+
+	}
+
+	if = {
+		limit = {
+			AND = {
+				FROM = { has_country_flag = kielak_alaska_expand_infra_arctic_buff }
+				ROOT = {
+					AND = {
+						has_climate = arctic
+						has_building = barracks
+						NOT = { has_building = training_fields } 
+					}
+
+				}
+			}
+			
+		}
+
+		ROOT = {
+			remove_building = barracks
+			add_building = training_fields
+		}
+		
+
+	}
+
+
 }
 on_expanded_infrastructure_removed = {
 }
@@ -5795,6 +5916,18 @@ on_centralized_state = {
 		add_province_modifier = {
 				name = centralized_state_temporary_modifiers
 				duration = 3650
+		}
+	}
+
+	if = {
+		limit = {
+			owner = { has_country_flag = kielak_brazil_centralize_state_buff}
+		}
+		area = {
+			add_province_modifier = {
+				name = kielak_brazil_centralize_state_tax_buff
+				duration = -1
+			}
 		}
 	}
 	
