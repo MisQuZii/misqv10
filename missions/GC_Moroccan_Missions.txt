@@ -714,6 +714,29 @@ gc_morocco_3 = {
 			}
 		}
 	}
+	misq_mor_recover = {
+		icon = mission_pirate_havens
+		
+		provinces_to_highlight = {
+			province_id = 2754
+			NOT = { controlled_by = ROOT }
+		}
+		
+		trigger = {
+			2754 = {
+				controlled_by = ROOT
+			}
+		}
+		
+		effect = {
+			2754 = {
+				add_province_modifier = { 
+					name = mor_castile_gold
+					duration = -1  
+				}
+			}
+		}
+	}
 	#gc_mor_italy_conquest = {
 	#	icon = renaissance_city
 	#	required_missions = { gc_mor_pirates }

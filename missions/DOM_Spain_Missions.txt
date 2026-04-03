@@ -873,7 +873,29 @@ dom_cas_missions_2 = {
 		NOT = { was_tag = ARA } 
 	}
 	has_country_shield = yes
-	
+	misq_cas_recover = {
+		icon = mission_pirate_havens
+		
+		provinces_to_highlight = {
+			province_id = 346
+			NOT = { controlled_by = ROOT }
+		}
+		
+		trigger = {
+			346 = {
+				controlled_by = ROOT
+			}
+		}
+		
+		effect = {
+			346 = {
+				add_province_modifier = { 
+					name = mor_castile_gold
+					duration = -1  
+				}
+			}
+		}
+	}
 	spa_papal_favor = {
 		icon = catholic_confraternity 
 		required_missions = { gc_cas_spa_army_ready2 }
@@ -2722,7 +2744,6 @@ dom_cas_missions_4 = {
 		NOT = { was_tag = ARA } 
 	}
 	has_country_shield = yes
-	
 	spa_infantes_aragon = {
 		icon = spa_infantes_aragon
 		required_missions = { }
@@ -3311,7 +3332,7 @@ dom_cas_missions_4_c = {
 				fire = 5
 				manuever = 6
 				siege = 1
-				name = "Hernán Cortés"
+				name = "Hernï¿½n Cortï¿½s"
 			}
 			490 = {
 				add_base_production = 3
