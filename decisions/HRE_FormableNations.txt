@@ -455,7 +455,7 @@ country_decisions = {
 		allow = {
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
-			#adm_tech = 10
+			adm_tech = 10
 			OR = { #Wurzburg was the theoretical holder of the title
 				tag = WBG
 				NOT = { exists = WBG }

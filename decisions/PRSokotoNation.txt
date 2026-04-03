@@ -63,6 +63,39 @@ country_decisions = {
 			owns_core_province = 1120 
 		}
 		effect = {
+			change_primary_culture = nygro
+			set_ruler_culture = nygro
+			if = {
+				limit = {
+					has_heir = yes
+				}
+				set_heir_culture = nygro
+			}
+			if = {
+				limit = {
+					has_consort = yes
+				}
+				set_consort_culture = nygro
+			}
+			every_province = {
+					limit = {
+						AND = {
+							OR = {
+								culture = mossi
+								culture = fulani
+								culture = tuareg
+								culture = hausa
+								culture = hanuri
+								culture = bilala
+								culture = kanuri
+							}
+							owned_by = ROOT
+						}
+						
+						
+					}
+					change_culture = nygro
+				}
 			change_tag = PR2
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
