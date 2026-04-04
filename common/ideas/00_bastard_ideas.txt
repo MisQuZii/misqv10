@@ -2856,7 +2856,7 @@ TIM_ideas = {
 BUK_ideas = {
 	start = {
 		manpower_recovery_speed = 0.2
-		leader_land_shock = 1
+		technology_cost = -0.05
 	}
 	bonus = {
 		discipline = 0.05
@@ -2866,28 +2866,28 @@ BUK_ideas = {
 	}
 	free = yes
 	
-	buk_jochid_patrimony = {
+	buk_1 = {
 		core_creation = -0.2
 	}
-	the_mantle_of_the_great_khan = {
-		cavalry_power = 0.125
+	buk_2 = {
+		development_cost = -0.05
 	}
-	unleash_the_tiger = {
-		shock_damage = 0.125
+	buk_3 = {
+		land_morale = 0.1
 	}
-	bastard_populating_the_steppes = {
+	buk_4 = {
 		global_manpower_modifier = 0.2
 	}
-	timurid_renaissance = {
-		technology_cost = -0.05
+	buk_5 = {
+		build_time = -0.15
 	}
-	riches_of_the_silk_road = {
-		trade_efficiency = 0.125
-		global_trade_goods_size_modifier = 0.1
+	buk_6 = {
+		trade_efficiency = 0.15
+		caravan_power = 0.5
 	}
-	buk_the_jews_of_bukhara = {
+	buk_7 = {
 		#artillery_shock = 1
-		artillery_power = 0.125
+		governing_cost = -0.15
 	}
 }
 
