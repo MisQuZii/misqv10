@@ -2453,15 +2453,14 @@ dlh_afghan_conquest_modifier = {
 	stability_cost_modifier	= -0.2
 }
 dlh_sind_conquest_modifier = {
-	religious_unity = 0.2
-	tolerance_own = 1
+	local_development_cost = -0.1
 }
 dlh_rajput_conquest_modifier = {
 	manpower_recovery_speed = 0.1
 	infantry_power = 0.1
 }
 dlh_deccan_conquest_modifier = {
-	cavalry_power = 0.1
+	cavalry_shock = 0.15
 	cavalry_cost = -0.1
 }
 
@@ -13984,11 +13983,6 @@ hordes_return_of_the_mongols_2 = {
     available_province_loot = 0.5
     governing_capacity = 100
     province_warscore_cost = -0.1
-}
-
-hordes_fall_of_hindustan = {
-	core_creation = -0.20
-	cavalry_power = 0.1
 }
 
 tatars_raiding_traditions = {

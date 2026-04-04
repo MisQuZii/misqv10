@@ -520,6 +520,7 @@ categories =  {
 			2702 #Philippines
 			4706 # 1.30 Greece and Bulgaria
 			235 #kent
+			465 2366 #nogay
 		}
 	}
 	

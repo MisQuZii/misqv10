@@ -628,43 +628,12 @@ bng_slot_3 = {
 	bng_conquer_arakan = {
 		icon = mission_end_arakan_piracy
 		required_missions = {  }
-		provinces_to_highlight = {
-			area = arakan_area
-			NOT = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-		trigger = {
-			arakan_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT	
-			}
+				trigger = {
 			num_of_light_ship = 10
 			navy_size_percentage = 1
 		}
 		effect = {
 			add_navy_tradition = 25
-			upper_burma_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
-			lower_burma_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
-			central_burma_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
 		}
 		ai_weight = {
 			factor = 75	#For the love of everything what is holy, Bengal should stop trying to go east...
@@ -699,15 +668,8 @@ bng_slot_3 = {
 					}
 				}
 			}
-			yun_gui_borderland_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
 
-			burma_region = {
+			deccan_region = {
 				add_permanent_claim = ROOT
 			}
 
@@ -908,15 +870,15 @@ bng_slot_4 = {
 		required_missions = { bng_conquer_burma }
 		position = 4
 		provinces_to_highlight = {
-			area = yun_gui_borderland_area
+			region = deccan_region
 			NOT = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		trigger = {
-			yun_gui_borderland_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT	
+			num_of_provinces_owned_or_owned_by_subjects_with = { 
+				region = deccan_region 
+				value = 15`
 			}
 			NOT = {
 				is_subject_of_type = tributary_state
