@@ -40,18 +40,6 @@ moghulistan_caucasus_fort_cost_no_slot = {
 	defensiveness = 0.125
 }
 
-moghulistan_egypt= {
-	shock_damage = 0.125
-	discipline = 0.025
-	cavalry_flanking = 0.50
-}
-
-moghulistan_anatolia = {
-	available_province_loot = 0.50
-	loot_amount = 0.50
-	cavalry_shock = 0.25
-}
-
 sca_finland_cav = {
 	cavalry_power = 0.05
 	cav_to_inf_ratio = 0.05

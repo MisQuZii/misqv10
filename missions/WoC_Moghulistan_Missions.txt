@@ -272,18 +272,9 @@ woc_moghulistan_1 = {
 			}
 			
 			add_army_tradition_or_mil_power = { amount = 10 }
-			
-			custom_tooltip = SEPERATOR_TOOLTIP
-			
-			country_event_with_option_insight = {
-				id = horde_mission_events.10
-				option_1 = "
-					custom_tooltip = HORDES_RELEASE_GOLDEN_HORDE
-				"
-				option_2 = "
-					add_adm_power = 100
-				"
-			}
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
 		} 
 	}
 
@@ -753,72 +744,6 @@ woc_moghulistan_3 = {
 		} 
 	}
 
-	moghulistan_southern_china = {
-		icon = qng_conquer_south_china
-		position = 6
-		required_missions = { moghulistan_dragons_gate } 
-		provinces_to_highlight = {  
-			OR = {
-				region = south_china_region
-				region = xinan_region
-			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		} 
-
-		trigger = {  
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				OR = {
-					region = south_china_region
-					region = xinan_region
-				}
-				value = 25
-			}
-		} 
-
-		effect = {
-			add_prestige_or_monarch_power = { amount = 10 }
-			
-			custom_tooltip = SEPERATOR_TOOLTIP
-			
-			if = {
-				limit = {
-					has_dlc = "Rights of Man"
-					NOT = { num_of_ruler_traits = { amount = 3 } }
-					NOT = { ruler_has_personality = conqueror_personality }
-				}
-				add_ruler_personality = legendary_conqueror_personality
-				
-				custom_tooltip = SEPERATOR_TOOLTIP
-			}
-			else_if = {
-				limit = {
-					has_dlc = "Rights of Man"
-					ruler_has_personality = conqueror_personality
-				}
-				
-				remove_ruler_personality = conqueror_personality	
-				add_ruler_personality = legendary_conqueror_personality
-				
-				custom_tooltip = SEPERATOR_TOOLTIP
-			}
-			
-			complex_dynamic_effect = {
-				first_custom_tooltip = TATARS_IF_YUAN_SUBJECT
-				first_limit = "
-					YUA = {
-						is_subject_of = ROOT
-					}
-				"
-				first_effect = "
-					add_army_tradition_or_mil_power = { amount = 5 }
-					
-					custom_tooltip = SEPERATOR_TOOLTIP
-					
-					create_general_with_pips = { tradition = 60 add_shock = 1 add_manuever = 1 }
-				"
-			}
-		}  
-	}
 
 	moghulistan_tatar_yoke = {
 		icon = mission_break_the_tatar_yoke
@@ -975,8 +900,8 @@ woc_moghulistan_4 = {
 			moghulistan_contact_with_mongols
 			moghulistan_unification_of_chagatai
 		}
-		provinces_to_highlight = {  
-			region = mongolia_region
+		provinces_to_highlight = {
+			area = kobdo_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		} 
 
@@ -987,160 +912,15 @@ woc_moghulistan_4 = {
 			}
 		} 
 
-		effect = {  
-			add_country_modifier = {
-				name = tatars_like_a_dragon
-				duration = -1
-			}
-			
-			give_claims = { region = north_china_region }
-			give_claims = { region = manchuria_region }
-		} 
-	}
-
-	moghulistan_dragons_gate = {
-		icon = mch_bypass_great_wall
-		position = 5
-		required_missions = { moghulistan_control_over_northern_yuan } 
-		provinces_to_highlight = {  
-			OR = {
-				area = ordos_area
-				area = gansu_area
-				area = west_gansu_area
-			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		} 
-
-		trigger = {  
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				OR = {
-					area = ordos_area
-					area = gansu_area
-					area = west_gansu_area
-				}
-				value = 6
-			}
-			698 = {
-				owned_by = ROOT
-			}
-		}
-
-		effect = {  
-			country_event_with_effect_insight = {
-				id = horde_mission_events.8
-				effect = "
-					add_army_tradition_or_mil_power = { amount = 10 }
-		
-					custom_tooltip = SEPERATOR_TOOLTIP
-		
-					if = {
-						limit = {
-							has_dlc = \"Leviathan\"
-						}
-						custom_tooltip = HORDES_UNLOCK_GREAT_WALL_OF_CHINA
-						set_country_flag = hordes_unlocked_wall_of_china
-					}
-					else = {
-						698 = {
-							add_or_upgrade_fort_building = yes
-						}
-					}
-				"
-			}
-		}
-	}
-
-	moghulistan_northern_china = {
-		icon = mission_tumu_crisis
-		position = 6
-		required_missions = { moghulistan_dragons_gate } 
-		provinces_to_highlight = {  
-			region = north_china_region
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		} 
-
-		trigger = {  
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				region = north_china_region
-				value = 20
-			}
-			1816 = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-
 		effect = {
-			give_claims = { region = south_china_region }
-			give_claims = { region = xinan_region }
-			
-			custom_tooltip = SEPERATOR_TOOLTIP
-		
-			add_prestige_or_monarch_power = { amount = 10 }
-			
-			custom_tooltip = SEPERATOR_TOOLTIP
-			
-			custom_tooltip = TATARS_MODIFY_LIKE_A_DRAGON_MODIFIER_1
-			hidden_effect = {
-				remove_country_modifier = tatars_like_a_dragon
-				add_country_modifier = {
-					name = tatars_like_a_dragon_1
-					duration = -1
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = mongolia_region
+					}
 				}
-			}
-		}
-	}
-
-	moghulistan_dragon_throne = {
-		icon = mission_seize_the_dragon_throne
-		position = 7
-		required_missions = {
-			moghulistan_southern_china
-			moghulistan_northern_china
-		}
-		provinces_to_highlight = {  
-			OR = {
-				region = north_china_region
-				region = south_china_region
-				region = xinan_region
-			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		} 
-
-		trigger = {
-			1816 = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			1821 = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			667 = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				OR = {
-					region = north_china_region
-					region = south_china_region
-					region = xinan_region
-				}
-				value = 100
-			}
-		}
-
-		effect = {
-			add_country_modifier_for_age = {
-				name = hordes_fall_of_china
-				age = age_of_reformation
-			}
-			
-			add_legitimacy_equivalent = { amount = 15 }
-			
-			custom_tooltip = SEPERATOR_TOOLTIP
-			
-			custom_tooltip = TATARS_MODIFY_LIKE_A_DRAGON_MODIFIER_2
-			hidden_effect = {
-				remove_country_modifier = tatars_like_a_dragon_1
-				add_country_modifier = {
-					name = tatars_like_a_dragon_2
+				add_province_modifier = {
+					name = "moghulistan_mongolia"
 					duration = -1
 				}
 			}
@@ -1204,7 +984,7 @@ woc_moghulistan_5 = {
 		icon = mission_oirat
 		position = 2
 		provinces_to_highlight = {  
-			region = mongolia_region
+			province_id = 718
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		} 
 	
@@ -1228,109 +1008,9 @@ woc_moghulistan_5 = {
 	
 		effect = {  
 			give_claims = { region = mongolia_region }
-			
-			custom_tooltip = SEPERATOR_TOOLTIP
-			
-			custom_tooltip = TATARS_UNLOCK_YUAN_RESTORATION_DECISION
-			
-			set_country_flag = hordes_yuan_restoration
 		} 
 	}
 	
-
-	moghulistan_manchuria = {
-		icon = mission_manchu_warrior
-		position = 4
-		required_missions = { moghulistan_control_over_northern_yuan } 
-		provinces_to_highlight = {  
-			region = manchuria_region
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		} 
-
-		trigger = {  
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				region = manchuria_region
-				value = 20
-			}
-		} 
-
-		effect = {
-			capital_scope = {
-				add_base_manpower = 1
-				add_base_tax = 2
-			}
-			
-			custom_tooltip = SEPERATOR_TOOLTIP
-			
-			custom_tooltip = TATARS_RAZING_GRANTS_TRIBES_LOYALTY
-			set_country_flag = hordes_unlock_tribes_loyalty_through_razing_flag
-		} 
-	}
-
-	moghulistan_korea = {
-		icon = mjz_into_korea
-		position = 6
-		required_missions = { moghulistan_dragons_gate } 
-		provinces_to_highlight = {  
-			region = korea_region
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		} 
-
-		trigger = {  
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				region = korea_region
-				value = 15
-			}
-		}
-
-		effect = {  
-			custom_tooltip = HORDES_SHARE_SPOILS_GRANTS_TECH_COST_REDUCTION
-			set_country_flag = hordes_share_spoils_buff_flag
-			
-			custom_tooltip = SEPERATOR_TOOLTIP
-			
-			add_legitimacy_equivalent = { amount = 10 }
-		}
-	}
-
-	moghulistan_japan = {
-		icon = jap_train_samurai
-		position = 8
-		required_missions = { moghulistan_korea } 
-		provinces_to_highlight = {  
-			region = japan_region
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		} 
-
-		trigger = {  
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				region = japan_region
-				value = 20
-			}
-		} 
-
-		effect = {  
-			define_advisor = {
-				type = army_reformer
-				skill = 2
-				cost_multiplier = 0.5
-			}
-			
-			custom_tooltip = SEPERATOR_TOOLTIP
-			
-			if = {
-				limit = {
-					has_dlc = "Rule Britannia"
-				}
-				set_country_flag = unlocked_japanese_atakebuna_doctrine_flag
-				custom_tooltip = HORDES_UNLOCK_JAPANESE_NAVAL_DOCTRINE
-			}
-			else = {
-				add_navy_tradition = 15
-				add_dip_power = 100
-			}
-		} 
-	}
 
 	moghulistan_land_raids = {
 		icon = mission_non-western_cavalry_raid

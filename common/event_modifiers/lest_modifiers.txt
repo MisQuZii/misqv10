@@ -1,0 +1,18 @@
+hordes_fall_of_hindustan = {
+	core_creation = -0.20
+	land_morale = 0.1
+}
+
+moghulistan_egypt= {
+	shock_damage = 0.125
+	discipline = 0.025
+}
+
+moghulistan_anatolia = {
+	trade_steering = 0.15
+	trade_efficiency = 0.1
+}
+
+moghulistan_mongolia = {
+	local_development_cost = -0.15
+}
