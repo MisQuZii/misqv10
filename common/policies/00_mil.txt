@@ -1000,7 +1000,7 @@ isolationist_society = {
        }
 
        manpower_in_true_faith_provinces= 0.25 
-       morale_damage_received = -0.1
+       discipline = 0.025
 
        ai_will_do = { 
                factor = 1 
