@@ -13985,11 +13985,6 @@ hordes_return_of_the_mongols_2 = {
     province_warscore_cost = -0.1
 }
 
-hordes_fall_of_hindustan = {
-	core_creation = -0.20
-	cavalry_power = 0.1
-}
-
 tatars_raiding_traditions = {
 	available_province_loot = 0.15
 	cavalry_cost = -0.1
