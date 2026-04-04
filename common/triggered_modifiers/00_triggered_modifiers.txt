@@ -1011,3 +1011,83 @@ franconian_deffensive_against_habsburg = {
 	land_forcelimit = 10
 	tax_income = 60
 }
+hre_alive = {
+	potential = {
+		AND = {
+			is_part_of_hre = yes
+			ai = no
+		}
+		
+	}
+
+	trigger = {
+		AND = {
+			is_part_of_hre = yes
+			ai = no
+		}
+		AND = {
+			OR = {
+				BRA = {
+					ai = no
+					is_part_of_hre = yes
+				}
+				PRU = {
+					ai = no
+					is_part_of_hre = yes
+				}
+			}
+			
+			OR = {
+				HES = {
+					ai = no
+					is_part_of_hre = yes
+				}
+				WES = {
+					ai = no
+					is_part_of_hre = yes
+				}
+			}
+			OR = {
+				HSA = {
+					ai = no
+					is_part_of_hre = yes
+				}
+				HAN = {
+					ai = no
+					is_part_of_hre = yes
+				}
+			}
+			OR = {
+				ROT = {
+					ai = no
+					is_part_of_hre = yes
+				}
+				FKN = {
+					ai = no
+					is_part_of_hre = yes
+				}
+			}
+			MLO = {
+				ai = no
+				is_part_of_hre = yes
+			}
+			VEN = {
+				ai = no
+				is_part_of_hre = yes
+			}
+			SIC = {
+				ai = no
+				is_part_of_hre = yes
+			}
+			HAB = {
+				ai = no
+				is_part_of_hre = yes
+			}
+				
+		}
+	}
+
+	development_cost = -0.05
+	build_cost = -0.05
+	imperial_authority_value = 0.1
+}

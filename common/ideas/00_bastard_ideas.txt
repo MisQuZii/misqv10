@@ -786,7 +786,7 @@ WES_ideas = {
 		merc_maintenance_modifier = -0.2
 	}
 	wes_westphalian_decentralisation  = {
-		state_maintenance_modifier = -0.1
+		development_cost = -0.05
 		build_cost = -0.05
 	}
 	wes_taxation = {
@@ -942,7 +942,7 @@ FU2_ideas = {
 
 HES_ideas = {
 	start = {
-		stability_cost_modifier = -0.1
+		development_cost = -0.05
 		#global_tax_modifier = 0.1
 		land_morale = 0.1
 	}
@@ -4034,7 +4034,7 @@ ROT_ideas = {
 	free = yes
 	
 	ROT_zarfat_registry = {
-		development_cost = -0.05
+		tolerance_own = 2
 	}
 	ROT_beautiful_city = {
 		prestige = 1

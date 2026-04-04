@@ -12,7 +12,7 @@ the_more_the_better = {
        }
 
        can_transfer_vassal_wargoal = yes 
-       liberty_desire_from_subject_development = -0.30
+       liberty_desire_from_subject_development = -0.15
        diplomatic_upkeep = 1
 
        ai_will_do = { 

@@ -49,8 +49,9 @@ mlw_slot_1 = {
 			factor = 500	#Reasonable conquest
 		}
 	}
-	mlw_conquer_gujarat = {
+	mlw_conquer_gujaratt = {
 		icon = mission_invade_gujarat
+		position = 2
 		required_missions = { mlw_rewakantha }
 		provinces_to_highlight = {
 			OR = {
@@ -77,7 +78,7 @@ mlw_slot_1 = {
 			}
 		}
 		effect = {
-			add_yearly_manpower = 5
+			add_yearly_manpower = 2
 			add_country_modifier = {
 				name = "malvani_gujarat"
 				duration = 7300
@@ -96,9 +97,6 @@ mlw_slot_1 = {
 				}
 				add_permanent_claim = ROOT
 			}
-		}
-		ai_weight = {
-			factor = 500	#Reasonable conquest
 		}
 	}
 	mlw_gujarat_trade = {
@@ -351,7 +349,7 @@ mlw_slot_3 = {
 			change_price = {
 				trade_goods = cotton
 				key = cotton_storage
-				value = 1
+				value = 0.5
 				duration = 32500
 			}
 			add_treasury = 500

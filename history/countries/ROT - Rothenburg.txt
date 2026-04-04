@@ -1,7 +1,6 @@
 government = monarchy
-add_government_reform = livonian_mercenary_monarchy
+add_government_reform = feudalism_reform
 government_rank = 1
-mercantilism = 25
 technology_group = western
 religion = catholic
 primary_culture = franconian
@@ -20,5 +19,4 @@ elector = yes
 	}
 	clear_scripted_personalities = yes
 	add_ruler_personality = calm_personality
-	add_ruler_personality = well_connected_personality
 }

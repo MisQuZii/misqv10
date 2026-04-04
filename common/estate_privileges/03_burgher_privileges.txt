@@ -2020,7 +2020,12 @@ estate_burghers_forest_expansion = {
 	influence = 0.05
 	#loyalty = 0.05
 	is_valid = {
-		has_unlocked_estate_privilege = { estate_privilege = estate_burghers_forest_expansion }
+		OR = {
+			has_unlocked_estate_privilege = { estate_privilege = estate_burghers_forest_expansion }
+			tag = BRA
+			tag = SWE
+		}
+		
 	}
 	can_select = {
 		ai=no

@@ -3916,7 +3916,6 @@ livonian_mercenary_monarchy = {
 	potential = {
 		OR = {
 			AND = {
-				tag = ROT
 				have_had_reform = livonian_mercenary_monarchy
 			}
 			has_unlocked_government_reform = { government_reform = livonian_mercenary_monarchy }
@@ -3925,7 +3924,6 @@ livonian_mercenary_monarchy = {
 	trigger = {
 		OR = {
 			AND = {
-				tag = ROT
 				have_had_reform = livonian_mercenary_monarchy
 			}
 			has_unlocked_government_reform = { government_reform = livonian_mercenary_monarchy }

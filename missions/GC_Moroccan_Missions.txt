@@ -719,12 +719,12 @@ gc_morocco_3 = {
 		
 		provinces_to_highlight = {
 			province_id = 2754
-			NOT = { controlled_by = ROOT }
+			NOT = { owned_by = ROOT }
 		}
 		
 		trigger = {
 			2754 = {
-				controlled_by = ROOT
+				owned_by = ROOT
 			}
 		}
 		

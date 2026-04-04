@@ -878,12 +878,12 @@ dom_cas_missions_2 = {
 		
 		provinces_to_highlight = {
 			province_id = 346
-			NOT = { controlled_by = ROOT }
+			NOT = { owned_by = ROOT }
 		}
 		
 		trigger = {
 			346 = {
-				controlled_by = ROOT
+				owned_by = ROOT
 			}
 		}
 		
