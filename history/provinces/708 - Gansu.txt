@@ -1,8 +1,8 @@
 #708 - Gansu
 
-owner = HMI
-controller = HMI
-add_core = HMI
+owner = LUW
+controller = LUW
+add_core = LUW
 culture = xibei
 religion = confucianism
 capital = "Zhangye"
