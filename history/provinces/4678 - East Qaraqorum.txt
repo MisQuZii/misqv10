@@ -1,8 +1,8 @@
 # 4678 - Qaraqorum
 
-owner = OIR
-controller = OIR
-add_core = OIR
+owner = LUW
+controller = LUW
+add_core = LUW
 culture = khalkha
 religion = tengri_pagan_reformed
 capital = "Qaraqorum"
