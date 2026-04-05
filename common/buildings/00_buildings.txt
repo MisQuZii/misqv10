@@ -3449,6 +3449,14 @@ state_house = {
 				}
 			}
 		}
+		area_for_scope_province = {
+				owner = {
+					tag = ROOT
+				}
+				type = all
+				development = 30
+				is_prosperous = yes
+			}
 	}
 	
 	keep_trigger = {
@@ -3464,10 +3472,18 @@ state_house = {
 				}
 			}
 		}
+		area_for_scope_province = {
+				owner = {
+					tag = ROOT
+				}
+				type = all
+				development = 30
+				is_prosperous = yes
+			}
 	}
 
 	modifier = {
-		local_centralize_state_cost = -0.33
+		local_governing_cost = -0.15
 	}
 	
 	onmap = no
