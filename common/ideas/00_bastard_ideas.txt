@@ -2414,7 +2414,7 @@ MAM_ideas = {
 	start = {
 		trade_steering = 0.25
 		
-		discipline = 0.025
+		discipline = 0.05
 		
 	}
 	
@@ -2448,7 +2448,7 @@ MAM_ideas = {
 	}
 	mam_army_reform = {
 		global_tax_modifier = 0.10
-		discipline = 0.025
+		cavalry_cost = -0.1
 	}
 }
 
@@ -2488,7 +2488,7 @@ EGY_ideas = {
 		sea_repair = yes
 	}
 	crossroads_between_europe_and_africa = {
-		manpower_recovery_speed = 0.15
+		backrow_artillery_damage = 0.10
 	}
 }
 TUR_ideas = {
@@ -2517,7 +2517,7 @@ TUR_ideas = {
 		cavalry_power = 0.1
 	}
 	autonmous_pashas = {
-		global_unrest = -2
+		build_cost = -0.1
 	}		
 	tulip_period = {
 		trade_efficiency = 0.10
